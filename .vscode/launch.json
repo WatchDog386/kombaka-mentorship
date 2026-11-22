@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Mwangaza (backend + frontend)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/run.py",
+      "cwd": "${workspaceFolder}/backend",
+      "env": { "NO_RELOAD": "1" },
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

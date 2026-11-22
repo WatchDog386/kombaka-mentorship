@@ -1,0 +1,273 @@
+/* Buttons, inputs, panels, tables, chips, report card, modal and toast. */
+
+/* Buttons and inputs */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.45rem; min-height:42px; padding:.45rem 1rem; border:1px solid var(--line); border-radius:var(--r-sm); background:var(--card); cursor:pointer; font-weight:700; font-size:.95rem; text-decoration:none; color:var(--ink); white-space:nowrap}
+.btn.cancel{background:#000; border-color:#000; color:#fff}
+.btn.cancel:hover{filter:brightness(1.1)}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--maroon); border-color:var(--maroon); color:var(--maroon-ink)}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.sm{min-height:34px; padding:.2rem .75rem; font-size:.85rem}
+.btn.link{border:0; background:none; padding:.2rem .3rem; min-height:32px; color:var(--maroon-text)}
+.btn.danger{color:var(--be)}
+input,select,textarea{font-weight:400; width:100%; min-height:42px; padding:.45rem .75rem; border:1px solid var(--line); border-radius:var(--r-sm); background:var(--card); transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:none; border-color:var(--maroon); box-shadow:0 0 0 2px color-mix(in srgb,var(--maroon) 15%,transparent)}
+textarea{min-height:92px; resize:vertical}
+input[type=checkbox]{width:20px; min-height:20px; height:20px; accent-color:var(--maroon)}
+label.f{display:block; font-size:.875rem; font-weight:600; color:var(--ink)}
+label.f > span{display:block; margin-bottom:.25rem}
+label.chk{display:flex; align-items:center; gap:.6rem; font-weight:700; font-size:.92rem; padding-top:1.4rem}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:.9rem 1rem} .grid2 .full{grid-column:1/-1}
+.hint{color:var(--muted); font-size:.875rem}
+.err{color:var(--be); font-weight:700; font-size:.9rem; min-height:1.2rem; margin-top:.6rem}
+
+/* Content blocks */
+.panel{background:transparent; border:none; border-radius:0; padding:1rem 0; margin-bottom:1.5rem; box-shadow:none}
+.panel > h2{margin-bottom:.6rem; font-size:.95rem; font-weight:600; color:var(--head)}
+.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:1.1rem; align-items:start}
+.cols > .panel{margin:0}
+.stack > * + *{margin-top:1.1rem}
+.tools{display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-bottom:1rem}
+.tools input[type=search]{max-width:260px} .tools select{width:auto; max-width:220px} .tools input[type=date]{width:auto}
+.tools .grow{flex:1}
+.strip{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:1.1rem}
+.strip > div{padding:1rem 1.2rem; border:1px solid var(--line); border-radius:var(--r); background:var(--card); box-shadow:var(--shadow-sm)}
+.strip b{display:block; font:800 1.6rem/1.15 var(--display)}
+.strip span{font-size:.875rem; color:var(--muted)} .strip small{display:block; font-size:.8rem; color:var(--muted); margin-top:.15rem}
+.strip.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){ .strip{grid-template-columns:1fr 1fr; gap:.7rem} .strip.three{grid-template-columns:1fr} }
+.tw{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r); background:var(--card)}
+table.t{border-collapse:collapse; width:100%; font-size:.93rem}
+.t th{font-size:.78rem; text-align:left; color:var(--muted); font-weight:700; letter-spacing:.02em; padding:.7rem .9rem; border-bottom:1px solid var(--line); white-space:nowrap; background:var(--soft)}
+.t td{padding:.65rem .9rem; border-bottom:1px solid var(--line); vertical-align:middle}
+.t tbody tr:hover td{background:color-mix(in srgb,var(--soft) 55%,transparent)}
+.t tr:last-child td{border-bottom:0}
+.t th.num,.t td.num{text-align:right}
+.t td.act{white-space:nowrap; text-align:right}
+.t tfoot td{font-weight:700; background:var(--soft)}
+.chip{display:inline-block; font-size:.78rem; font-weight:700; padding:.15rem .6rem; border-radius:var(--r-sm); background:var(--soft); white-space:nowrap}
+.chip.ok,.lvl.ee{background:var(--ee-bg); color:var(--ee)} .lvl.me,.chip.info{background:var(--me-bg); color:var(--me)}
+.chip.warn,.lvl.ae{background:var(--ae-bg); color:var(--ae)} .chip.bad,.lvl.be{background:var(--be-bg); color:var(--be)}
+.lvl{display:inline-block; min-width:2.6rem; text-align:center; font-weight:700; font-size:.8rem; padding:.1rem .45rem; border-radius:6px}
+.only-sm{display:none}
+@media (max-width:640px){ .hide-sm{display:none} .only-sm{display:block} .seg button{padding:.35rem .5rem} }
+.empty{padding:2rem 1.2rem; text-align:center; color:var(--muted)} .empty b{display:block; color:var(--ink); font-family:var(--display); font-size:1.1rem; margin-bottom:.3rem} .empty .btn{margin-top:.9rem}
+.tabs{display:flex; gap:.3rem; border-bottom:1px solid var(--line); margin-bottom:1rem; overflow-x:auto}
+.tabs button{border:0; background:none; padding:.55rem .9rem; cursor:pointer; font-weight:700; color:var(--muted); border-bottom:3px solid transparent; white-space:nowrap}
+.tabs button[aria-selected=true]{color:var(--ink); border-bottom-color:var(--maroon)}
+.list{list-style:none; margin:0; padding:0} .list li{display:flex; gap:.8rem; justify-content:space-between; align-items:baseline; padding:.5rem 0; border-bottom:1px solid var(--line)} .list li:last-child{border:0}
+.bar{height:10px; border-radius:99px; background:var(--soft); overflow:hidden; display:flex} .bar i{display:block; height:100%}
+.enrol{display:grid; grid-template-columns:5.2rem 1fr 2.2rem; gap:.3rem .7rem; align-items:center; font-size:.9rem}
+.enrol .bar{height:14px; border-radius:4px} .legend{display:flex; flex-wrap:wrap; gap:.3rem 1rem; font-size:.82rem; color:var(--muted); margin-top:.7rem} .legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:.35rem}
+.note{border:1px solid var(--line); border-left:5px solid var(--board); background:var(--card); border-radius:var(--r); padding:.9rem 1.1rem; margin-bottom:.8rem}
+.note.pin{border-left-color:var(--bus)} .note h3{margin-bottom:.25rem} .note .meta{font-size:.82rem; color:var(--muted); margin-top:.5rem; display:flex; flex-wrap:wrap; gap:.3rem .9rem; align-items:center}
+.seg{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden}
+.seg button{border:0; background:var(--card); padding:.35rem .7rem; min-width:44px; min-height:36px; cursor:pointer; font-weight:700; font-size:.85rem; border-left:1px solid var(--line)} .seg button:first-child{border-left:0}
+.seg.mode button{padding:.45rem 1rem; min-height:42px}
+.seg.mode button[aria-pressed=true]{background:var(--navy); color:#fff}
+.seg button[aria-pressed=true].p{background:var(--ee-bg); color:var(--ee)} .seg button[aria-pressed=true].l{background:var(--ae-bg); color:var(--ae)} .seg button[aria-pressed=true].a{background:var(--be-bg); color:var(--be)}
+.tt{border-collapse:collapse; width:100%; min-width:640px; font-size:.86rem}
+.tt th,.tt td{border:1px solid var(--line); padding:.4rem .5rem; text-align:left; vertical-align:top}
+.tt th{background:var(--soft); font-size:.8rem} .tt td.brk{background:var(--soft); color:var(--muted); text-align:center; font-size:.8rem}
+.tt td button{all:unset; display:block; width:100%; min-height:38px; cursor:pointer; border-radius:4px} .tt td button:focus-visible{outline:3px solid var(--bus)}
+.tt small{display:block; color:var(--muted)}
+.kv{display:grid; grid-template-columns:max-content 1fr; gap:.3rem 1rem; font-size:.93rem} .kv dt{color:var(--muted)} .kv dd{margin:0}
+/* A round avatar showing a profile picture instead of initials (core/avatar.js). */
+.av.has-photo{padding:0; overflow:hidden; background:var(--soft)}
+.av.has-photo img,.rail-me img{display:block; width:100%; height:100%; border-radius:50%; object-fit:cover}
+
+/* My profile. (.av.prof-av outranks the plain .av size in layout.css, which loads later.) A header card: a coloured band, the picture overlapping it with a camera button,
+   the name, role and a few facts as chips, and the photo buttons. Then two columns of panels:
+   personal details, the person's own part of the school, and changing the password. */
+.prof-hero{overflow:hidden; margin-bottom:1rem; border-radius:var(--r); background:var(--card); box-shadow:var(--shadow-sm)}
+.prof-cover{height:112px; background:linear-gradient(115deg,var(--navy) 0%,#2B62C4 62%,#1B715A 100%)}
+.prof-id{display:flex; flex-wrap:wrap; align-items:flex-start; gap:1rem 1.4rem; margin-top:-52px; padding:0 1.5rem 1.35rem}
+.prof-pic{position:relative; flex:none}
+.av.prof-av{width:116px; height:116px; border:4px solid var(--card); font-size:2.2rem; box-shadow:0 10px 24px rgba(20,40,70,.18)}
+.prof-cam{position:absolute; right:2px; bottom:6px; display:grid; place-items:center; width:38px; height:38px; border:3px solid var(--card); border-radius:50%; background:var(--navy); color:#fff; cursor:pointer; transition:transform .15s}
+.prof-cam:hover{transform:scale(1.06)}
+.prof-cam:focus-within{outline:3px solid color-mix(in srgb,var(--navy) 40%,transparent); outline-offset:2px}
+.prof-who{flex:1; min-width:200px; padding:60px 0 .25rem}
+.prof-who h2{margin:0; color:var(--head); font-size:1.45rem; font-weight:600}
+.prof-who p{margin:.2rem 0 0; color:var(--muted); font-size:.92rem}
+.prof-chips{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.65rem}
+.prof-chips span{padding:.32rem .7rem; border-radius:99px; background:var(--soft); color:var(--ink); font-size:.78rem; font-weight:600}
+.prof-acts{display:flex; flex-wrap:wrap; gap:.5rem; padding:60px 0 .25rem}
+.prof-acts label.btn{cursor:pointer}
+.prof-acts label.btn:focus-within{outline:3px solid color-mix(in srgb,var(--navy) 40%,transparent); outline-offset:2px}
+.prof-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; align-items:start}
+.prof-grid > .panel{margin:0}
+.prof-grid > .panel:last-child{grid-column:1/-1}
+.prof-kv{gap:.7rem 1.4rem}
+.prof-stat b{display:block; color:var(--head); font-size:1.35rem}
+.prof-stat span{color:var(--muted); font-size:.88rem}
+.prof-links{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
+.prof-links .btn,.prof-hero .btn,.prof-grid > .panel > .btn{display:inline-flex; align-items:center; gap:.45rem}
+.prof-h3{margin:1.3rem 0 .55rem; color:var(--muted); font-size:.82rem; font-weight:700}
+.prof-chips.soft{margin-top:0}
+.prof-kids{display:grid; gap:.6rem; margin:0; padding:0; list-style:none}
+.prof-kids li{display:flex; align-items:center; gap:.85rem; padding:.8rem .9rem; border-radius:12px; background:var(--soft)}
+.prof-kids li > div:first-of-type{flex:1; min-width:0}
+.prof-kids b{display:block}
+.prof-kids span:not(.av){display:block; color:var(--muted); font-size:.82rem}
+.prof-kids span.owe{color:#C2362F; font-weight:600} .prof-kids span.paid{color:#1B8A5A; font-weight:600}
+.prof-kid-acts{display:flex; gap:.4rem}
+.prof-nums{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem}
+.prof-nums div{padding:.85rem .5rem; border-radius:12px; background:var(--soft); text-align:center}
+.prof-nums b{display:block; color:var(--head); font-size:1.45rem}
+.prof-nums span{color:var(--muted); font-size:.76rem}
+@media (max-width:760px){
+  .prof-cover{height:92px}
+  .prof-id{flex-direction:column; align-items:flex-start; margin-top:-48px; padding:0 1rem 1.1rem}
+  .av.prof-av{width:100px; height:100px; font-size:1.9rem}
+  .prof-who,.prof-acts{min-width:0; padding:0}
+  .prof-grid{grid-template-columns:minmax(0,1fr)}
+  .prof-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prof-kids li{flex-wrap:wrap}
+  .prof-kid-acts{width:100%} .prof-kid-acts .btn{flex:1}
+}
+.facts{display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; margin:.9rem 0} .facts div{background:var(--soft); border-radius:var(--r); padding:.7rem .9rem} .facts b{display:block; font:700 1.15rem var(--display)} .facts span{font-size:.82rem; color:var(--muted)}
+@media (max-width:560px){ .facts{grid-template-columns:1fr} }
+
+/* Report card */
+.rc{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:1.5rem; max-width:860px}
+.rc-head{display:flex; gap:1rem; align-items:center; border-bottom:3px double var(--line); padding-bottom:1rem; margin-bottom:1rem}
+.rc-head .seal{width:56px; height:56px; border-radius:50%; background:var(--board); color:var(--bus); display:grid; place-items:center; flex:none}
+.rc-head p{color:var(--muted); font-size:.875rem}
+
+/* A heading between sections of a page */
+.sec-h{margin:1.7rem 0 .8rem; font-size:1rem; font-weight:500}
+.sec-h:first-child{margin-top:0}
+
+/* Modal and toast */
+.modal-bg{position:fixed; inset:0; z-index:50; background:rgba(12,20,17,.55); display:grid; place-items:center; padding:1rem; overflow-y:auto}
+.modal{background:var(--card); border-radius:var(--r); padding:1.4rem 1.5rem; width:min(100%,560px); box-shadow:var(--shadow); max-height:calc(100vh - 2rem); overflow-y:auto}
+.modal.wide{width:min(100%,760px)} .modal h2{margin-bottom:1rem}
+.actions{display:flex; justify-content:flex-end; gap:.6rem; margin-top:1.1rem; flex-wrap:wrap}
+/* Compact, non-blocking status notification. */
+#toast:empty{display:none}
+.pr-bg{position:fixed; right:1rem; bottom:1rem; z-index:120; width:min(390px,calc(100vw - 2rem)); pointer-events:none}
+.pr-bg.out .pr{animation:pr-out .18s ease forwards}
+.pr{--pc:#76D6A1; position:relative; overflow:hidden; pointer-events:auto; display:grid; grid-template-columns:34px minmax(0,1fr) 32px; align-items:center; gap:.7rem; min-height:54px; padding:.55rem .7rem; border:1px solid rgba(255,255,255,.12); border-radius:12px; background:#132B47; color:#fff; text-align:left; box-shadow:0 10px 28px rgba(10,25,42,.24); animation:pr-in .22s ease both}
+.pr-error{--pc:#FF858B} .pr-warn{--pc:#FFD16A} .pr-info{--pc:#8FC4FF}
+.pr-icon{display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:color-mix(in srgb,var(--pc) 16%,#132B47); color:var(--pc)}
+.pr-message{min-width:0; margin:0; color:#F4F7FA; font-size:.86rem; font-weight:600; line-height:1.4; overflow-wrap:anywhere}
+.pr-close{display:grid; place-items:center; width:32px; height:32px; padding:0; border:0; border-radius:6px; background:transparent; color:var(--muted); cursor:pointer}
+.pr-close{color:#C7D3DE}
+.pr-close:hover{background:rgba(255,255,255,.1); color:#fff}
+.pr-close:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
+.pr-success::after{content:""; position:absolute; right:0; bottom:0; left:0; height:2px; background:var(--pc); transform-origin:left; animation:pr-progress 4s linear forwards}
+@keyframes pr-in{from{opacity:0; transform:translateY(-8px)}to{opacity:1; transform:none}}
+@keyframes pr-out{to{opacity:0; transform:translateY(8px)}}
+@keyframes pr-progress{to{transform:scaleX(0)}}
+@media (prefers-reduced-motion:reduce){ .pr,.pr-bg.out .pr,.pr-success::after{animation:none} }
+
+/* The yes/no question (confirmBox): an icon, the question, and Cancel beside the answer */
+.ask{text-align:center; padding:.6rem .4rem .2rem}
+.ask > i{display:inline-grid; place-items:center; width:68px; height:68px; margin-bottom:1rem; border-radius:50%; background:color-mix(in srgb,var(--ac) 13%,transparent); color:var(--ac); box-shadow:0 0 0 8px color-mix(in srgb,var(--ac) 6%,transparent)}
+.ask-ask{--ac:#1F65AD} .ask-danger{--ac:#DC3B3B} .ask-out{--ac:#E8590C}
+.ask h2{margin-bottom:.5rem; font-size:1.12rem}
+.ask p{max-width:40ch; margin:0 auto; color:var(--muted); line-height:1.55}
+.ask .actions{justify-content:center; margin-top:1.5rem}
+.ask .actions .btn{min-width:130px; min-height:46px; border-radius:10px}
+/* The bare question (confirmBox with no icon and no description) is styled like the sign-in
+   page: white card, navy heading, a light Cancel beside a filled Log out. The colours are
+   written out instead of themed because the sign-in page is always light, so this should look
+   the same whichever theme the app is in. */
+.ask-bare{padding:1.35rem 1.2rem 1.15rem}
+.modal:has(.ask-bare){background:#FFFFFF; box-shadow:0 1px 2px rgba(20,45,75,.06), 0 18px 42px rgba(20,45,75,.24)}
+.ask-bare h2{margin-bottom:0; color:#1D4777; font-size:1.18rem; font-weight:500}
+.ask-bare .actions{gap:.5rem; margin-top:1.35rem}
+.ask-bare .actions .btn{min-width:0; min-height:48px; border-radius:99px; font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase}
+.ask-bare .btn-quiet{border-color:#E3E4E8; background:#F3F3F5; color:#23262E}
+.ask-bare .btn-quiet:hover{border-color:#D3D5DB; background:#EBECEF}
+.btn.danger-fill{border-color:var(--ac); background:var(--ac); color:#fff}
+.btn.danger-fill:hover{filter:brightness(1.08)}
+.modal:has(.ask){width:min(100%,430px); border-radius:20px; box-shadow:var(--shadow), 0 26px 60px -22px rgba(12,20,17,.5); animation:ask-in .32s cubic-bezier(.2,1.15,.35,1) both}
+/* The pop: rise and settle, with a touch of overshoot so it feels sprung rather than drawn. */
+@keyframes ask-in{from{opacity:0; transform:translateY(10px) scale(.9)}60%{opacity:1; transform:translateY(0) scale(1.012)}to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){ .modal:has(.ask){animation:none} }
+
+/* ================================================================ chats (views/messages.js)
+   Laid out like a messaging app: the list of conversations on the left, the open conversation
+   on the right, filling the height of the page so the composer stays put at the bottom. */
+.chat-tools{margin-bottom:.7rem}
+/* The height is worked out from the space the header, the tools row and the page footer take,
+   so the panes fill the window and the composer stays at the bottom of the screen. */
+.chat{display:grid; grid-template-columns:minmax(260px,340px) minmax(0,1fr); height:calc(100dvh - 383px); min-height:420px; border:1px solid var(--line); background:var(--card)}
+.chat.chat-list-only{grid-template-columns:minmax(0,1fr)}
+.chat.chat-list-only .chat-main{display:none}
+
+/* The list */
+.chat-side{min-width:0; overflow-y:auto; border-right:1px solid var(--line); background:var(--paper)}
+.chat.chat-list-only .chat-side{border-right:0}
+.chat-sec{margin:0; padding:.85rem 1rem .3rem; color:var(--muted); font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+.chat-row{display:flex; align-items:center; gap:.7rem; width:100%; padding:.7rem .9rem; border:0; border-bottom:1px solid var(--line); background:none; color:var(--ink); text-align:left; cursor:pointer; -webkit-tap-highlight-color:transparent}
+.chat-row:hover{background:var(--soft)}
+.chat-row.on{background:var(--card); box-shadow:inset 3px 0 0 var(--bus)}
+.chat-row:focus-visible{outline:3px solid var(--focus); outline-offset:-3px}
+.chat-av{flex:none; display:grid; place-items:center; width:42px; height:42px; border-radius:50%; font-size:.8rem; font-weight:800; letter-spacing:.02em}
+.av-s{background:var(--navy); color:#fff}
+.av-p{background:var(--maroon); color:var(--maroon-ink)}
+.av-g{background:var(--bus); color:#1F2A0E}
+.chat-row-m{flex:1; min-width:0}
+.chat-row-t{display:flex; align-items:center; gap:.4rem; font-size:.92rem}
+.chat-row-t b{flex:1; min-width:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.chat-row-s{display:block; overflow:hidden; color:var(--muted); font-size:.8rem; white-space:nowrap; text-overflow:ellipsis}
+.chat-row-w{flex:none; display:grid; justify-items:end; gap:.15rem; align-self:stretch; align-content:space-between; padding:.1rem 0}
+.chat-row-d{color:var(--muted); font-size:.68rem; white-space:nowrap}
+.chat-row .dot{width:8px; height:8px; border-radius:50%; background:var(--bus)}
+.chat-row .tick{color:var(--me); font-size:.66rem; font-style:normal; letter-spacing:-.18em}
+
+/* The open conversation */
+.chat-main{display:grid; grid-template-rows:auto minmax(0,1fr) auto; min-width:0; background:var(--paper)}
+.chat-head{display:flex; align-items:center; gap:.7rem; padding:.7rem .9rem; border-bottom:1px solid var(--line); background:var(--card); overflow:hidden}
+.chat-head-m{flex:1; min-width:0}
+.chat-head-m b{display:block; overflow:hidden; font-size:.95rem; white-space:nowrap; text-overflow:ellipsis}
+.chat-head-m .chat-sub{display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.chat-head-a{flex:none; display:flex; gap:.35rem}
+.chat-head-a .btn{min-height:34px; padding:.2rem .55rem; font-size:.74rem; white-space:nowrap}
+.chat-back{display:none; flex:none; padding:.3rem; border:0; border-radius:50%; background:none; color:var(--ink); cursor:pointer}
+
+.chat-body{display:flex; flex-direction:column; gap:.35rem; overflow-y:auto; padding:.9rem 1rem; overscroll-behavior:contain}
+.chat-day{display:flex; justify-content:center; margin:.5rem 0 .3rem}
+.chat-day span{padding:.15rem .6rem; border-radius:99px; background:color-mix(in srgb,var(--muted) 16%,transparent); color:var(--muted); font-size:.68rem; font-weight:700}
+.chat-b{position:relative; max-width:min(78%,560px); padding:.45rem .7rem .4rem; border-radius:14px 14px 14px 4px; background:var(--card); box-shadow:var(--shadow-sm); align-self:flex-start; overflow-wrap:anywhere}
+.chat-b.me{align-self:flex-end; border-radius:14px 14px 4px 14px; background:var(--me-bg)}
+.chat-x{display:block; white-space:pre-wrap; font-size:.9rem; line-height:1.45}
+.chat-who{display: block; margin-bottom:.1rem; color:var(--blue); font-size:.72rem; font-weight:800}
+.chat-at{display: block; margin-top:.15rem; color:var(--muted); font-size:.65rem; text-align:right}
+.chat-blank{margin:auto; max-width:34ch; padding:2rem 1rem; color:var(--muted); text-align:center}
+.chat-blank b{display:block; margin-bottom:.3rem; color:var(--ink); font-size:1rem}
+.chat-empty{padding:1rem}
+
+/* The composer */
+.chat-compose{display:flex; align-items:flex-end; gap:.5rem; padding:.6rem .8rem; border-top:1px solid var(--line); background:var(--card)}
+.chat-compose textarea{flex:1; min-width:0; min-height:42px; max-height:120px; padding:.6rem .85rem; border:1px solid var(--line); border-radius:21px; background:var(--paper); color:var(--ink); font:inherit; font-size:16px; line-height:1.4; resize:none; overflow-y:auto}
+.chat-compose textarea:focus{outline:2px solid var(--focus); outline-offset:1px}
+.chat-send{flex:none; display:grid; place-items:center; width:44px; height:44px; border:0; border-radius:50%; background:var(--bus); color:#1F2A0E; cursor:pointer}
+.chat-send:hover{filter:brightness(1.06)}
+.chat-send:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
+.chat-locked{margin:0; padding:1rem; border-top:1px solid var(--line); background:var(--card); color:var(--muted); text-align:center}
+
+/* ================================================================ teaching material (views/resources.js)
+   One row per file: a label square, the title with the details under it, and the buttons. */
+.res-areas{display:flex; gap:.4rem; margin:0 0 .9rem; padding-bottom:.2rem; overflow-x:auto; scrollbar-width:none}
+.res-areas::-webkit-scrollbar{display:none}
+.res-areas button{flex:none; min-height:36px; padding:.25rem .8rem; border:1px solid var(--line); border-radius:99px; background:var(--card); color:var(--muted); font-size:.82rem; font-weight:700; white-space:nowrap; cursor:pointer}
+.res-areas button:hover{border-color:var(--blue); color:var(--ink)}
+.res-areas button.on{border-color:transparent; background:var(--navy); color:#fff}
+/* minmax(0,1fr) rather than a bare 1fr: a grid track sized by max-content cannot shrink below
+   the widest card, which pushed the page sideways on a phone. */
+.res-list{display:grid; grid-template-columns:minmax(0,1fr); gap:.55rem}
+.res-card{display:flex; align-items:center; gap:.85rem; padding:.7rem .9rem; border:1px solid var(--line); border-radius:var(--r); background:var(--card); box-shadow:var(--shadow-sm)}
+.res-ico{flex:none; display:grid; place-items:center; width:46px; height:46px; border-radius:10px; background:var(--soft); color:var(--muted); font-size:.68rem; font-weight:800; letter-spacing:.02em}
+.res-ico.res-pdf{background:#F6E4E3; color:#A8231C}
+.res-ico.res-doc,.res-ico.res-docx,.res-ico.res-word{background:#E1EBF7; color:#1B5886}
+.res-ico.res-xls,.res-ico.res-xlsx,.res-ico.res-sheet{background:#E0F1E7; color:#17683F}
+.res-ico.res-ppt,.res-ico.res-pptx,.res-ico.res-slides{background:#FAEED3; color:#8A5200}
+.res-ico.res-image{background:#EFE6F7; color:#7048B8}
+.res-m{flex:1; min-width:0}
+.res-m b{display:block; overflow:hidden; font-size:.92rem; line-height:1.35; text-overflow:ellipsis}
+.res-meta{display:block; margin-top:.12rem; overflow:hidden; color:var(--muted); font-size:.76rem; white-space:nowrap; text-overflow:ellipsis}
+.res-a{flex:none; display:flex; gap:.4rem; min-width:0}

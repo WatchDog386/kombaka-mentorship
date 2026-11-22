@@ -1,0 +1,50 @@
+/* Design tokens (colours, corners, fonts) for light and dark mode, and base element styles.
+   Light is the default; the switch in the top bar sets data-theme="dark" on <html>.
+   --r is the corner radius of cards and panels (0 keeps them square, like the sign-in card);
+   --r-sm is for buttons, inputs and small badges. */
+
+:root{
+  --navy:#1C3D62; --navy-2:#16324F; --navy-3:#132B47; --navy-up:rgba(255,255,255,.08); --lime:#8BBF3F; --blue:#1F65AD; --head:#1D4777;
+  --board:#1C3D62; --board-2:#132B47; --chalk:#FFFFFF; --chalk-dim:#C9D7E7;
+  --paper:#EEF3F8; --card:#FFFFFF; --ink:#1A3350; --muted:#5B7088; --line:#DCE6F0; --soft:#F1F5FA;
+  --maroon:#4D8219; --maroon-ink:#FFFFFF; --maroon-text:#1F65AD; --bus:#8BBF3F; --wood:#B58A57; --focus:#1F65AD;
+  --ee:#17683F; --ee-bg:#E0F1E7; --me:#1B5886; --me-bg:#E1EDF6; --ae:#8A5200; --ae-bg:#FAEED3; --be:#A8231C; --be-bg:#FAE3E1;
+  --r:0px; --r-sm:4px;
+  --shadow:0 1px 2px rgba(20,45,75,.06), 0 10px 28px rgba(20,45,75,.1);
+  --shadow-sm:0 1px 2px rgba(20,45,75,.05), 0 6px 18px rgba(20,45,75,.05);
+  --display:"Urbanist","Segoe UI",system-ui,sans-serif;
+  --body:"Urbanist","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --navy:#112A47; --navy-2:#0D2139; --navy-3:#0A1A2E; --head:#D4E4F5;
+    --board:#112A47; --board-2:#0A1A2E; --paper:#0B1626; --card:#122238; --ink:#E4EDF7; --muted:#93A8C1; --line:#22364F; --soft:#172B44;
+    --maroon-text:#78B6F2; --wood:#7C5F3C; --focus:#78B6F2;
+    --ee:#7FD3A4; --ee-bg:#153326; --me:#8CC3EC; --me-bg:#152C3D; --ae:#F1C56B; --ae-bg:#3A2C0E; --be:#F39A93; --be-bg:#3F1A18;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.3); --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --navy:#112A47; --navy-2:#0D2139; --navy-3:#0A1A2E; --head:#D4E4F5;
+  --board:#112A47; --board-2:#0A1A2E; --paper:#0B1626; --card:#122238; --ink:#E4EDF7; --muted:#93A8C1; --line:#22364F; --soft:#172B44;
+  --maroon-text:#78B6F2; --wood:#7C5F3C; --focus:#78B6F2;
+  --ee:#7FD3A4; --ee-bg:#153326; --me:#8CC3EC; --me-bg:#152C3D; --ae:#F1C56B; --ae-bg:#3A2C0E; --be:#F39A93; --be-bg:#3F1A18;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.3); --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{height:100%; margin:0; background:var(--paper); color:var(--ink); font:16px/1.5 var(--body); -webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--display); line-height:1.15; margin:0; letter-spacing:-.01em}
+/* Headings follow the "Welcome back" sign-in title: the display face at weight 500, a size or
+   so under it, in the same navy. The public site and the sign-in page set their own. */
+h1{font-size:1.3rem; font-weight:500} h2{font-size:1.08rem; font-weight:500} h3{font-size:.95rem; font-weight:500}
+/* Headings are navy blue inside the signed-in app; :where keeps this easy to override.
+   --head is the same navy as the sign-in title in light mode, and stays legible in dark. */
+:where(body:not(.pub)) :where(h1,h2,h3){color:var(--head)}
+p{margin:0} a{color:var(--maroon-text)}
+button,input,select,textarea{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:6px}
+.muted{color:var(--muted)} .small{font-size:.875rem} .num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+#app{min-height:100%}

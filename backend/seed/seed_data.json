@@ -1,0 +1,4748 @@
+{
+ "config": {
+  "school": {
+   "name": "Kombaka Mentorship School",
+   "motto": "Elimu ni mwanga",
+   "address": "P.O. Box 000, Ruaka",
+   "county": "Kiambu County",
+   "phone": "0700 555 000",
+   "email": "office@mwangaza.example",
+   "paybill": "000000",
+   "year": 2026,
+   "term": 3,
+   "terms": {
+    "1": {
+     "s": "2026-01-05",
+     "e": "2026-04-02"
+    },
+    "2": {
+     "s": "2026-04-27",
+     "e": "2026-07-31"
+    },
+    "3": {
+     "s": "2026-08-24",
+     "e": "2026-10-23"
+    }
+   },
+   "nextOpens": "2027-01-04",
+   "bands": {
+    "ee1": 95,
+    "ee2": 90,
+    "me1": 75,
+    "me2": 60,
+    "ae1": 50,
+    "ae2": 45,
+    "be1": 40,
+    "be2": 1
+   },
+   "fees": {
+    "pp": {
+     "tuition": 14000,
+     "lunch": 6000,
+     "activity": 1500
+    },
+    "lower": {
+     "tuition": 18000,
+     "lunch": 6500,
+     "activity": 2000
+    },
+    "upper": {
+     "tuition": 22000,
+     "lunch": 7000,
+     "activity": 2500
+    },
+    "junior": {
+     "tuition": 28000,
+     "lunch": 7500,
+     "activity": 3500
+    }
+   }
+  }
+ },
+ "classes": {
+  "c_pp1": {
+   "name": "PP1",
+   "level": "pp",
+   "order": 1,
+   "teacherId": "s03",
+   "room": "Block A, Room 1"
+  },
+  "c_pp2": {
+   "name": "PP2",
+   "level": "pp",
+   "order": 2,
+   "teacherId": "s04",
+   "room": "Block A, Room 2"
+  },
+  "c_g1": {
+   "name": "Grade 1",
+   "level": "lower",
+   "order": 3,
+   "teacherId": "s05",
+   "room": "Block A, Room 3"
+  },
+  "c_g2": {
+   "name": "Grade 2",
+   "level": "lower",
+   "order": 4,
+   "teacherId": "s06",
+   "room": "Block A, Room 4"
+  },
+  "c_g3": {
+   "name": "Grade 3",
+   "level": "lower",
+   "order": 5,
+   "teacherId": "s07",
+   "room": "Block B, Room 1"
+  },
+  "c_g4": {
+   "name": "Grade 4",
+   "level": "upper",
+   "order": 6,
+   "teacherId": "s08",
+   "room": "Block B, Room 2"
+  },
+  "c_g5": {
+   "name": "Grade 5",
+   "level": "upper",
+   "order": 7,
+   "teacherId": "s09",
+   "room": "Block B, Room 3"
+  },
+  "c_g6": {
+   "name": "Grade 6",
+   "level": "upper",
+   "order": 8,
+   "teacherId": "s10",
+   "room": "Block B, Room 4"
+  },
+  "c_g7": {
+   "name": "Grade 7",
+   "level": "junior",
+   "order": 9,
+   "teacherId": "s11",
+   "room": "Block C, Room 1"
+  },
+  "c_g8": {
+   "name": "Grade 8",
+   "level": "junior",
+   "order": 10,
+   "teacherId": "s12",
+   "room": "Block C, Room 2"
+  },
+  "c_g9": {
+   "name": "Grade 9",
+   "level": "junior",
+   "order": 11,
+   "teacherId": "s02",
+   "room": "Block C, Room 3"
+  }
+ },
+ "staff": {
+  "s01": {
+   "staffNo": "ST-001",
+   "name": "Grace Kariuki",
+   "role": "Head teacher",
+   "gender": "F",
+   "areas": "Leadership and administration",
+   "tsc": "600100",
+   "phone": "0700555900",
+   "email": "grace.kariuki@mwangaza.example",
+   "status": "Active",
+   "joined": "2015-01-05"
+  },
+  "s02": {
+   "staffNo": "ST-002",
+   "name": "Peter Omondi",
+   "role": "Deputy head teacher",
+   "gender": "M",
+   "areas": "Mathematics, Integrated Science, Pre-Technical Studies",
+   "tsc": "600237",
+   "phone": "0700555901",
+   "email": "peter.omondi@mwangaza.example",
+   "status": "Active",
+   "joined": "2016-01-06"
+  },
+  "s03": {
+   "staffNo": "ST-003",
+   "name": "Mary Achieng",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "Pre-primary",
+   "tsc": "600374",
+   "phone": "0700555902",
+   "email": "mary.achieng@mwangaza.example",
+   "status": "Active",
+   "joined": "2017-01-07"
+  },
+  "s04": {
+   "staffNo": "ST-004",
+   "name": "Esther Wanjiku",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "Pre-primary",
+   "tsc": "600511",
+   "phone": "0700555903",
+   "email": "esther.wanjiku@mwangaza.example",
+   "status": "Active",
+   "joined": "2018-01-08"
+  },
+  "s05": {
+   "staffNo": "ST-005",
+   "name": "Jane Mutheu",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "Lower primary",
+   "tsc": "600648",
+   "phone": "0700555904",
+   "email": "jane.mutheu@mwangaza.example",
+   "status": "Active",
+   "joined": "2019-01-09"
+  },
+  "s06": {
+   "staffNo": "ST-006",
+   "name": "Ruth Chepkoech",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "Lower primary",
+   "tsc": "600785",
+   "phone": "0700555905",
+   "email": "ruth.chepkoech@mwangaza.example",
+   "status": "Active",
+   "joined": "2020-01-10"
+  },
+  "s07": {
+   "staffNo": "ST-007",
+   "name": "Samuel Kiptoo",
+   "role": "Class teacher",
+   "gender": "M",
+   "areas": "Lower primary",
+   "tsc": "600922",
+   "phone": "0700555906",
+   "email": "samuel.kiptoo@mwangaza.example",
+   "status": "Active",
+   "joined": "2021-01-11"
+  },
+  "s08": {
+   "staffNo": "ST-008",
+   "name": "Agnes Nekesa",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "English, Social Studies",
+   "tsc": "601059",
+   "phone": "0700555907",
+   "email": "agnes.nekesa@mwangaza.example",
+   "status": "Active",
+   "joined": "2022-01-12"
+  },
+  "s09": {
+   "staffNo": "ST-009",
+   "name": "David Mwangi",
+   "role": "Class teacher",
+   "gender": "M",
+   "areas": "Mathematics, Science and Technology",
+   "tsc": "601196",
+   "phone": "0700555908",
+   "email": "david.mwangi@mwangaza.example",
+   "status": "Active",
+   "joined": "2023-01-13"
+  },
+  "s10": {
+   "staffNo": "ST-010",
+   "name": "Halima Abdullahi",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "Kiswahili, Religious Education",
+   "tsc": "601333",
+   "phone": "0700555909",
+   "email": "halima.abdullahi@mwangaza.example",
+   "status": "Active",
+   "joined": "2024-01-14"
+  },
+  "s11": {
+   "staffNo": "ST-011",
+   "name": "Kevin Onyango",
+   "role": "Class teacher",
+   "gender": "M",
+   "areas": "English, Social Studies, Religious Education",
+   "tsc": "601470",
+   "phone": "0700555910",
+   "email": "kevin.onyango@mwangaza.example",
+   "status": "Active",
+   "joined": "2015-01-15"
+  },
+  "s12": {
+   "staffNo": "ST-012",
+   "name": "Naomi Moraa",
+   "role": "Class teacher",
+   "gender": "F",
+   "areas": "Kiswahili, Agriculture and Nutrition, Creative Arts and Sports",
+   "tsc": "601607",
+   "phone": "0700555911",
+   "email": "naomi.moraa@mwangaza.example",
+   "status": "Active",
+   "joined": "2016-01-16"
+  },
+  "s13": {
+   "staffNo": "ST-013",
+   "name": "Lucy Mwikali",
+   "role": "Bursar",
+   "gender": "F",
+   "areas": "",
+   "tsc": "",
+   "phone": "0700555912",
+   "email": "lucy.mwikali@mwangaza.example",
+   "status": "Active",
+   "joined": "2017-01-17"
+  },
+  "s14": {
+   "staffNo": "ST-014",
+   "name": "Brenda Naliaka",
+   "role": "Secretary",
+   "gender": "F",
+   "areas": "",
+   "tsc": "",
+   "phone": "0700555913",
+   "email": "brenda.naliaka@mwangaza.example",
+   "status": "Active",
+   "joined": "2018-01-18"
+  },
+  "s15": {
+   "staffNo": "ST-015",
+   "name": "Joseph Kamau",
+   "role": "Driver",
+   "gender": "M",
+   "areas": "",
+   "tsc": "",
+   "phone": "0700555914",
+   "email": "joseph.kamau@mwangaza.example",
+   "status": "Active",
+   "joined": "2019-01-19"
+  },
+  "s16": {
+   "staffNo": "ST-016",
+   "name": "Beatrice Atieno",
+   "role": "Cook",
+   "gender": "F",
+   "areas": "",
+   "tsc": "",
+   "phone": "0700555915",
+   "email": "beatrice.atieno@mwangaza.example",
+   "status": "Active",
+   "joined": "2020-01-20"
+  }
+ },
+ "routes": {
+  "r1": {
+   "name": "Ruaka and Muchatha",
+   "vehicle": "KDA 000A",
+   "driver": "Joseph Kamau",
+   "fee": 8000,
+   "pickup": "6:40 am",
+   "stops": "Ruaka, Muchatha"
+  },
+  "r2": {
+   "name": "Banana and Karuri",
+   "vehicle": "KDB 000B",
+   "driver": "",
+   "fee": 9500,
+   "pickup": "6:20 am",
+   "stops": "Banana, Karuri"
+  },
+  "r3": {
+   "name": "Gachie and Kihara",
+   "vehicle": "KDC 000C",
+   "driver": "",
+   "fee": 9000,
+   "pickup": "6:30 am",
+   "stops": "Gachie, Kihara"
+  }
+ },
+ "learners": {
+  "L1001": {
+   "admNo": "1001",
+   "name": "Brian Ndanu",
+   "gender": "M",
+   "dob": "2022-01-01",
+   "classId": "c_pp1",
+   "upi": "VBZZ75",
+   "guardianName": "Alice Ndanu",
+   "guardianPhone": "0700555001",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2026-01-06",
+   "bf": 0
+  },
+  "L1002": {
+   "admNo": "1002",
+   "name": "Faith Kemunto",
+   "gender": "F",
+   "dob": "2021-06-08",
+   "classId": "c_pp1",
+   "upi": "9H593S",
+   "guardianName": "Paul Kemunto",
+   "guardianPhone": "0700555002",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2026-01-07",
+   "bf": 0
+  },
+  "L1003": {
+   "admNo": "1003",
+   "name": "Ian Simiyu",
+   "gender": "M",
+   "dob": "2022-11-15",
+   "classId": "c_pp1",
+   "upi": "8BQJDG",
+   "guardianName": "Monica Simiyu",
+   "guardianPhone": "0700555003",
+   "guardianRelation": "Mother",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2026-01-08",
+   "bf": 0
+  },
+  "L1004": {
+   "admNo": "1004",
+   "name": "Mercy Musyoka",
+   "gender": "F",
+   "dob": "2021-04-22",
+   "classId": "c_pp1",
+   "upi": "8K8QH7",
+   "guardianName": "Hellen Musyoka",
+   "guardianPhone": "0700555004",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2026-01-09",
+   "bf": 0
+  },
+  "L1005": {
+   "admNo": "1005",
+   "name": "Joy Odhiambo",
+   "gender": "F",
+   "dob": "2021-09-02",
+   "classId": "c_pp2",
+   "upi": "S3V835",
+   "guardianName": "Alice Odhiambo",
+   "guardianPhone": "0700555005",
+   "guardianRelation": "Mother",
+   "routeId": "r3",
+   "lunch": false,
+   "medical": "",
+   "status": "Active",
+   "joined": "2025-01-10",
+   "bf": 0
+  },
+  "L1006": {
+   "admNo": "1006",
+   "name": "Kelvin Omondi",
+   "gender": "M",
+   "dob": "2020-02-09",
+   "classId": "c_pp2",
+   "upi": "ACK79Z",
+   "guardianName": "Charles Omondi",
+   "guardianPhone": "0700555006",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2025-01-06",
+   "bf": 0
+  },
+  "L1007": {
+   "admNo": "1007",
+   "name": "Shanice Mutua",
+   "gender": "F",
+   "dob": "2021-07-16",
+   "classId": "c_pp2",
+   "upi": "9795CU",
+   "guardianName": "Elizabeth Mutua",
+   "guardianPhone": "0700555007",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "Asthma, carries an inhaler",
+   "status": "Active",
+   "joined": "2025-01-07",
+   "bf": 0
+  },
+  "L1008": {
+   "admNo": "1008",
+   "name": "Ethan Lemayian",
+   "gender": "M",
+   "dob": "2020-12-23",
+   "classId": "c_pp2",
+   "upi": "6S6M58",
+   "guardianName": "James Lemayian",
+   "guardianPhone": "0700555008",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2025-01-08",
+   "bf": 4500
+  },
+  "L1009": {
+   "admNo": "1009",
+   "name": "Jayden Mwende",
+   "gender": "M",
+   "dob": "2020-05-03",
+   "classId": "c_g1",
+   "upi": "T9ZGN4",
+   "guardianName": "Janet Mwende",
+   "guardianPhone": "0700555009",
+   "guardianRelation": "Mother",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2024-01-09",
+   "bf": 0
+  },
+  "L1010": {
+   "admNo": "1010",
+   "name": "Tiffany Wanjiru",
+   "gender": "F",
+   "dob": "2019-10-10",
+   "classId": "c_g1",
+   "upi": "FA6FNR",
+   "guardianName": "John Wanjiru",
+   "guardianPhone": "0700555010",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2024-01-10",
+   "bf": 0
+  },
+  "L1011": {
+   "admNo": "1011",
+   "name": "Liam Auma",
+   "gender": "M",
+   "dob": "2020-03-17",
+   "classId": "c_g1",
+   "upi": "TYKAW9",
+   "guardianName": "John Auma",
+   "guardianPhone": "0700555011",
+   "guardianRelation": "Father",
+   "routeId": "r3",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2024-01-06",
+   "bf": 0
+  },
+  "L1012": {
+   "admNo": "1012",
+   "name": "Natasha Nyambura",
+   "gender": "F",
+   "dob": "2019-08-24",
+   "classId": "c_g1",
+   "upi": "Q8JUF4",
+   "guardianName": "Catherine Nyambura",
+   "guardianPhone": "0700555012",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2024-01-07",
+   "bf": 0
+  },
+  "L1013": {
+   "admNo": "1013",
+   "name": "Blessing Onyango",
+   "gender": "F",
+   "dob": "2019-01-04",
+   "classId": "c_g2",
+   "upi": "V42KN2",
+   "guardianName": "Catherine Onyango",
+   "guardianPhone": "0700555013",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1014": {
+   "admNo": "1014",
+   "name": "Ryan Chepngeno",
+   "gender": "M",
+   "dob": "2018-06-11",
+   "classId": "c_g2",
+   "upi": "2EDYYB",
+   "guardianName": "James Chepngeno",
+   "guardianPhone": "0700555014",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": false,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 0
+  },
+  "L1015": {
+   "admNo": "1015",
+   "name": "Angel Kariuki",
+   "gender": "F",
+   "dob": "2019-11-18",
+   "classId": "c_g2",
+   "upi": "WV6WH9",
+   "guardianName": "George Kariuki",
+   "guardianPhone": "0700555015",
+   "guardianRelation": "Father",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-10",
+   "bf": 0
+  },
+  "L1016": {
+   "admNo": "1016",
+   "name": "Nathan Wambui",
+   "gender": "M",
+   "dob": "2018-04-25",
+   "classId": "c_g2",
+   "upi": "LKP5X7",
+   "guardianName": "Monica Wambui",
+   "guardianPhone": "0700555016",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-06",
+   "bf": 0
+  },
+  "L1017": {
+   "admNo": "1017",
+   "name": "Elvis Kiplagat",
+   "gender": "M",
+   "dob": "2018-09-05",
+   "classId": "c_g3",
+   "upi": "E3CNMC",
+   "guardianName": "Janet Kiplagat",
+   "guardianPhone": "0700555017",
+   "guardianRelation": "Mother",
+   "routeId": "r3",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-07",
+   "bf": 0
+  },
+  "L1018": {
+   "admNo": "1018",
+   "name": "Precious Atieno",
+   "gender": "F",
+   "dob": "2017-02-12",
+   "classId": "c_g3",
+   "upi": "6N8BJP",
+   "guardianName": "Margaret Atieno",
+   "guardianPhone": "0700555018",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1019": {
+   "admNo": "1019",
+   "name": "Collins Jepkosgei",
+   "gender": "M",
+   "dob": "2018-07-19",
+   "classId": "c_g3",
+   "upi": "JLM2T5",
+   "guardianName": "Lydia Jepkosgei",
+   "guardianPhone": "0700555019",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 4500
+  },
+  "L1020": {
+   "admNo": "1020",
+   "name": "Zawadi Juma",
+   "gender": "F",
+   "dob": "2017-12-26",
+   "classId": "c_g3",
+   "upi": "2VMYMS",
+   "guardianName": "Susan Juma",
+   "guardianPhone": "0700555020",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "Allergic to groundnuts",
+   "status": "Active",
+   "joined": "2023-01-10",
+   "bf": 0
+  },
+  "L1021": {
+   "admNo": "1021",
+   "name": "Imani Ndanu",
+   "gender": "F",
+   "dob": "2017-05-06",
+   "classId": "c_g4",
+   "upi": "794U7M",
+   "guardianName": "Alice Ndanu",
+   "guardianPhone": "0700555001",
+   "guardianRelation": "Mother",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-06",
+   "bf": 0
+  },
+  "L1022": {
+   "admNo": "1022",
+   "name": "Dennis Kibet",
+   "gender": "M",
+   "dob": "2016-10-13",
+   "classId": "c_g4",
+   "upi": "6HTGPQ",
+   "guardianName": "George Kibet",
+   "guardianPhone": "0700555021",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-07",
+   "bf": 0
+  },
+  "L1023": {
+   "admNo": "1023",
+   "name": "Neema Moraa",
+   "gender": "F",
+   "dob": "2017-03-20",
+   "classId": "c_g4",
+   "upi": "7X4MBY",
+   "guardianName": "James Moraa",
+   "guardianPhone": "0700555022",
+   "guardianRelation": "Father",
+   "routeId": "r3",
+   "lunch": false,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1024": {
+   "admNo": "1024",
+   "name": "Victor Koech",
+   "gender": "M",
+   "dob": "2016-08-27",
+   "classId": "c_g4",
+   "upi": "PHTPUT",
+   "guardianName": "Ann Koech",
+   "guardianPhone": "0700555023",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 0
+  },
+  "L1025": {
+   "admNo": "1025",
+   "name": "Mark Were",
+   "gender": "M",
+   "dob": "2016-01-07",
+   "classId": "c_g5",
+   "upi": "GSG5LG",
+   "guardianName": "Catherine Were",
+   "guardianPhone": "0700555024",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-10",
+   "bf": 0
+  },
+  "L1026": {
+   "admNo": "1026",
+   "name": "Malaika Muthoni",
+   "gender": "F",
+   "dob": "2015-06-14",
+   "classId": "c_g5",
+   "upi": "MGWTEU",
+   "guardianName": "Ann Muthoni",
+   "guardianPhone": "0700555025",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-06",
+   "bf": 0
+  },
+  "L1027": {
+   "admNo": "1027",
+   "name": "Trevor Maina",
+   "gender": "M",
+   "dob": "2016-11-21",
+   "classId": "c_g5",
+   "upi": "SSEA4S",
+   "guardianName": "Catherine Maina",
+   "guardianPhone": "0700555026",
+   "guardianRelation": "Mother",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-07",
+   "bf": 0
+  },
+  "L1028": {
+   "admNo": "1028",
+   "name": "Fatuma Wekesa",
+   "gender": "F",
+   "dob": "2015-04-01",
+   "classId": "c_g5",
+   "upi": "DGRBVH",
+   "guardianName": "John Wekesa",
+   "guardianPhone": "0700555027",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1029": {
+   "admNo": "1029",
+   "name": "Halima Chebet",
+   "gender": "F",
+   "dob": "2015-09-08",
+   "classId": "c_g6",
+   "upi": "YW7C3W",
+   "guardianName": "Anthony Chebet",
+   "guardianPhone": "0700555028",
+   "guardianRelation": "Father",
+   "routeId": "r3",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 0
+  },
+  "L1030": {
+   "admNo": "1030",
+   "name": "Alvin Wanjiru",
+   "gender": "M",
+   "dob": "2014-02-15",
+   "classId": "c_g6",
+   "upi": "P75HZS",
+   "guardianName": "John Wanjiru",
+   "guardianPhone": "0700555010",
+   "guardianRelation": "Father",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-10",
+   "bf": 4500
+  },
+  "L1031": {
+   "admNo": "1031",
+   "name": "Sharon Naliaka",
+   "gender": "F",
+   "dob": "2015-07-22",
+   "classId": "c_g6",
+   "upi": "D5BUXU",
+   "guardianName": "Francis Naliaka",
+   "guardianPhone": "0700555029",
+   "guardianRelation": "Father",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-06",
+   "bf": 0
+  },
+  "L1032": {
+   "admNo": "1032",
+   "name": "Emmanuel Otieno",
+   "gender": "M",
+   "dob": "2014-12-02",
+   "classId": "c_g6",
+   "upi": "V4WBXN",
+   "guardianName": "Susan Otieno",
+   "guardianPhone": "0700555030",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": false,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-07",
+   "bf": 0
+  },
+  "L1033": {
+   "admNo": "1033",
+   "name": "Gift Mwangi",
+   "gender": "M",
+   "dob": "2014-05-09",
+   "classId": "c_g7",
+   "upi": "HLHHCJ",
+   "guardianName": "Alice Mwangi",
+   "guardianPhone": "0700555031",
+   "guardianRelation": "Mother",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1034": {
+   "admNo": "1034",
+   "name": "Purity Mohamed",
+   "gender": "F",
+   "dob": "2013-10-16",
+   "classId": "c_g7",
+   "upi": "VB5JY4",
+   "guardianName": "Monica Mohamed",
+   "guardianPhone": "0700555032",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 0
+  },
+  "L1035": {
+   "admNo": "1035",
+   "name": "Jabali Gitau",
+   "gender": "M",
+   "dob": "2014-03-23",
+   "classId": "c_g7",
+   "upi": "4QJMB3",
+   "guardianName": "Daniel Gitau",
+   "guardianPhone": "0700555033",
+   "guardianRelation": "Father",
+   "routeId": "r3",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-10",
+   "bf": 0
+  },
+  "L1036": {
+   "admNo": "1036",
+   "name": "Ivy Nyaga",
+   "gender": "F",
+   "dob": "2013-08-03",
+   "classId": "c_g7",
+   "upi": "QBBT84",
+   "guardianName": "Catherine Nyaga",
+   "guardianPhone": "0700555034",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-06",
+   "bf": 0
+  },
+  "L1037": {
+   "admNo": "1037",
+   "name": "Abigael Ndanu",
+   "gender": "F",
+   "dob": "2013-01-10",
+   "classId": "c_g8",
+   "upi": "SWJFMC",
+   "guardianName": "Alice Ndanu",
+   "guardianPhone": "0700555001",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-07",
+   "bf": 0
+  },
+  "L1038": {
+   "admNo": "1038",
+   "name": "Baraka Achieng",
+   "gender": "M",
+   "dob": "2012-06-17",
+   "classId": "c_g8",
+   "upi": "SXWDAR",
+   "guardianName": "Lydia Achieng",
+   "guardianPhone": "0700555035",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1039": {
+   "admNo": "1039",
+   "name": "Wendy Akinyi",
+   "gender": "F",
+   "dob": "2013-11-24",
+   "classId": "c_g8",
+   "upi": "K3ZQTX",
+   "guardianName": "Rose Akinyi",
+   "guardianPhone": "0700555036",
+   "guardianRelation": "Mother",
+   "routeId": "r2",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 0
+  },
+  "L1040": {
+   "admNo": "1040",
+   "name": "Hassan Njeri",
+   "gender": "M",
+   "dob": "2012-04-04",
+   "classId": "c_g8",
+   "upi": "Y778VN",
+   "guardianName": "Ann Njeri",
+   "guardianPhone": "0700555037",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-10",
+   "bf": 0
+  },
+  "L1041": {
+   "admNo": "1041",
+   "name": "Abdi Ndungu",
+   "gender": "M",
+   "dob": "2012-09-11",
+   "classId": "c_g9",
+   "upi": "K9AY4C",
+   "guardianName": "Patrick Ndungu",
+   "guardianPhone": "0700555038",
+   "guardianRelation": "Father",
+   "routeId": "r3",
+   "lunch": false,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-06",
+   "bf": 4500
+  },
+  "L1042": {
+   "admNo": "1042",
+   "name": "Tamara Wafula",
+   "gender": "F",
+   "dob": "2011-02-18",
+   "classId": "c_g9",
+   "upi": "VZSJGB",
+   "guardianName": "Susan Wafula",
+   "guardianPhone": "0700555039",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-07",
+   "bf": 0
+  },
+  "L1043": {
+   "admNo": "1043",
+   "name": "Lewis Jepkosgei",
+   "gender": "M",
+   "dob": "2012-07-25",
+   "classId": "c_g9",
+   "upi": "PVC32L",
+   "guardianName": "Lydia Jepkosgei",
+   "guardianPhone": "0700555019",
+   "guardianRelation": "Mother",
+   "routeId": "r1",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-08",
+   "bf": 0
+  },
+  "L1044": {
+   "admNo": "1044",
+   "name": "Amani Kamau",
+   "gender": "F",
+   "dob": "2011-12-05",
+   "classId": "c_g9",
+   "upi": "FK2XSV",
+   "guardianName": "Susan Kamau",
+   "guardianPhone": "0700555040",
+   "guardianRelation": "Mother",
+   "routeId": "",
+   "lunch": true,
+   "medical": "",
+   "status": "Active",
+   "joined": "2023-01-09",
+   "bf": 0
+  }
+ },
+ "payments": {
+  "p001": {
+   "receiptNo": "R26-0001",
+   "learnerId": "L1001",
+   "amount": 15000,
+   "method": "Bank deposit",
+   "ref": "SLIP-04400",
+   "date": "2026-08-24",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p002": {
+   "receiptNo": "R26-0002",
+   "learnerId": "L1002",
+   "amount": 21500,
+   "method": "M-Pesa",
+   "ref": "SHNLUUUYJ0",
+   "date": "2026-08-25",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p003": {
+   "receiptNo": "R26-0003",
+   "learnerId": "L1003",
+   "amount": 18500,
+   "method": "M-Pesa",
+   "ref": "SIA63YL9BM",
+   "date": "2026-08-27",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p004": {
+   "receiptNo": "R26-0004",
+   "learnerId": "L1004",
+   "amount": 6500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04403",
+   "date": "2026-08-31",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p005": {
+   "receiptNo": "R26-0005",
+   "learnerId": "L1006",
+   "amount": 21500,
+   "method": "M-Pesa",
+   "ref": "SJKLBH8AZE",
+   "date": "2026-09-07",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p006": {
+   "receiptNo": "R26-0006",
+   "learnerId": "L1007",
+   "amount": 29500,
+   "method": "M-Pesa",
+   "ref": "SJVPKRJGW7",
+   "date": "2026-09-11",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p007": {
+   "receiptNo": "R26-0007",
+   "learnerId": "L1008",
+   "amount": 15500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04407",
+   "date": "2026-09-15",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p008": {
+   "receiptNo": "R26-0008",
+   "learnerId": "L1009",
+   "amount": 11000,
+   "method": "Bank deposit",
+   "ref": "SLIP-04408",
+   "date": "2026-09-21",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p009": {
+   "receiptNo": "R26-0009",
+   "learnerId": "L1011",
+   "amount": 35500,
+   "method": "M-Pesa",
+   "ref": "SHE0SVHY67",
+   "date": "2026-10-01",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p010": {
+   "receiptNo": "R26-0010",
+   "learnerId": "L1012",
+   "amount": 26500,
+   "method": "M-Pesa",
+   "ref": "SH9RY5YFEF",
+   "date": "2026-10-05",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p011": {
+   "receiptNo": "R26-0011",
+   "learnerId": "L1013",
+   "amount": 20500,
+   "method": "M-Pesa",
+   "ref": "SKVSQLW38X",
+   "date": "2026-08-24",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p012": {
+   "receiptNo": "R26-0012",
+   "learnerId": "L1014",
+   "amount": 6000,
+   "method": "Bank deposit",
+   "ref": "SLIP-04413",
+   "date": "2026-08-25",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p013": {
+   "receiptNo": "R26-0013",
+   "learnerId": "L1016",
+   "amount": 26500,
+   "method": "M-Pesa",
+   "ref": "SJ71WMN5QY",
+   "date": "2026-08-31",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p014": {
+   "receiptNo": "R26-0014",
+   "learnerId": "L1017",
+   "amount": 35500,
+   "method": "M-Pesa",
+   "ref": "SJ20PK4J3T",
+   "date": "2026-09-02",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p015": {
+   "receiptNo": "R26-0015",
+   "learnerId": "L1018",
+   "amount": 16000,
+   "method": "M-Pesa",
+   "ref": "SJHWT4SKTQ",
+   "date": "2026-09-07",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p016": {
+   "receiptNo": "R26-0016",
+   "learnerId": "L1019",
+   "amount": 11500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04418",
+   "date": "2026-09-11",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p017": {
+   "receiptNo": "R26-0017",
+   "learnerId": "L1021",
+   "amount": 41000,
+   "method": "M-Pesa",
+   "ref": "SJKHTU511B",
+   "date": "2026-09-21",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p018": {
+   "receiptNo": "R26-0018",
+   "learnerId": "L1022",
+   "amount": 31500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04421",
+   "date": "2026-09-28",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p019": {
+   "receiptNo": "R26-0019",
+   "learnerId": "L1023",
+   "amount": 20000,
+   "method": "M-Pesa",
+   "ref": "SJ2XG79P3Y",
+   "date": "2026-10-01",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p020": {
+   "receiptNo": "R26-0020",
+   "learnerId": "L1024",
+   "amount": 9500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04423",
+   "date": "2026-10-05",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p021": {
+   "receiptNo": "R26-0021",
+   "learnerId": "L1026",
+   "amount": 31500,
+   "method": "M-Pesa",
+   "ref": "SJD1MATSJX",
+   "date": "2026-08-25",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p022": {
+   "receiptNo": "R26-0022",
+   "learnerId": "L1027",
+   "amount": 41000,
+   "method": "M-Pesa",
+   "ref": "SK66XACQHT",
+   "date": "2026-08-27",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p023": {
+   "receiptNo": "R26-0023",
+   "learnerId": "L1028",
+   "amount": 19000,
+   "method": "M-Pesa",
+   "ref": "SJBP58TZFN",
+   "date": "2026-08-31",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p024": {
+   "receiptNo": "R26-0024",
+   "learnerId": "L1029",
+   "amount": 12000,
+   "method": "Bank deposit",
+   "ref": "SLIP-04428",
+   "date": "2026-09-02",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p025": {
+   "receiptNo": "R26-0025",
+   "learnerId": "L1031",
+   "amount": 39500,
+   "method": "M-Pesa",
+   "ref": "SHGKXQ5PLV",
+   "date": "2026-09-11",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p026": {
+   "receiptNo": "R26-0026",
+   "learnerId": "L1032",
+   "amount": 24500,
+   "method": "M-Pesa",
+   "ref": "SH29JGBT2C",
+   "date": "2026-09-15",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p027": {
+   "receiptNo": "R26-0027",
+   "learnerId": "L1033",
+   "amount": 29000,
+   "method": "M-Pesa",
+   "ref": "SI8Q6XXYW6",
+   "date": "2026-09-21",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p028": {
+   "receiptNo": "R26-0028",
+   "learnerId": "L1034",
+   "amount": 11500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04433",
+   "date": "2026-09-28",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p029": {
+   "receiptNo": "R26-0029",
+   "learnerId": "L1036",
+   "amount": 39000,
+   "method": "Bank deposit",
+   "ref": "SLIP-04435",
+   "date": "2026-10-05",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p030": {
+   "receiptNo": "R26-0030",
+   "learnerId": "L1037",
+   "amount": 47000,
+   "method": "M-Pesa",
+   "ref": "SJ7WSC7JB6",
+   "date": "2026-08-24",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p031": {
+   "receiptNo": "R26-0031",
+   "learnerId": "L1038",
+   "amount": 23500,
+   "method": "M-Pesa",
+   "ref": "SJS5NZT81V",
+   "date": "2026-08-25",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p032": {
+   "receiptNo": "R26-0032",
+   "learnerId": "L1039",
+   "amount": 14500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04438",
+   "date": "2026-08-27",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p033": {
+   "receiptNo": "R26-0033",
+   "learnerId": "L1041",
+   "amount": 45000,
+   "method": "M-Pesa",
+   "ref": "SID2E8V6F8",
+   "date": "2026-09-02",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p034": {
+   "receiptNo": "R26-0034",
+   "learnerId": "L1042",
+   "amount": 39000,
+   "method": "M-Pesa",
+   "ref": "SJ7WXZMEMS",
+   "date": "2026-09-07",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p035": {
+   "receiptNo": "R26-0035",
+   "learnerId": "L1043",
+   "amount": 28000,
+   "method": "Bank deposit",
+   "ref": "SLIP-04442",
+   "date": "2026-09-11",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  },
+  "p036": {
+   "receiptNo": "R26-0036",
+   "learnerId": "L1044",
+   "amount": 11500,
+   "method": "Bank deposit",
+   "ref": "SLIP-04443",
+   "date": "2026-09-15",
+   "term": 3,
+   "year": 2026,
+   "note": "",
+   "by": "Lucy Mwikali"
+  }
+ },
+ "expenses": {
+  "x01": {
+   "date": "2026-08-26",
+   "category": "Food and kitchen",
+   "payee": "Gikomba Cereals Ltd",
+   "amount": 48500,
+   "method": "Bank transfer",
+   "ref": "",
+   "note": "Maize, beans and rice for the term",
+   "term": 3,
+   "year": 2026
+  },
+  "x02": {
+   "date": "2026-08-28",
+   "category": "Utilities",
+   "payee": "Kenya Power",
+   "amount": 12350,
+   "method": "M-Pesa",
+   "ref": "",
+   "note": "August electricity bill",
+   "term": 3,
+   "year": 2026
+  },
+  "x03": {
+   "date": "2026-09-01",
+   "category": "Transport",
+   "payee": "Ruaka Service Station",
+   "amount": 27000,
+   "method": "M-Pesa",
+   "ref": "",
+   "note": "Diesel for school buses",
+   "term": 3,
+   "year": 2026
+  },
+  "x04": {
+   "date": "2026-09-10",
+   "category": "Learning materials",
+   "payee": "Textbook Centre",
+   "amount": 36800,
+   "method": "Cheque",
+   "ref": "",
+   "note": "Grade 7 to 9 course books",
+   "term": 3,
+   "year": 2026
+  },
+  "x05": {
+   "date": "2026-09-30",
+   "category": "Salaries",
+   "payee": "Support staff payroll",
+   "amount": 96000,
+   "method": "Bank transfer",
+   "ref": "",
+   "note": "September wages",
+   "term": 3,
+   "year": 2026
+  },
+  "x06": {
+   "date": "2026-10-02",
+   "category": "Repairs",
+   "payee": "Fundi wa Mabati",
+   "amount": 8500,
+   "method": "Cash",
+   "ref": "",
+   "note": "Roof repair, Block B",
+   "term": 3,
+   "year": 2026
+  }
+ },
+ "notices": {
+  "n1": {
+   "title": "End of term assessments start on Monday 12 October",
+   "body": "Assessments run from Monday 12 to Friday 16 October for Grade 1 to Grade 9. Please make sure learners arrive by 7:45 am and have had breakfast.",
+   "audience": "All",
+   "date": "2026-10-05",
+   "by": "Grace Kariuki",
+   "pinned": true
+  },
+  "n2": {
+   "title": "Fee balances are due by Friday 9 October",
+   "body": "Kindly clear any Term 3 balance before assessments begin. Pay through M-Pesa Pay Bill using the learner admission number as the account number.",
+   "audience": "Parents",
+   "date": "2026-10-01",
+   "by": "Lucy Mwikali",
+   "pinned": false
+  },
+  "n3": {
+   "title": "Staff meeting on Thursday at 3:30 pm",
+   "body": "We will agree on invigilation duties and the report card timeline. Bring your assessment records.",
+   "audience": "Teachers",
+   "date": "2026-10-06",
+   "by": "Grace Kariuki",
+   "pinned": false
+  },
+  "n4": {
+   "title": "Grade 7 science project showcase",
+   "body": "Parents of Grade 7 learners are welcome on Wednesday 14 October from 2:00 pm to see the Integrated Science projects.",
+   "audience": "c_g7",
+   "date": "2026-10-06",
+   "by": "Kevin Onyango",
+   "pinned": false
+  }
+ },
+ "events": {
+  "e1": {
+   "date": "2026-10-09",
+   "endDate": "",
+   "title": "Grade 9 parents meeting",
+   "type": "Meeting",
+   "note": "10:00 am in the school hall"
+  },
+  "e2": {
+   "date": "2026-10-12",
+   "endDate": "2026-10-16",
+   "title": "End of term assessments",
+   "type": "Assessment",
+   "note": "Grade 1 to Grade 9"
+  },
+  "e3": {
+   "date": "2026-10-15",
+   "endDate": "",
+   "title": "Briefing for Grade 6 and Grade 9 candidates",
+   "type": "Assessment",
+   "note": "National assessment rules and timetable, with parents"
+  },
+  "e4": {
+   "date": "2026-10-20",
+   "endDate": "",
+   "title": "Mashujaa Day",
+   "type": "Holiday",
+   "note": "Public holiday, no classes"
+  },
+  "e5": {
+   "date": "2026-10-22",
+   "endDate": "",
+   "title": "Prize giving day",
+   "type": "Event",
+   "note": "All parents invited, 9:00 am"
+  },
+  "e6": {
+   "date": "2026-10-23",
+   "endDate": "",
+   "title": "Closing day for Term 3",
+   "type": "Academic",
+   "note": "Learners released at 12:30 pm, report cards issued"
+  },
+  "e7": {
+   "date": "2027-01-04",
+   "endDate": "",
+   "title": "Opening day for Term 1",
+   "type": "Academic",
+   "note": "Reporting time 7:30 am"
+  }
+ },
+ "homework": {
+  "h1": {
+   "classId": "c_g7",
+   "area": "Mathematics",
+   "title": "Algebraic expressions, exercise 6B",
+   "details": "Questions 1 to 12 on page 84 of the course book. Show all working.",
+   "due": "2026-10-08",
+   "date": "2026-10-06",
+   "by": "Peter Omondi"
+  },
+  "h2": {
+   "classId": "c_g7",
+   "area": "English",
+   "title": "Composition: a day I will never forget",
+   "details": "Write between 250 and 300 words. Plan your points first.",
+   "due": "2026-10-09",
+   "date": "2026-10-06",
+   "by": "Kevin Onyango"
+  },
+  "h3": {
+   "classId": "c_g4",
+   "area": "Science and Technology",
+   "title": "Draw and label parts of a plant",
+   "details": "Use a full page in your exercise book and colour the diagram.",
+   "due": "2026-10-08",
+   "date": "2026-10-05",
+   "by": "Agnes Nekesa"
+  },
+  "h4": {
+   "classId": "c_g2",
+   "area": "Kiswahili Activities",
+   "title": "Soma hadithi ukurasa wa 31",
+   "details": "Soma kwa sauti pamoja na mzazi au mlezi, kisha jibu maswali matatu.",
+   "due": "2026-10-08",
+   "date": "2026-10-06",
+   "by": "Ruth Chepkoech"
+  },
+  "h5": {
+   "classId": "c_pp1",
+   "area": "Language Activities",
+   "title": "Practise writing the letter m",
+   "details": "Trace and write one page of the letter m in the pattern book.",
+   "due": "2026-10-09",
+   "date": "2026-10-06",
+   "by": "Mary Achieng"
+  }
+ },
+ "books": {
+  "b1": {
+   "title": "Kifo Kisimani",
+   "author": "Kithaka wa Mberia",
+   "category": "Kiswahili fasihi",
+   "copies": 6,
+   "shelf": "K2",
+   "loans": []
+  },
+  "b2": {
+   "title": "The River and the Source",
+   "author": "Margaret Ogola",
+   "category": "English fiction",
+   "copies": 5,
+   "shelf": "E1",
+   "loans": [
+    {
+     "learnerId": "L1034",
+     "date": "2026-09-29"
+    }
+   ]
+  },
+  "b3": {
+   "title": "Moses and the Kidnappers",
+   "author": "Barbara Kimenye",
+   "category": "English fiction",
+   "copies": 8,
+   "shelf": "E3",
+   "loans": [
+    {
+     "learnerId": "L1021",
+     "date": "2026-10-02"
+    }
+   ]
+  },
+  "b4": {
+   "title": "Primary Mathematics Atlas",
+   "author": "School edition",
+   "category": "Reference",
+   "copies": 4,
+   "shelf": "R1",
+   "loans": []
+  },
+  "b5": {
+   "title": "Hadithi za Abunuwasi",
+   "author": "Retold",
+   "category": "Kiswahili fasihi",
+   "copies": 7,
+   "shelf": "K1",
+   "loans": []
+  },
+  "b6": {
+   "title": "Science in Action, Grade 7",
+   "author": "Course book",
+   "category": "Science",
+   "copies": 10,
+   "shelf": "S2",
+   "loans": []
+  }
+ },
+ "attendance": {
+  "c_pp1_2026_T3": {
+   "classId": "c_pp1",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1001": "P",
+     "L1002": "P",
+     "L1003": "P",
+     "L1004": "P"
+    },
+    "2026-09-29": {
+     "L1001": "P",
+     "L1002": "P",
+     "L1003": "P",
+     "L1004": "L"
+    },
+    "2026-09-30": {
+     "L1001": "P",
+     "L1002": "P",
+     "L1003": "P",
+     "L1004": "P"
+    },
+    "2026-10-01": {
+     "L1001": "P",
+     "L1002": "P",
+     "L1003": "L",
+     "L1004": "P"
+    },
+    "2026-10-02": {
+     "L1001": "P",
+     "L1002": "P",
+     "L1003": "P",
+     "L1004": "P"
+    },
+    "2026-10-05": {
+     "L1001": "A",
+     "L1002": "P",
+     "L1003": "P",
+     "L1004": "L"
+    },
+    "2026-10-06": {
+     "L1001": "P",
+     "L1002": "P",
+     "L1003": "P",
+     "L1004": "P"
+    }
+   }
+  },
+  "c_pp2_2026_T3": {
+   "classId": "c_pp2",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1005": "P",
+     "L1006": "P",
+     "L1007": "P",
+     "L1008": "P"
+    },
+    "2026-09-29": {
+     "L1005": "P",
+     "L1006": "P",
+     "L1007": "P",
+     "L1008": "P"
+    },
+    "2026-09-30": {
+     "L1005": "P",
+     "L1006": "P",
+     "L1007": "P",
+     "L1008": "P"
+    },
+    "2026-10-01": {
+     "L1005": "P",
+     "L1006": "P",
+     "L1007": "P",
+     "L1008": "P"
+    },
+    "2026-10-02": {
+     "L1005": "P",
+     "L1006": "P",
+     "L1007": "P",
+     "L1008": "P"
+    },
+    "2026-10-05": {
+     "L1005": "P",
+     "L1006": "P",
+     "L1007": "P",
+     "L1008": "P"
+    },
+    "2026-10-06": {
+     "L1005": "P",
+     "L1006": "A",
+     "L1007": "P",
+     "L1008": "P"
+    }
+   }
+  },
+  "c_g1_2026_T3": {
+   "classId": "c_g1",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "A",
+     "L1012": "P"
+    },
+    "2026-09-29": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "A",
+     "L1012": "A"
+    },
+    "2026-09-30": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "P",
+     "L1012": "P"
+    },
+    "2026-10-01": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "P",
+     "L1012": "P"
+    },
+    "2026-10-02": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "P",
+     "L1012": "P"
+    },
+    "2026-10-05": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "P",
+     "L1012": "A"
+    },
+    "2026-10-06": {
+     "L1009": "P",
+     "L1010": "P",
+     "L1011": "P",
+     "L1012": "P"
+    }
+   }
+  },
+  "c_g2_2026_T3": {
+   "classId": "c_g2",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1013": "P",
+     "L1014": "L",
+     "L1015": "P",
+     "L1016": "P"
+    },
+    "2026-09-29": {
+     "L1013": "P",
+     "L1014": "P",
+     "L1015": "P",
+     "L1016": "P"
+    },
+    "2026-09-30": {
+     "L1013": "A",
+     "L1014": "P",
+     "L1015": "P",
+     "L1016": "P"
+    },
+    "2026-10-01": {
+     "L1013": "P",
+     "L1014": "P",
+     "L1015": "P",
+     "L1016": "P"
+    },
+    "2026-10-02": {
+     "L1013": "P",
+     "L1014": "P",
+     "L1015": "P",
+     "L1016": "P"
+    },
+    "2026-10-05": {
+     "L1013": "P",
+     "L1014": "A",
+     "L1015": "P",
+     "L1016": "P"
+    },
+    "2026-10-06": {
+     "L1013": "P",
+     "L1014": "P",
+     "L1015": "P",
+     "L1016": "P"
+    }
+   }
+  },
+  "c_g3_2026_T3": {
+   "classId": "c_g3",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1017": "P",
+     "L1018": "P",
+     "L1019": "P",
+     "L1020": "A"
+    },
+    "2026-09-29": {
+     "L1017": "L",
+     "L1018": "P",
+     "L1019": "P",
+     "L1020": "P"
+    },
+    "2026-09-30": {
+     "L1017": "P",
+     "L1018": "P",
+     "L1019": "P",
+     "L1020": "P"
+    },
+    "2026-10-01": {
+     "L1017": "P",
+     "L1018": "P",
+     "L1019": "P",
+     "L1020": "P"
+    },
+    "2026-10-02": {
+     "L1017": "P",
+     "L1018": "P",
+     "L1019": "L",
+     "L1020": "P"
+    },
+    "2026-10-05": {
+     "L1017": "P",
+     "L1018": "P",
+     "L1019": "P",
+     "L1020": "P"
+    },
+    "2026-10-06": {
+     "L1017": "L",
+     "L1018": "P",
+     "L1019": "A",
+     "L1020": "P"
+    }
+   }
+  },
+  "c_g4_2026_T3": {
+   "classId": "c_g4",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    },
+    "2026-09-29": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    },
+    "2026-09-30": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    },
+    "2026-10-01": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    },
+    "2026-10-02": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    },
+    "2026-10-05": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    },
+    "2026-10-06": {
+     "L1021": "P",
+     "L1022": "P",
+     "L1023": "P",
+     "L1024": "P"
+    }
+   }
+  },
+  "c_g5_2026_T3": {
+   "classId": "c_g5",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "P"
+    },
+    "2026-09-29": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "P"
+    },
+    "2026-09-30": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "A"
+    },
+    "2026-10-01": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "P"
+    },
+    "2026-10-02": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "P"
+    },
+    "2026-10-05": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "P"
+    },
+    "2026-10-06": {
+     "L1025": "P",
+     "L1026": "P",
+     "L1027": "P",
+     "L1028": "P"
+    }
+   }
+  },
+  "c_g6_2026_T3": {
+   "classId": "c_g6",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1029": "P",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "P"
+    },
+    "2026-09-29": {
+     "L1029": "A",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "L"
+    },
+    "2026-09-30": {
+     "L1029": "P",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "L"
+    },
+    "2026-10-01": {
+     "L1029": "A",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "P"
+    },
+    "2026-10-02": {
+     "L1029": "P",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "P"
+    },
+    "2026-10-05": {
+     "L1029": "A",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "P"
+    },
+    "2026-10-06": {
+     "L1029": "P",
+     "L1030": "P",
+     "L1031": "P",
+     "L1032": "P"
+    }
+   }
+  },
+  "c_g7_2026_T3": {
+   "classId": "c_g7",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1033": "P",
+     "L1034": "P",
+     "L1035": "P",
+     "L1036": "P"
+    },
+    "2026-09-29": {
+     "L1033": "P",
+     "L1034": "P",
+     "L1035": "P",
+     "L1036": "P"
+    },
+    "2026-09-30": {
+     "L1033": "P",
+     "L1034": "P",
+     "L1035": "P",
+     "L1036": "P"
+    },
+    "2026-10-01": {
+     "L1033": "P",
+     "L1034": "P",
+     "L1035": "P",
+     "L1036": "P"
+    },
+    "2026-10-02": {
+     "L1033": "A",
+     "L1034": "P",
+     "L1035": "P",
+     "L1036": "P"
+    },
+    "2026-10-05": {
+     "L1033": "P",
+     "L1034": "A",
+     "L1035": "P",
+     "L1036": "A"
+    },
+    "2026-10-06": {
+     "L1033": "A",
+     "L1034": "P",
+     "L1035": "P",
+     "L1036": "P"
+    }
+   }
+  },
+  "c_g8_2026_T3": {
+   "classId": "c_g8",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1037": "P",
+     "L1038": "P",
+     "L1039": "P",
+     "L1040": "P"
+    },
+    "2026-09-29": {
+     "L1037": "L",
+     "L1038": "P",
+     "L1039": "P",
+     "L1040": "P"
+    },
+    "2026-09-30": {
+     "L1037": "P",
+     "L1038": "P",
+     "L1039": "P",
+     "L1040": "L"
+    },
+    "2026-10-01": {
+     "L1037": "P",
+     "L1038": "P",
+     "L1039": "P",
+     "L1040": "P"
+    },
+    "2026-10-02": {
+     "L1037": "P",
+     "L1038": "A",
+     "L1039": "P",
+     "L1040": "L"
+    },
+    "2026-10-05": {
+     "L1037": "P",
+     "L1038": "P",
+     "L1039": "P",
+     "L1040": "P"
+    },
+    "2026-10-06": {
+     "L1037": "P",
+     "L1038": "P",
+     "L1039": "P",
+     "L1040": "P"
+    }
+   }
+  },
+  "c_g9_2026_T3": {
+   "classId": "c_g9",
+   "year": 2026,
+   "term": 3,
+   "days": {
+    "2026-09-28": {
+     "L1041": "P",
+     "L1042": "A",
+     "L1043": "P",
+     "L1044": "P"
+    },
+    "2026-09-29": {
+     "L1041": "P",
+     "L1042": "P",
+     "L1043": "P",
+     "L1044": "A"
+    },
+    "2026-09-30": {
+     "L1041": "P",
+     "L1042": "P",
+     "L1043": "P",
+     "L1044": "P"
+    },
+    "2026-10-01": {
+     "L1041": "P",
+     "L1042": "P",
+     "L1043": "P",
+     "L1044": "P"
+    },
+    "2026-10-02": {
+     "L1041": "P",
+     "L1042": "P",
+     "L1043": "P",
+     "L1044": "P"
+    },
+    "2026-10-05": {
+     "L1041": "P",
+     "L1042": "P",
+     "L1043": "P",
+     "L1044": "A"
+    },
+    "2026-10-06": {
+     "L1041": "L",
+     "L1042": "P",
+     "L1043": "L",
+     "L1044": "P"
+    }
+   }
+  }
+ },
+ "assessments": {
+  "c_pp1_2026_T3": {
+   "classId": "c_pp1",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "language_activities": {
+     "L1001": "EE",
+     "L1002": "AE",
+     "L1003": "BE",
+     "L1004": "ME"
+    },
+    "mathematical_activities": {
+     "L1001": "EE",
+     "L1002": "AE",
+     "L1003": "BE",
+     "L1004": "ME"
+    },
+    "environmental_activities": {
+     "L1001": "EE",
+     "L1002": "ME",
+     "L1003": "AE",
+     "L1004": "AE"
+    },
+    "creative_activities": {
+     "L1001": "EE",
+     "L1002": "ME",
+     "L1003": "AE",
+     "L1004": "ME"
+    },
+    "religious_activities": {
+     "L1001": "EE",
+     "L1002": "ME",
+     "L1003": "BE",
+     "L1004": "ME"
+    }
+   }
+  },
+  "c_pp2_2026_T3": {
+   "classId": "c_pp2",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "language_activities": {
+     "L1005": "AE",
+     "L1006": "BE",
+     "L1007": "ME",
+     "L1008": "ME"
+    },
+    "mathematical_activities": {
+     "L1005": "BE",
+     "L1006": "AE",
+     "L1007": "ME",
+     "L1008": "AE"
+    },
+    "environmental_activities": {
+     "L1005": "AE",
+     "L1006": "AE",
+     "L1007": "ME",
+     "L1008": "ME"
+    },
+    "creative_activities": {
+     "L1005": "AE",
+     "L1006": "AE",
+     "L1007": "EE",
+     "L1008": "ME"
+    },
+    "religious_activities": {
+     "L1005": "AE",
+     "L1006": "BE",
+     "L1007": "ME",
+     "L1008": "ME"
+    }
+   }
+  },
+  "c_g1_2026_T3": {
+   "classId": "c_g1",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english_activities": {
+     "L1009": 56,
+     "L1010": 79,
+     "L1011": 58,
+     "L1012": 57
+    },
+    "kiswahili_activities": {
+     "L1009": 68,
+     "L1010": 92,
+     "L1011": 53,
+     "L1012": 56
+    },
+    "indigenous_language_activities": {
+     "L1009": 60,
+     "L1010": 95,
+     "L1011": 62,
+     "L1012": 73
+    },
+    "mathematical_activities": {
+     "L1009": 73,
+     "L1010": 69,
+     "L1011": 57,
+     "L1012": 73
+    },
+    "environmental_activities": {
+     "L1009": 70,
+     "L1010": 87,
+     "L1011": 53,
+     "L1012": 52
+    },
+    "religious_education_activities": {
+     "L1009": 55,
+     "L1010": 72,
+     "L1011": 52,
+     "L1012": 63
+    },
+    "creative_activities": {
+     "L1009": 70,
+     "L1010": 62,
+     "L1011": 47,
+     "L1012": 71
+    }
+   }
+  },
+  "c_g2_2026_T3": {
+   "classId": "c_g2",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english_activities": {
+     "L1013": 72,
+     "L1014": 92,
+     "L1015": 69,
+     "L1016": 51
+    },
+    "kiswahili_activities": {
+     "L1013": 64,
+     "L1014": 81,
+     "L1015": 66,
+     "L1016": 62
+    },
+    "indigenous_language_activities": {
+     "L1013": 69,
+     "L1014": 84,
+     "L1015": 59,
+     "L1016": 35
+    },
+    "mathematical_activities": {
+     "L1013": 71,
+     "L1014": 98,
+     "L1015": 61,
+     "L1016": 42
+    },
+    "environmental_activities": {
+     "L1013": 67,
+     "L1014": 91,
+     "L1015": 76,
+     "L1016": 45
+    },
+    "religious_education_activities": {
+     "L1013": 61,
+     "L1014": 86,
+     "L1015": 63,
+     "L1016": 40
+    },
+    "creative_activities": {
+     "L1013": 73,
+     "L1014": 94,
+     "L1015": 68,
+     "L1016": 35
+    }
+   }
+  },
+  "c_g3_2026_T3": {
+   "classId": "c_g3",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english_activities": {
+     "L1017": 91,
+     "L1018": 91,
+     "L1019": 83,
+     "L1020": 50
+    },
+    "kiswahili_activities": {
+     "L1017": 51,
+     "L1018": 66,
+     "L1019": 78,
+     "L1020": 68
+    },
+    "indigenous_language_activities": {
+     "L1017": 79,
+     "L1018": 79,
+     "L1019": 77,
+     "L1020": 52
+    },
+    "mathematical_activities": {
+     "L1017": 73,
+     "L1018": 80,
+     "L1019": 64,
+     "L1020": 41
+    },
+    "environmental_activities": {
+     "L1017": 89,
+     "L1018": 98,
+     "L1019": 81,
+     "L1020": 50
+    },
+    "religious_education_activities": {
+     "L1017": 78,
+     "L1018": 79,
+     "L1019": 67,
+     "L1020": 53
+    },
+    "creative_activities": {
+     "L1017": 78,
+     "L1018": 78,
+     "L1019": 55,
+     "L1020": 41
+    }
+   }
+  },
+  "c_g4_2026_T3": {
+   "classId": "c_g4",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english": {
+     "L1021": 57,
+     "L1022": 45,
+     "L1023": 68,
+     "L1024": 62
+    },
+    "kiswahili": {
+     "L1021": 49,
+     "L1022": 50,
+     "L1023": 44,
+     "L1024": 50
+    },
+    "mathematics": {
+     "L1021": 46,
+     "L1022": 49,
+     "L1023": 61,
+     "L1024": 74
+    },
+    "science_and_technology": {
+     "L1021": 49,
+     "L1022": 53,
+     "L1023": 58,
+     "L1024": 70
+    },
+    "agriculture_and_nutrition": {
+     "L1021": 58,
+     "L1022": 44,
+     "L1023": 70,
+     "L1024": 45
+    },
+    "social_studies": {
+     "L1021": 73,
+     "L1022": 70,
+     "L1023": 54,
+     "L1024": 45
+    },
+    "religious_education": {
+     "L1021": 43,
+     "L1022": 41,
+     "L1023": 66,
+     "L1024": 45
+    },
+    "creative_arts": {
+     "L1021": 39,
+     "L1022": 44,
+     "L1023": 65,
+     "L1024": 69
+    }
+   }
+  },
+  "c_g5_2026_T3": {
+   "classId": "c_g5",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english": {
+     "L1025": 39,
+     "L1026": 51,
+     "L1027": 44,
+     "L1028": 63
+    },
+    "kiswahili": {
+     "L1025": 55,
+     "L1026": 57,
+     "L1027": 60,
+     "L1028": 72
+    },
+    "mathematics": {
+     "L1025": 30,
+     "L1026": 50,
+     "L1027": 74,
+     "L1028": 74
+    },
+    "science_and_technology": {
+     "L1025": 48,
+     "L1026": 52,
+     "L1027": 80,
+     "L1028": 60
+    },
+    "agriculture_and_nutrition": {
+     "L1025": 43,
+     "L1026": 43,
+     "L1027": 57,
+     "L1028": 77
+    },
+    "social_studies": {
+     "L1025": 51,
+     "L1026": 46,
+     "L1027": 73,
+     "L1028": 53
+    },
+    "religious_education": {
+     "L1025": 45,
+     "L1026": 56,
+     "L1027": 74,
+     "L1028": 73
+    },
+    "creative_arts": {
+     "L1025": 27,
+     "L1026": 59,
+     "L1027": 86,
+     "L1028": 60
+    }
+   }
+  },
+  "c_g6_2026_T3": {
+   "classId": "c_g6",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english": {
+     "L1029": 74,
+     "L1030": 40,
+     "L1031": 46,
+     "L1032": 51
+    },
+    "kiswahili": {
+     "L1029": 72,
+     "L1030": 35,
+     "L1031": 32,
+     "L1032": 59
+    },
+    "mathematics": {
+     "L1029": 65,
+     "L1030": 39,
+     "L1031": 48,
+     "L1032": 44
+    },
+    "science_and_technology": {
+     "L1029": 64,
+     "L1030": 41,
+     "L1031": 37,
+     "L1032": 51
+    },
+    "agriculture_and_nutrition": {
+     "L1029": 62,
+     "L1030": 44,
+     "L1031": 47,
+     "L1032": 48
+    },
+    "social_studies": {
+     "L1029": 67,
+     "L1030": 27,
+     "L1031": 39,
+     "L1032": 51
+    },
+    "religious_education": {
+     "L1029": 74,
+     "L1030": 35,
+     "L1031": 43,
+     "L1032": 58
+    },
+    "creative_arts": {
+     "L1029": 70,
+     "L1030": 41,
+     "L1031": 47,
+     "L1032": 65
+    }
+   }
+  },
+  "c_g7_2026_T3": {
+   "classId": "c_g7",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english": {
+     "L1033": 86,
+     "L1034": 61,
+     "L1035": 49,
+     "L1036": 91
+    },
+    "kiswahili": {
+     "L1033": 90,
+     "L1034": 45,
+     "L1035": 56,
+     "L1036": 93
+    },
+    "mathematics": {
+     "L1033": 77,
+     "L1034": 58,
+     "L1035": 65,
+     "L1036": 90
+    },
+    "integrated_science": {
+     "L1033": 80,
+     "L1034": 47,
+     "L1035": 44,
+     "L1036": 91
+    },
+    "social_studies": {
+     "L1033": 59,
+     "L1034": 53,
+     "L1035": 61,
+     "L1036": 88
+    },
+    "pre_technical_studies": {
+     "L1033": 76,
+     "L1034": 51,
+     "L1035": 56,
+     "L1036": 84
+    },
+    "agriculture_and_nutrition": {
+     "L1033": 84,
+     "L1034": 66,
+     "L1035": 75,
+     "L1036": 87
+    },
+    "religious_education": {
+     "L1033": 71,
+     "L1034": 54,
+     "L1035": 41,
+     "L1036": 93
+    },
+    "creative_arts_and_sports": {
+     "L1033": 70,
+     "L1034": 41,
+     "L1035": 63,
+     "L1036": 80
+    }
+   }
+  },
+  "c_g8_2026_T3": {
+   "classId": "c_g8",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english": {
+     "L1037": 80,
+     "L1038": 98,
+     "L1039": 65,
+     "L1040": 66
+    },
+    "kiswahili": {
+     "L1037": 70,
+     "L1038": 98,
+     "L1039": 62,
+     "L1040": 57
+    },
+    "mathematics": {
+     "L1037": 82,
+     "L1038": 88,
+     "L1039": 56,
+     "L1040": 56
+    },
+    "integrated_science": {
+     "L1037": 85,
+     "L1038": 97,
+     "L1039": 46,
+     "L1040": 51
+    },
+    "social_studies": {
+     "L1037": 91,
+     "L1038": 92,
+     "L1039": 47,
+     "L1040": 52
+    },
+    "pre_technical_studies": {
+     "L1037": 89,
+     "L1038": 86,
+     "L1039": 64,
+     "L1040": 64
+    },
+    "agriculture_and_nutrition": {
+     "L1037": 90,
+     "L1038": 94,
+     "L1039": 56,
+     "L1040": 51
+    },
+    "religious_education": {
+     "L1037": 88,
+     "L1038": 95,
+     "L1039": 60,
+     "L1040": 60
+    },
+    "creative_arts_and_sports": {
+     "L1037": 82,
+     "L1038": 86,
+     "L1039": 78,
+     "L1040": 57
+    }
+   }
+  },
+  "c_g9_2026_T3": {
+   "classId": "c_g9",
+   "year": 2026,
+   "term": 3,
+   "scores": {
+    "english": {
+     "L1041": 77,
+     "L1042": 92,
+     "L1043": 72,
+     "L1044": 46
+    },
+    "kiswahili": {
+     "L1041": 91,
+     "L1042": 84,
+     "L1043": 73,
+     "L1044": 50
+    },
+    "mathematics": {
+     "L1041": 65,
+     "L1042": 80,
+     "L1043": 57,
+     "L1044": 57
+    },
+    "integrated_science": {
+     "L1041": 75,
+     "L1042": 90,
+     "L1043": 58,
+     "L1044": 32
+    },
+    "social_studies": {
+     "L1041": 83,
+     "L1042": 77,
+     "L1043": 53,
+     "L1044": 50
+    },
+    "pre_technical_studies": {
+     "L1041": 69,
+     "L1042": 89,
+     "L1043": 58,
+     "L1044": 43
+    },
+    "agriculture_and_nutrition": {
+     "L1041": 68,
+     "L1042": 75,
+     "L1043": 50,
+     "L1044": 55
+    },
+    "religious_education": {
+     "L1041": 85,
+     "L1042": 88,
+     "L1043": 64,
+     "L1044": 43
+    },
+    "creative_arts_and_sports": {
+     "L1041": 60,
+     "L1042": 84,
+     "L1043": 63,
+     "L1044": 42
+    }
+   }
+  }
+ },
+ "timetables": {
+  "c_pp1": {
+   "classId": "c_pp1",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Mathematical Activities",
+      "t": "s03"
+     },
+     "2": {
+      "a": "Environmental Activities",
+      "t": "s03"
+     },
+     "3": {
+      "a": "Creative Activities",
+      "t": "s03"
+     },
+     "4": {
+      "a": "Religious Activities",
+      "t": "s03"
+     },
+     "5": {
+      "a": "Language Activities",
+      "t": "s03"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Religious Activities",
+      "t": "s03"
+     },
+     "2": {
+      "a": "Language Activities",
+      "t": "s03"
+     },
+     "3": {
+      "a": "Mathematical Activities",
+      "t": "s03"
+     },
+     "4": {
+      "a": "Environmental Activities",
+      "t": "s03"
+     },
+     "5": {
+      "a": "Creative Activities",
+      "t": "s03"
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Environmental Activities",
+      "t": "s03"
+     },
+     "2": {
+      "a": "Creative Activities",
+      "t": "s03"
+     },
+     "3": {
+      "a": "Religious Activities",
+      "t": "s03"
+     },
+     "4": {
+      "a": "Language Activities",
+      "t": "s03"
+     },
+     "5": {
+      "a": "Mathematical Activities",
+      "t": "s03"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Language Activities",
+      "t": "s03"
+     },
+     "2": {
+      "a": "Mathematical Activities",
+      "t": "s03"
+     },
+     "3": {
+      "a": "Environmental Activities",
+      "t": "s03"
+     },
+     "4": {
+      "a": "Creative Activities",
+      "t": "s03"
+     },
+     "5": {
+      "a": "Religious Activities",
+      "t": "s03"
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s03"
+     },
+     "2": {
+      "a": "Religious Activities",
+      "t": "s03"
+     },
+     "3": {
+      "a": "Language Activities",
+      "t": "s03"
+     },
+     "4": {
+      "a": "Mathematical Activities",
+      "t": "s03"
+     },
+     "5": {
+      "a": "Environmental Activities",
+      "t": "s03"
+     }
+    }
+   }
+  },
+  "c_pp2": {
+   "classId": "c_pp2",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Environmental Activities",
+      "t": "s04"
+     },
+     "2": {
+      "a": "Creative Activities",
+      "t": "s04"
+     },
+     "3": {
+      "a": "Religious Activities",
+      "t": "s04"
+     },
+     "4": {
+      "a": "Language Activities",
+      "t": "s04"
+     },
+     "5": {
+      "a": "Mathematical Activities",
+      "t": "s04"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Language Activities",
+      "t": "s04"
+     },
+     "2": {
+      "a": "Mathematical Activities",
+      "t": "s04"
+     },
+     "3": {
+      "a": "Environmental Activities",
+      "t": "s04"
+     },
+     "4": {
+      "a": "Creative Activities",
+      "t": "s04"
+     },
+     "5": {
+      "a": "Religious Activities",
+      "t": "s04"
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Creative Activities",
+      "t": "s04"
+     },
+     "2": {
+      "a": "Religious Activities",
+      "t": "s04"
+     },
+     "3": {
+      "a": "Language Activities",
+      "t": "s04"
+     },
+     "4": {
+      "a": "Mathematical Activities",
+      "t": "s04"
+     },
+     "5": {
+      "a": "Environmental Activities",
+      "t": "s04"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Mathematical Activities",
+      "t": "s04"
+     },
+     "2": {
+      "a": "Environmental Activities",
+      "t": "s04"
+     },
+     "3": {
+      "a": "Creative Activities",
+      "t": "s04"
+     },
+     "4": {
+      "a": "Religious Activities",
+      "t": "s04"
+     },
+     "5": {
+      "a": "Language Activities",
+      "t": "s04"
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s04"
+     },
+     "2": {
+      "a": "Language Activities",
+      "t": "s04"
+     },
+     "3": {
+      "a": "Mathematical Activities",
+      "t": "s04"
+     },
+     "4": {
+      "a": "Environmental Activities",
+      "t": "s04"
+     },
+     "5": {
+      "a": "Creative Activities",
+      "t": "s04"
+     }
+    }
+   }
+  },
+  "c_g1": {
+   "classId": "c_g1",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Mathematical Activities",
+      "t": "s05"
+     },
+     "2": {
+      "a": "Environmental Activities",
+      "t": "s05"
+     },
+     "3": {
+      "a": "Religious Education Activities",
+      "t": "s05"
+     },
+     "4": {
+      "a": "Creative Activities",
+      "t": "s05"
+     },
+     "5": {
+      "a": "English Activities",
+      "t": "s05"
+     },
+     "6": {
+      "a": "Kiswahili Activities",
+      "t": "s05"
+     },
+     "7": {
+      "a": "Indigenous Language Activities",
+      "t": "s05"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Creative Activities",
+      "t": "s05"
+     },
+     "2": {
+      "a": "English Activities",
+      "t": "s05"
+     },
+     "3": {
+      "a": "Kiswahili Activities",
+      "t": "s05"
+     },
+     "4": {
+      "a": "Indigenous Language Activities",
+      "t": "s05"
+     },
+     "5": {
+      "a": "Mathematical Activities",
+      "t": "s05"
+     },
+     "6": {
+      "a": "Environmental Activities",
+      "t": "s05"
+     },
+     "7": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Indigenous Language Activities",
+      "t": "s05"
+     },
+     "2": {
+      "a": "Mathematical Activities",
+      "t": "s05"
+     },
+     "3": {
+      "a": "Environmental Activities",
+      "t": "s05"
+     },
+     "4": {
+      "a": "Religious Education Activities",
+      "t": "s05"
+     },
+     "5": {
+      "a": "Creative Activities",
+      "t": "s05"
+     },
+     "6": {
+      "a": "English Activities",
+      "t": "s05"
+     },
+     "7": {
+      "a": "Kiswahili Activities",
+      "t": "s05"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Religious Education Activities",
+      "t": "s05"
+     },
+     "2": {
+      "a": "Creative Activities",
+      "t": "s05"
+     },
+     "3": {
+      "a": "English Activities",
+      "t": "s05"
+     },
+     "4": {
+      "a": "Kiswahili Activities",
+      "t": "s05"
+     },
+     "5": {
+      "a": "Indigenous Language Activities",
+      "t": "s05"
+     },
+     "6": {
+      "a": "Mathematical Activities",
+      "t": "s05"
+     },
+     "7": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s05"
+     },
+     "2": {
+      "a": "Indigenous Language Activities",
+      "t": "s05"
+     },
+     "3": {
+      "a": "Mathematical Activities",
+      "t": "s05"
+     },
+     "4": {
+      "a": "Environmental Activities",
+      "t": "s05"
+     },
+     "5": {
+      "a": "Religious Education Activities",
+      "t": "s05"
+     },
+     "6": {
+      "a": "Creative Activities",
+      "t": "s05"
+     },
+     "7": {
+      "a": "English Activities",
+      "t": "s05"
+     }
+    }
+   }
+  },
+  "c_g2": {
+   "classId": "c_g2",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Environmental Activities",
+      "t": "s06"
+     },
+     "2": {
+      "a": "Religious Education Activities",
+      "t": "s06"
+     },
+     "3": {
+      "a": "Creative Activities",
+      "t": "s06"
+     },
+     "4": {
+      "a": "English Activities",
+      "t": "s06"
+     },
+     "5": {
+      "a": "Kiswahili Activities",
+      "t": "s06"
+     },
+     "6": {
+      "a": "Indigenous Language Activities",
+      "t": "s06"
+     },
+     "7": {
+      "a": "Mathematical Activities",
+      "t": "s06"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "English Activities",
+      "t": "s06"
+     },
+     "2": {
+      "a": "Kiswahili Activities",
+      "t": "s06"
+     },
+     "3": {
+      "a": "Indigenous Language Activities",
+      "t": "s06"
+     },
+     "4": {
+      "a": "Mathematical Activities",
+      "t": "s06"
+     },
+     "5": {
+      "a": "Environmental Activities",
+      "t": "s06"
+     },
+     "6": {
+      "a": "Religious Education Activities",
+      "t": "s06"
+     },
+     "7": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Mathematical Activities",
+      "t": "s06"
+     },
+     "2": {
+      "a": "Environmental Activities",
+      "t": "s06"
+     },
+     "3": {
+      "a": "Religious Education Activities",
+      "t": "s06"
+     },
+     "4": {
+      "a": "Creative Activities",
+      "t": "s06"
+     },
+     "5": {
+      "a": "English Activities",
+      "t": "s06"
+     },
+     "6": {
+      "a": "Kiswahili Activities",
+      "t": "s06"
+     },
+     "7": {
+      "a": "Indigenous Language Activities",
+      "t": "s06"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Creative Activities",
+      "t": "s06"
+     },
+     "2": {
+      "a": "English Activities",
+      "t": "s06"
+     },
+     "3": {
+      "a": "Kiswahili Activities",
+      "t": "s06"
+     },
+     "4": {
+      "a": "Indigenous Language Activities",
+      "t": "s06"
+     },
+     "5": {
+      "a": "Mathematical Activities",
+      "t": "s06"
+     },
+     "6": {
+      "a": "Environmental Activities",
+      "t": "s06"
+     },
+     "7": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s06"
+     },
+     "2": {
+      "a": "Mathematical Activities",
+      "t": "s06"
+     },
+     "3": {
+      "a": "Environmental Activities",
+      "t": "s06"
+     },
+     "4": {
+      "a": "Religious Education Activities",
+      "t": "s06"
+     },
+     "5": {
+      "a": "Creative Activities",
+      "t": "s06"
+     },
+     "6": {
+      "a": "English Activities",
+      "t": "s06"
+     },
+     "7": {
+      "a": "Kiswahili Activities",
+      "t": "s06"
+     }
+    }
+   }
+  },
+  "c_g3": {
+   "classId": "c_g3",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Religious Education Activities",
+      "t": "s07"
+     },
+     "2": {
+      "a": "Creative Activities",
+      "t": "s07"
+     },
+     "3": {
+      "a": "English Activities",
+      "t": "s07"
+     },
+     "4": {
+      "a": "Kiswahili Activities",
+      "t": "s07"
+     },
+     "5": {
+      "a": "Indigenous Language Activities",
+      "t": "s07"
+     },
+     "6": {
+      "a": "Mathematical Activities",
+      "t": "s07"
+     },
+     "7": {
+      "a": "Environmental Activities",
+      "t": "s07"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Kiswahili Activities",
+      "t": "s07"
+     },
+     "2": {
+      "a": "Indigenous Language Activities",
+      "t": "s07"
+     },
+     "3": {
+      "a": "Mathematical Activities",
+      "t": "s07"
+     },
+     "4": {
+      "a": "Environmental Activities",
+      "t": "s07"
+     },
+     "5": {
+      "a": "Religious Education Activities",
+      "t": "s07"
+     },
+     "6": {
+      "a": "Creative Activities",
+      "t": "s07"
+     },
+     "7": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Environmental Activities",
+      "t": "s07"
+     },
+     "2": {
+      "a": "Religious Education Activities",
+      "t": "s07"
+     },
+     "3": {
+      "a": "Creative Activities",
+      "t": "s07"
+     },
+     "4": {
+      "a": "English Activities",
+      "t": "s07"
+     },
+     "5": {
+      "a": "Kiswahili Activities",
+      "t": "s07"
+     },
+     "6": {
+      "a": "Indigenous Language Activities",
+      "t": "s07"
+     },
+     "7": {
+      "a": "Mathematical Activities",
+      "t": "s07"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "English Activities",
+      "t": "s07"
+     },
+     "2": {
+      "a": "Kiswahili Activities",
+      "t": "s07"
+     },
+     "3": {
+      "a": "Indigenous Language Activities",
+      "t": "s07"
+     },
+     "4": {
+      "a": "Mathematical Activities",
+      "t": "s07"
+     },
+     "5": {
+      "a": "Environmental Activities",
+      "t": "s07"
+     },
+     "6": {
+      "a": "Religious Education Activities",
+      "t": "s07"
+     },
+     "7": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s07"
+     },
+     "2": {
+      "a": "Environmental Activities",
+      "t": "s07"
+     },
+     "3": {
+      "a": "Religious Education Activities",
+      "t": "s07"
+     },
+     "4": {
+      "a": "Creative Activities",
+      "t": "s07"
+     },
+     "5": {
+      "a": "English Activities",
+      "t": "s07"
+     },
+     "6": {
+      "a": "Kiswahili Activities",
+      "t": "s07"
+     },
+     "7": {
+      "a": "Indigenous Language Activities",
+      "t": "s07"
+     }
+    }
+   }
+  },
+  "c_g4": {
+   "classId": "c_g4",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Religious Education",
+      "t": "s08"
+     },
+     "2": {
+      "a": "Creative Arts",
+      "t": "s08"
+     },
+     "3": {
+      "a": "English",
+      "t": "s08"
+     },
+     "4": {
+      "a": "Kiswahili",
+      "t": "s08"
+     },
+     "5": {
+      "a": "Mathematics",
+      "t": "s08"
+     },
+     "6": {
+      "a": "Science and Technology",
+      "t": "s08"
+     },
+     "7": {
+      "a": "Agriculture and Nutrition",
+      "t": "s08"
+     },
+     "8": {
+      "a": "Social Studies",
+      "t": "s08"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Kiswahili",
+      "t": "s08"
+     },
+     "2": {
+      "a": "Mathematics",
+      "t": "s08"
+     },
+     "3": {
+      "a": "Science and Technology",
+      "t": "s08"
+     },
+     "4": {
+      "a": "Agriculture and Nutrition",
+      "t": "s08"
+     },
+     "5": {
+      "a": "Social Studies",
+      "t": "s08"
+     },
+     "6": {
+      "a": "Religious Education",
+      "t": "s08"
+     },
+     "7": {
+      "a": "Creative Arts",
+      "t": "s08"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Agriculture and Nutrition",
+      "t": "s08"
+     },
+     "2": {
+      "a": "Social Studies",
+      "t": "s08"
+     },
+     "3": {
+      "a": "Religious Education",
+      "t": "s08"
+     },
+     "4": {
+      "a": "Creative Arts",
+      "t": "s08"
+     },
+     "5": {
+      "a": "English",
+      "t": "s08"
+     },
+     "6": {
+      "a": "Kiswahili",
+      "t": "s08"
+     },
+     "7": {
+      "a": "Mathematics",
+      "t": "s08"
+     },
+     "8": {
+      "a": "Science and Technology",
+      "t": "s08"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Creative Arts",
+      "t": "s08"
+     },
+     "2": {
+      "a": "English",
+      "t": "s08"
+     },
+     "3": {
+      "a": "Kiswahili",
+      "t": "s08"
+     },
+     "4": {
+      "a": "Mathematics",
+      "t": "s08"
+     },
+     "5": {
+      "a": "Science and Technology",
+      "t": "s08"
+     },
+     "6": {
+      "a": "Agriculture and Nutrition",
+      "t": "s08"
+     },
+     "7": {
+      "a": "Social Studies",
+      "t": "s08"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s08"
+     },
+     "2": {
+      "a": "Science and Technology",
+      "t": "s08"
+     },
+     "3": {
+      "a": "Agriculture and Nutrition",
+      "t": "s08"
+     },
+     "4": {
+      "a": "Social Studies",
+      "t": "s08"
+     },
+     "5": {
+      "a": "Religious Education",
+      "t": "s08"
+     },
+     "6": {
+      "a": "Creative Arts",
+      "t": "s08"
+     },
+     "7": {
+      "a": "English",
+      "t": "s08"
+     },
+     "8": {
+      "a": "Kiswahili",
+      "t": "s08"
+     }
+    }
+   }
+  },
+  "c_g5": {
+   "classId": "c_g5",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Creative Arts",
+      "t": "s09"
+     },
+     "2": {
+      "a": "English",
+      "t": "s09"
+     },
+     "3": {
+      "a": "Kiswahili",
+      "t": "s09"
+     },
+     "4": {
+      "a": "Mathematics",
+      "t": "s09"
+     },
+     "5": {
+      "a": "Science and Technology",
+      "t": "s09"
+     },
+     "6": {
+      "a": "Agriculture and Nutrition",
+      "t": "s09"
+     },
+     "7": {
+      "a": "Social Studies",
+      "t": "s09"
+     },
+     "8": {
+      "a": "Religious Education",
+      "t": "s09"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Mathematics",
+      "t": "s09"
+     },
+     "2": {
+      "a": "Science and Technology",
+      "t": "s09"
+     },
+     "3": {
+      "a": "Agriculture and Nutrition",
+      "t": "s09"
+     },
+     "4": {
+      "a": "Social Studies",
+      "t": "s09"
+     },
+     "5": {
+      "a": "Religious Education",
+      "t": "s09"
+     },
+     "6": {
+      "a": "Creative Arts",
+      "t": "s09"
+     },
+     "7": {
+      "a": "English",
+      "t": "s09"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Social Studies",
+      "t": "s09"
+     },
+     "2": {
+      "a": "Religious Education",
+      "t": "s09"
+     },
+     "3": {
+      "a": "Creative Arts",
+      "t": "s09"
+     },
+     "4": {
+      "a": "English",
+      "t": "s09"
+     },
+     "5": {
+      "a": "Kiswahili",
+      "t": "s09"
+     },
+     "6": {
+      "a": "Mathematics",
+      "t": "s09"
+     },
+     "7": {
+      "a": "Science and Technology",
+      "t": "s09"
+     },
+     "8": {
+      "a": "Agriculture and Nutrition",
+      "t": "s09"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "English",
+      "t": "s09"
+     },
+     "2": {
+      "a": "Kiswahili",
+      "t": "s09"
+     },
+     "3": {
+      "a": "Mathematics",
+      "t": "s09"
+     },
+     "4": {
+      "a": "Science and Technology",
+      "t": "s09"
+     },
+     "5": {
+      "a": "Agriculture and Nutrition",
+      "t": "s09"
+     },
+     "6": {
+      "a": "Social Studies",
+      "t": "s09"
+     },
+     "7": {
+      "a": "Religious Education",
+      "t": "s09"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s09"
+     },
+     "2": {
+      "a": "Agriculture and Nutrition",
+      "t": "s09"
+     },
+     "3": {
+      "a": "Social Studies",
+      "t": "s09"
+     },
+     "4": {
+      "a": "Religious Education",
+      "t": "s09"
+     },
+     "5": {
+      "a": "Creative Arts",
+      "t": "s09"
+     },
+     "6": {
+      "a": "English",
+      "t": "s09"
+     },
+     "7": {
+      "a": "Kiswahili",
+      "t": "s09"
+     },
+     "8": {
+      "a": "Mathematics",
+      "t": "s09"
+     }
+    }
+   }
+  },
+  "c_g6": {
+   "classId": "c_g6",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "English",
+      "t": "s10"
+     },
+     "2": {
+      "a": "Kiswahili",
+      "t": "s10"
+     },
+     "3": {
+      "a": "Mathematics",
+      "t": "s10"
+     },
+     "4": {
+      "a": "Science and Technology",
+      "t": "s10"
+     },
+     "5": {
+      "a": "Agriculture and Nutrition",
+      "t": "s10"
+     },
+     "6": {
+      "a": "Social Studies",
+      "t": "s10"
+     },
+     "7": {
+      "a": "Religious Education",
+      "t": "s10"
+     },
+     "8": {
+      "a": "Creative Arts",
+      "t": "s10"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Science and Technology",
+      "t": "s10"
+     },
+     "2": {
+      "a": "Agriculture and Nutrition",
+      "t": "s10"
+     },
+     "3": {
+      "a": "Social Studies",
+      "t": "s10"
+     },
+     "4": {
+      "a": "Religious Education",
+      "t": "s10"
+     },
+     "5": {
+      "a": "Creative Arts",
+      "t": "s10"
+     },
+     "6": {
+      "a": "English",
+      "t": "s10"
+     },
+     "7": {
+      "a": "Kiswahili",
+      "t": "s10"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Religious Education",
+      "t": "s10"
+     },
+     "2": {
+      "a": "Creative Arts",
+      "t": "s10"
+     },
+     "3": {
+      "a": "English",
+      "t": "s10"
+     },
+     "4": {
+      "a": "Kiswahili",
+      "t": "s10"
+     },
+     "5": {
+      "a": "Mathematics",
+      "t": "s10"
+     },
+     "6": {
+      "a": "Science and Technology",
+      "t": "s10"
+     },
+     "7": {
+      "a": "Agriculture and Nutrition",
+      "t": "s10"
+     },
+     "8": {
+      "a": "Social Studies",
+      "t": "s10"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Kiswahili",
+      "t": "s10"
+     },
+     "2": {
+      "a": "Mathematics",
+      "t": "s10"
+     },
+     "3": {
+      "a": "Science and Technology",
+      "t": "s10"
+     },
+     "4": {
+      "a": "Agriculture and Nutrition",
+      "t": "s10"
+     },
+     "5": {
+      "a": "Social Studies",
+      "t": "s10"
+     },
+     "6": {
+      "a": "Religious Education",
+      "t": "s10"
+     },
+     "7": {
+      "a": "Creative Arts",
+      "t": "s10"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s10"
+     },
+     "2": {
+      "a": "Social Studies",
+      "t": "s10"
+     },
+     "3": {
+      "a": "Religious Education",
+      "t": "s10"
+     },
+     "4": {
+      "a": "Creative Arts",
+      "t": "s10"
+     },
+     "5": {
+      "a": "English",
+      "t": "s10"
+     },
+     "6": {
+      "a": "Kiswahili",
+      "t": "s10"
+     },
+     "7": {
+      "a": "Mathematics",
+      "t": "s10"
+     },
+     "8": {
+      "a": "Science and Technology",
+      "t": "s10"
+     }
+    }
+   }
+  },
+  "c_g7": {
+   "classId": "c_g7",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "English",
+      "t": "s11"
+     },
+     "2": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "3": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "4": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "5": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "6": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "7": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "8": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "2": {
+      "a": "English",
+      "t": "s11"
+     },
+     "3": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "4": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "5": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "6": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "7": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "2": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "3": {
+      "a": "English",
+      "t": "s11"
+     },
+     "4": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "5": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "6": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "7": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "8": {
+      "a": "Integrated Science",
+      "t": "s02"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "2": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "3": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "4": {
+      "a": "English",
+      "t": "s11"
+     },
+     "5": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "6": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "7": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s11"
+     },
+     "2": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "3": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "4": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "5": {
+      "a": "English",
+      "t": "s11"
+     },
+     "6": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "7": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "8": {
+      "a": "Social Studies",
+      "t": "s11"
+     }
+    }
+   }
+  },
+  "c_g8": {
+   "classId": "c_g8",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "2": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "3": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "4": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "5": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "6": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "7": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "8": {
+      "a": "Mathematics",
+      "t": "s02"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "English",
+      "t": "s11"
+     },
+     "2": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "3": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "4": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "5": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "6": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "7": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "2": {
+      "a": "English",
+      "t": "s11"
+     },
+     "3": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "4": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "5": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "6": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "7": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "8": {
+      "a": "Religious Education",
+      "t": "s11"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "2": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "3": {
+      "a": "English",
+      "t": "s11"
+     },
+     "4": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "5": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "6": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "7": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s12"
+     },
+     "2": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "3": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "4": {
+      "a": "English",
+      "t": "s11"
+     },
+     "5": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "6": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "7": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "8": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     }
+    }
+   }
+  },
+  "c_g9": {
+   "classId": "c_g9",
+   "grid": {
+    "Mon": {
+     "1": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "2": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "3": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "4": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "5": {
+      "a": "English",
+      "t": "s11"
+     },
+     "6": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "7": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "8": {
+      "a": "Social Studies",
+      "t": "s11"
+     }
+    },
+    "Tue": {
+     "1": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "2": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "3": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "4": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "5": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "6": {
+      "a": "English",
+      "t": "s11"
+     },
+     "7": {
+      "a": "Kiswahili",
+      "t": "s12"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Wed": {
+     "1": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "2": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "3": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "4": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "5": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "6": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "7": {
+      "a": "English",
+      "t": "s11"
+     },
+     "8": {
+      "a": "Kiswahili",
+      "t": "s12"
+     }
+    },
+    "Thu": {
+     "1": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "2": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "3": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "4": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "5": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "6": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "7": {
+      "a": "Mathematics",
+      "t": "s02"
+     },
+     "8": {
+      "a": "Games",
+      "t": ""
+     }
+    },
+    "Fri": {
+     "1": {
+      "a": "Pastoral programme",
+      "t": "s02"
+     },
+     "2": {
+      "a": "Integrated Science",
+      "t": "s02"
+     },
+     "3": {
+      "a": "Social Studies",
+      "t": "s11"
+     },
+     "4": {
+      "a": "Agriculture and Nutrition",
+      "t": "s12"
+     },
+     "5": {
+      "a": "Pre-Technical Studies",
+      "t": "s02"
+     },
+     "6": {
+      "a": "Religious Education",
+      "t": "s11"
+     },
+     "7": {
+      "a": "Creative Arts and Sports",
+      "t": "s12"
+     },
+     "8": {
+      "a": "Mathematics",
+      "t": "s02"
+     }
+    }
+   }
+  }
+ },
+ "remarks": {
+  "L1001_2026_T3": {
+   "learnerId": "L1001",
+   "year": 2026,
+   "term": 3,
+   "teacher": "Brian has settled in well and enjoys songs and story time. He is learning to share materials with others.",
+   "head": "A happy and curious learner. Keep it up."
+  },
+  "L1021_2026_T3": {
+   "learnerId": "L1021",
+   "year": 2026,
+   "term": 3,
+   "teacher": "A steady term. Reads fluently and should now practise multiplication tables daily.",
+   "head": "Good progress. Aim higher next term."
+  },
+  "L1037_2026_T3": {
+   "learnerId": "L1037",
+   "year": 2026,
+   "term": 3,
+   "teacher": "Works hard and asks good questions in Integrated Science. Needs to revise Kiswahili insha writing.",
+   "head": "A focused learner with strong potential."
+  },
+  "L1010_2026_T3": {
+   "learnerId": "L1010",
+   "year": 2026,
+   "term": 3,
+   "teacher": "Participates actively in class and has neat handwriting.",
+   "head": "Well done."
+  },
+  "L1030_2026_T3": {
+   "learnerId": "L1030",
+   "year": 2026,
+   "term": 3,
+   "teacher": "Shows leadership in group work. Should complete homework on time.",
+   "head": "Encouraging results."
+  },
+  "L1043_2026_T3": {
+   "learnerId": "L1043",
+   "year": 2026,
+   "term": 3,
+   "teacher": "Well prepared for the national assessment. Keep revising past papers.",
+   "head": "We are proud of your effort. All the best in KJSEA."
+  }
+ },
+ "messages": {
+  "m1": {
+   "learnerId": "L1037",
+   "parentPhone": "0700555001",
+   "parentName": "Alice Ndanu",
+   "to": "s11",
+   "subject": "Science project materials",
+   "msgs": [
+    {
+     "who": "parent",
+     "name": "Alice Ndanu",
+     "text": "Good evening Mr Onyango. Which materials should we buy for the science project?",
+     "at": "2026-10-05T18:42:00"
+    },
+    {
+     "who": "staff",
+     "name": "Kevin Onyango",
+     "text": "Good evening. A manila paper, two dry cells and a small bulb are enough. The school provides the wires.",
+     "at": "2026-10-05T19:10:00"
+    }
+   ],
+   "updated": "2026-10-05T19:10:00"
+  },
+  "m2": {
+   "learnerId": "L1011",
+   "parentPhone": "0700555011",
+   "parentName": "John Auma",
+   "to": "office",
+   "subject": "Request for fee statement",
+   "msgs": [
+    {
+     "who": "parent",
+     "name": "John Auma",
+     "text": "Hello, kindly confirm that the payment I made on Monday has been received.",
+     "at": "2026-10-06T08:15:00"
+    }
+   ],
+   "updated": "2026-10-06T08:15:00"
+  }
+ }
+}

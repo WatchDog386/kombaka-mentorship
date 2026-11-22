@@ -1,0 +1,151 @@
+/* The public school home page: a green hero card filling the screen, on a white page. */
+
+.pub{--r:20px; --r-sm:10px; --hx-sheet:#FFFFFF; --hx-dark:#1B715A; --hx-card:#FFFFFF; --hx-on:#FFFFFF; --hx-on-muted:#CFE6DE;
+  --hx-coral:#D97362; --hx-coral-text:#F2957F; --hx-purple:#4B3BC0; --hx-lime:#B8DC6E; --hx-tile:#F3F3F5; --hx-tile-line:#E6E6EA;
+  /* One colour per CBC level, so each level tile below the hero reads on its own. */
+  --lv-pp:#B94A38; --lv-pp-bg:rgba(217,115,98,.14); --lv-pp-line:rgba(217,115,98,.4);
+  --lv-lower:#1B715A; --lv-lower-bg:rgba(27,113,90,.12); --lv-lower-line:rgba(27,113,90,.38);
+  --lv-upper:#2B62C4; --lv-upper-bg:rgba(43,98,196,.12); --lv-upper-line:rgba(43,98,196,.38);
+  --lv-junior:#4B3BC0; --lv-junior-bg:rgba(75,59,192,.12); --lv-junior-line:rgba(75,59,192,.38);
+  --paper:var(--hx-sheet); --card:#FFFFFF; --ink:#23262E; --muted:#676B76; --line:#E3E4E8; --soft:#F3F3F5;
+  --maroon:var(--hx-purple); --maroon-text:var(--hx-purple);
+  --display:"Urbanist","Segoe UI",system-ui,sans-serif; --body:"Urbanist","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .pub{--hx-sheet:#16181D; --hx-dark:#155A47; --hx-card:#FFFFFF; --hx-tile:#262A32; --hx-tile-line:#333843;
+    --lv-pp:#F2957F; --lv-pp-bg:rgba(217,115,98,.2); --lv-pp-line:rgba(217,115,98,.45);
+    --lv-lower:#5FC7A6; --lv-lower-bg:rgba(95,199,166,.16); --lv-lower-line:rgba(95,199,166,.42);
+    --lv-upper:#7FA8F0; --lv-upper-bg:rgba(127,168,240,.16); --lv-upper-line:rgba(127,168,240,.42);
+    --lv-junior:#AFA6F6; --lv-junior-bg:rgba(175,166,246,.16); --lv-junior-line:rgba(175,166,246,.42);
+    --card:#23262E; --ink:#ECEDF1; --muted:#A3A7B2; --line:#353A45; --soft:#2A2E37; --maroon:#5B4BD0; --maroon-text:#AFA6F6}
+}
+:root[data-theme="dark"] .pub{--hx-sheet:#16181D; --hx-dark:#155A47; --hx-card:#FFFFFF; --hx-tile:#262A32; --hx-tile-line:#333843;
+  --lv-pp:#F2957F; --lv-pp-bg:rgba(217,115,98,.2); --lv-pp-line:rgba(217,115,98,.45);
+  --lv-lower:#5FC7A6; --lv-lower-bg:rgba(95,199,166,.16); --lv-lower-line:rgba(95,199,166,.42);
+  --lv-upper:#7FA8F0; --lv-upper-bg:rgba(127,168,240,.16); --lv-upper-line:rgba(127,168,240,.42);
+  --lv-junior:#AFA6F6; --lv-junior-bg:rgba(175,166,246,.16); --lv-junior-line:rgba(175,166,246,.42);
+  --card:#23262E; --ink:#ECEDF1; --muted:#A3A7B2; --line:#353A45; --soft:#2A2E37; --maroon:#5B4BD0; --maroon-text:#AFA6F6}
+
+/* --gut keeps the content in a centred column on wide screens while the colours run edge to edge. */
+.home{--gut:max(clamp(1.1rem,5vw,4.2rem),calc((100vw - 1320px)/2)); min-height:100vh; background:var(--hx-sheet); color:var(--ink)}
+.home :focus-visible{outline-color:var(--maroon-text)}
+.home .hx :focus-visible,.home .hx-tab :focus-visible{outline-color:var(--hx-lime)}
+.sheet{display:flex; flex-direction:column; min-height:100vh; padding:10px 10px 24px}
+.home button{cursor:pointer}
+
+/* Hero card */
+.hx{position:relative; isolation:isolate; overflow:hidden; flex:1 0 auto; display:flex; flex-direction:column; min-height:560px; border-radius:30px 30px 30px 0; background:var(--hx-dark); color:var(--hx-on)}
+.hx-img{position:absolute; z-index:-1; right:0; bottom:0; width:60%; height:calc(100% - 5.2rem); object-fit:cover; object-position:58% 0; pointer-events:none;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 42%); mask-image:linear-gradient(to right,transparent,#000 42%)}
+.hx-top{display:flex; align-items:center; gap:.8rem 1.4rem; padding:1.7rem var(--gut) 0}
+/* The logo sits straight on the hero, with no card behind it, and the system name beside it. */
+.hx-logo{flex:none; display:flex; align-items:center; gap:.75rem; color:#fff; font-size:clamp(1.35rem,2vw,1.6rem); font-weight:600; letter-spacing:.01em}
+.hx-logo img{display:block; height:clamp(48px,4.6vw,58px); width:auto; filter:drop-shadow(0 2px 8px rgba(0,0,0,.18))}
+.hx-nav{display:flex; justify-content:center; gap:clamp(.2rem,2vw,1.8rem); margin:0 auto}
+.hx-nav button{position:relative; border:0; background:none; color:#fff; font-weight:600; font-size:.95rem; padding:.45rem .5rem; border-radius:8px}
+.hx-nav button:hover{color:var(--hx-coral-text)}
+.hx-nav .on{color:var(--hx-coral-text)}
+.hx-nav .on::after{content:""; position:absolute; left:50%; bottom:.05rem; width:14px; height:2px; border-radius:2px; background:currentColor; transform:translateX(-50%)}
+.hx-acct{display:flex; align-items:center; gap:1.1rem; margin-left:auto}
+.hx-login{border:0; background:none; color:#fff; font-weight:600; font-size:.95rem; padding:.45rem .2rem; white-space:nowrap}
+.hx-join{min-height:54px; min-width:150px; padding:.6rem 2rem; border:2px solid rgba(255,255,255,.9); border-radius:99px; background:none; color:#fff; font-weight:700; font-size:1.05rem; white-space:nowrap; transition:background .2s,color .2s}
+.hx-login:hover{color:var(--hx-coral-text)} .hx-join:hover{border-color:#fff; background:#fff; color:var(--hx-dark)}
+
+.hx-body{flex:1; display:grid; align-content:center; grid-template-columns:minmax(0,1fr); padding:3rem var(--gut) 3.4rem}
+.hx-text{position:relative; z-index:3}
+.hx-badge{display:inline-flex; align-items:center; gap:.4rem; height:66px; padding:0 1.3rem 0 .5rem; border-radius:14px; background:var(--hx-purple); font-weight:600; font-size:1rem}
+.hx-bell{flex:none; width:104px; height:84px; margin-top:-26px; overflow:visible}
+.hx-text h1{max-width:16ch; margin:1.9rem 0 1.1rem; font-size:clamp(2.3rem,4.6vw,3.55rem); font-weight:400; line-height:1.07; letter-spacing:-.005em; color:#fff}
+.hx-sub{max-width:36ch; color:var(--hx-on-muted); font-size:1.08rem; line-height:1.5}
+.hx-find{display:flex; align-items:center; gap:.6rem 1.1rem; max-width:480px; margin-top:2.3rem; padding:.75rem .75rem .75rem 1rem; border-radius:12px; background:#fff; color:#23262E; box-shadow:0 14px 32px rgba(0,0,0,.2)}
+.hx-field{flex:1; display:flex; align-items:center; gap:.65rem; min-width:0}
+.hx-field i{flex:none; display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:#FCEDEA; color:#C9604F}
+.hx-field > span{min-width:0}
+.hx-field small{display:block; font-size:.76rem; color:#676B76; line-height:1.25}
+.hx-field b{display:block; font-size:.93rem; white-space:nowrap}
+.hx-field select{-webkit-appearance:none; appearance:none; width:auto; max-width:100%; min-height:0; height:auto; padding:0 1.15rem 0 0; border:0; border-radius:4px; color:#23262E; font-weight:700; font-size:.93rem; cursor:pointer;
+  background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2323262E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right center/12px}
+.hx-field select option{color:#23262E; background:#fff}
+.hx-go{flex:none; min-height:44px; padding:.6rem 1.6rem; border:0; border-radius:8px; background:var(--hx-purple); color:#fff; font-weight:600; font-size:.95rem}
+.hx-go:hover{filter:brightness(1.15)}
+.home .hx-find :focus-visible{outline-color:var(--hx-purple)}
+
+.hx-call{position:absolute; z-index:3; right:clamp(1.1rem,4vw,3.4rem); bottom:2.2rem; max-width:250px; font-size:.86rem; line-height:1.6; color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.85)}
+.hx-call a{color:#fff; font-weight:700; text-decoration:none; white-space:nowrap}
+.hx-link{padding:0; border:0; background:none; color:var(--hx-lime); font-weight:600; text-decoration:underline; text-underline-offset:2px}
+
+/* The tab under the hero, with a curved ramp joining it to the card */
+.hx-tab{position:relative; display:flex; flex-wrap:wrap; align-items:center; gap:.4rem 2.2rem; width:calc(var(--gut) + min(31vw,420px)); min-width:min(100%,340px); min-height:64px; padding:0 0 .9rem var(--gut); border-radius:0 0 0 30px; background:var(--hx-dark)}
+.hx-tab button{display:inline-flex; align-items:center; gap:.6rem; min-height:40px; padding:0; border:0; background:none; color:#fff; font-weight:600; font-size:1rem}
+.hx-tab button i{display:grid; place-items:center; width:22px; height:22px; border-radius:50%; background:#fff; color:var(--hx-dark)}
+.hx-tab button:hover{color:var(--hx-coral-text)}
+.hx-ramp{position:absolute; left:calc(100% - 1px); top:0; width:70px; height:100%; fill:var(--hx-dark)}
+
+/* Below the hero: the school card and the four CBC levels */
+.hx-below{display:grid; grid-template-columns:calc(min(31vw,420px) - 1rem) minmax(0,1fr); gap:1.4rem 2rem; align-items:center; padding:1.3rem max(12px,calc(var(--gut) - 3rem)) 0 calc(var(--gut) + 1rem)}
+.hx-spot{display:flex; align-items:center; gap:1.1rem; min-width:0}
+.hx-spot img{flex:none; width:84px; height:84px; border-radius:8px; object-fit:cover}
+.hx-spot > div{min-width:0}
+.hx-where{display:flex; align-items:center; gap:.4rem; font-size:.82rem; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.hx-where i{flex:none; display:grid; color:var(--hx-coral)}
+.hx-specs{display:flex; flex-wrap:wrap; gap:.2rem 1rem; margin:.45rem 0; font-size:.8rem; color:var(--muted)}
+.hx-specs span{display:inline-flex; align-items:center; gap:.35rem}
+.hx-price{display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .7rem; font-size:.95rem}
+.hx-price small{margin-left:-.35rem; color:var(--muted); font-size:.8rem}
+.hx-chip{min-height:30px; padding:.3rem .7rem; border:0; border-radius:5px; background:var(--hx-lime); color:#1F2A0E; font-size:.76rem; font-weight:700}
+.hx-chip:hover{filter:brightness(1.06)}
+.hx-levels{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px}
+.hx-tile{display:flex; align-items:center; justify-content:center; gap:.6rem; min-height:78px; padding:.6rem .8rem; border:1px solid var(--hx-tile-line); border-radius:20px; background:var(--hx-tile); color:var(--ink); font-weight:700; font-size:1.02rem; line-height:1.15; text-align:left}
+.hx-tile i{flex:none; display:grid}
+.hx-tile:hover{border-color:var(--muted)}
+
+/* Each level tile takes the colour of its own level, keyed off the data-l already in the markup. */
+.hx-tile[data-l="pp"]{background:var(--lv-pp-bg); border-color:var(--lv-pp-line)}
+.hx-tile[data-l="pp"] i{color:var(--lv-pp)}
+.hx-tile[data-l="lower"]{background:var(--lv-lower-bg); border-color:var(--lv-lower-line)}
+.hx-tile[data-l="lower"] i{color:var(--lv-lower)}
+.hx-tile[data-l="upper"]{background:var(--lv-upper-bg); border-color:var(--lv-upper-line)}
+.hx-tile[data-l="upper"] i{color:var(--lv-upper)}
+.hx-tile[data-l="junior"]{background:var(--lv-junior-bg); border-color:var(--lv-junior-line)}
+.hx-tile[data-l="junior"] i{color:var(--lv-junior)}
+.hx-tile[data-l="pp"]:hover{border-color:var(--lv-pp)}
+.hx-tile[data-l="lower"]:hover{border-color:var(--lv-lower)}
+.hx-tile[data-l="upper"]:hover{border-color:var(--lv-upper)}
+.hx-tile[data-l="junior"]:hover{border-color:var(--lv-junior)}
+
+/* Pop-ups opened from the home page */
+.pub .modal-bg{background:rgba(18,20,28,.6)}
+.pub .modal{border-radius:22px; padding:1.5rem 1.6rem}
+.pub .btn{border-radius:10px}
+.hx-motto{margin:-.4rem 0 .8rem; color:var(--maroon-text); font-weight:600}
+.pub .facts .on{outline:2px solid var(--maroon); outline-offset:-2px}
+.hx-lv{padding:.9rem 0; border-top:1px solid var(--line)}
+.hx-lv-h{display:flex; align-items:center; gap:.8rem; margin-bottom:.45rem}
+.hx-lv-h i{flex:none; display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:var(--soft); color:var(--maroon-text)}
+.hx-lv-h > div{flex:1}
+.hx-steps{list-style:none; counter-reset:step; margin:0; padding:0}
+.hx-steps li{counter-increment:step; display:grid; grid-template-columns:2.2rem 1fr; column-gap:.8rem; padding:.6rem 0; border-bottom:1px solid var(--line)}
+.hx-steps li:last-child{border-bottom:0}
+.hx-steps li::before{content:counter(step); grid-row:span 2; display:grid; place-items:center; width:2.2rem; height:2.2rem; border-radius:50%; background:var(--hx-lime); color:#1F2A0E; font-weight:800}
+
+@media (max-width:1020px){
+  .hx-body{grid-template-columns:1fr; padding-bottom:1.6rem}
+  .hx-text h1{max-width:none}
+  .hx-img{width:100%; height:520px; -webkit-mask-image:linear-gradient(to bottom,transparent,#000 45%); mask-image:linear-gradient(to bottom,transparent,#000 45%)}
+  .hx-below{grid-template-columns:1fr; padding-left:var(--gut)}
+}
+@media (max-width:760px){
+  .hx-top{flex-wrap:wrap}
+  .hx-logo img{height:46px}
+  .hx-acct{margin-left:auto; gap:.7rem}
+  .hx-nav{order:3; width:calc(100% + .7rem); justify-content:space-between; gap:0; overflow-x:auto; margin:0 -.35rem}
+  .hx-nav button{padding:.45rem .35rem}
+  .hx-body{padding-top:2.2rem}
+  .hx-find{flex-wrap:wrap}
+  .hx-field{flex:1 1 150px}
+  .hx-go{flex:1 1 100%}
+  .hx-call{left:var(--gut); right:auto; max-width:none}
+  .hx{border-radius:26px 26px 0 0; min-height:0}
+  .hx-tab{width:auto; border-radius:0 0 26px 26px; padding-right:1.1rem}
+  .hx-ramp{display:none}
+  .hx-levels{grid-template-columns:1fr 1fr}
+}

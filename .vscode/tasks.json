@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "options": { "cwd": "${workspaceFolder}/backend" },
+  "tasks": [
+    {
+      "label": "1. Set up backend (create .venv, install packages)",
+      "type": "shell",
+      "command": "python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt",
+      "windows": { "command": "py -3 -m venv .venv; .venv\\Scripts\\python.exe -m pip install -r requirements.txt" },
+      "problemMatcher": []
+    },
+    {
+      "label": "2. Load demo school (resets the database)",
+      "type": "shell",
+      "command": ".venv/bin/python manage.py seed --reset",
+      "windows": { "command": ".venv\\Scripts\\python.exe manage.py seed --reset" },
+      "problemMatcher": []
+    },
+    {
+      "label": "3. Run server",
+      "type": "shell",
+      "command": ".venv/bin/python run.py",
+      "windows": { "command": ".venv\\Scripts\\python.exe run.py" },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Run backend tests",
+      "type": "shell",
+      "command": ".venv/bin/python -m unittest -v",
+      "windows": { "command": ".venv\\Scripts\\python.exe -m unittest -v" },
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

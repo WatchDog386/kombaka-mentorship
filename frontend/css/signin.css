@@ -1,0 +1,170 @@
+/* The sign-in page and the loading screen.
+   The sign-in page is one card with two forms (sign in, create an account) and a dark cover.
+   Switching moves the cover to the other half of the card and slides the forms underneath it. */
+
+/* The sign-in page stays white whatever the device theme, so it sets its own light colours. */
+.auth-page{--au-ease:cubic-bezier(.65,0,.35,1); --au-green:#1B715A; --au-cover:linear-gradient(120deg,#21886B,#155A47); --card:#FFFFFF; --ink:#23262E; --muted:#676B76; --line:#E3E4E8; --soft:#F3F3F5;
+  --maroon:#1B715A; --maroon-text:#1B715A; --maroon-hover:#21886B; --ee:#17683F; --be:#A8231C; color-scheme:light}
+body:has(.auth-page){background:#FFFFFF}
+
+.auth-page{position:relative; overflow:hidden; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; padding:clamp(1rem,4vw,3rem); background:#FFFFFF; color:var(--ink)}
+.auth-page :focus-visible{outline-color:var(--maroon-text)}
+.auth-page button{cursor:pointer}
+.au-shape{position:absolute; z-index:0; pointer-events:none}
+.au-tri{top:-3vw; right:-5vw; width:clamp(170px,27vw,400px); fill:var(--hx-coral); stroke:var(--hx-coral); stroke-width:16; stroke-linejoin:round}
+.au-dot{left:-7vw; bottom:-13vw; width:clamp(220px,30vw,440px); aspect-ratio:1; border-radius:50%; background:linear-gradient(140deg,#D4EC9C,var(--hx-lime))}
+
+/* Back to home, pinned to the top left corner of the page */
+.au-back{position:absolute; z-index:2; top:1rem; left:1rem; display:inline-flex; align-items:center; gap:.5rem; min-height:42px; padding:.35rem .95rem .35rem .7rem; border:1px solid var(--line); border-radius:99px; background:var(--card); color:var(--ink); font-weight:400; font-size:.86rem; box-shadow:0 4px 12px rgba(20,22,30,.08)}
+.au-back i,.au-back svg{flex:none; color:var(--maroon-text)}
+.au-back:hover{border-color:var(--maroon-text)}
+
+.au-bar{position:relative; z-index:1; width:min(100%,1000px); text-align:right; font-size:.9rem; color:var(--muted)}
+.au-bar a{color:var(--maroon-text); font-weight:500; text-decoration:none; white-space:nowrap}
+
+/* The card */
+.auth{position:relative; z-index:1; width:min(100%,1000px); height:620px; overflow:hidden; border-radius:0; background:var(--card); box-shadow:0 30px 60px rgba(20,22,30,.16),0 4px 12px rgba(20,22,30,.06)}
+.auth-forms{position:absolute; inset:0}
+.auth-form{position:absolute; top:0; left:0; width:50%; height:100%; display:flex; flex-direction:column; justify-content:center; padding:2.2rem clamp(1.6rem,4.5vw,4rem); background:var(--card); transition:transform .65s var(--au-ease)}
+.auth-in{z-index:2}
+/* The application form shows or hides halfway through the slide, while the cover hides the swap. */
+.auth-up{z-index:1; opacity:0; transition:transform .65s var(--au-ease),opacity 0s .32s,z-index 0s .32s}
+.auth.up .auth-in{transform:translateX(100%)}
+.auth.up .auth-up{z-index:5; opacity:1; transform:translateX(100%)}
+
+.auth-form h2{margin-bottom:.45rem; text-align:center; color:var(--maroon-text); font-size:clamp(1.8rem,2.6vw,2.3rem); font-weight:600}
+.au-cap{margin-bottom:1rem; text-align:center; color:var(--muted); font-size:.88rem}
+.au-demo{display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:1rem}
+.au-pill{display:inline-flex; align-items:center; gap:.45rem; min-height:42px; padding:.3rem .95rem .3rem .35rem; border:1px solid var(--line); border-radius:99px; background:var(--card); color:var(--ink); font-weight:400; font-size:.86rem}
+.au-pill i{display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:var(--soft); color:var(--maroon-text)}
+.au-pill:hover{border-color:var(--maroon-text)}
+.au-fields{display:grid; gap:.7rem; width:100%; max-width:390px; margin:0 auto}
+.au-field{position:relative; display:flex; align-items:center}
+.au-field > i{position:absolute; left:.95rem; display:grid; color:var(--muted); pointer-events:none}
+/* Each field icon carries its own real colour, set on the <i> by the field() helper. */
+.au-field > i.t-green{color:#1B715A}
+.au-field > i.t-amber{color:#C07A12}
+.au-field > i.t-blue{color:#2B62C4}
+.au-field > i.t-purple{color:#7048B8}
+.au-field > i.t-coral{color:#D97362}
+.au-field > i.t-lime{color:#6C8C1E}
+.au-field input,.au-field select{min-height:50px; padding:.6rem 1rem .6rem 2.85rem; border:0; border-radius:10px; background-color:var(--soft); font-size:.95rem}
+.au-field input::placeholder{color:var(--muted); opacity:1}
+.au-field input:focus,.au-field select:focus{outline:none; background-color:#E6E7EB}
+.au-field select{-webkit-appearance:none; appearance:none; padding-right:2.4rem; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23676B76' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; background-size:14px}
+.au-field select:invalid{color:var(--muted)}
+.au-field select option{color:var(--ink); background:var(--card)}
+.au-field #liPass{padding-right:3.2rem}
+.au-eye{position:absolute; right:.35rem; display:grid; place-items:center; width:42px; height:42px; border:0; border-radius:8px; background:none; color:var(--muted)}
+.au-eye:hover{color:var(--ink)}
+.auth .err{min-height:1.3rem; margin:.6rem 0 0; text-align:center}
+.auth .err.ok{color:var(--ee)}
+.au-btn{display:block; min-width:210px; min-height:50px; margin:.7rem auto 0; padding:.8rem 2.4rem; border:0; border-radius:99px; background:var(--maroon); color:#fff; font-weight:500; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; box-shadow:0 10px 22px rgba(27,113,90,.25)}
+.au-btn:hover{background:var(--maroon-hover)}
+.au-btn:disabled{opacity:.6; cursor:progress}
+.au-hint{margin-top:1rem; text-align:center; color:var(--muted); font-size:.82rem}
+
+/* The dark cover. Its inner layer is twice as wide and moves the other way, so each panel glides into place. */
+.auth-cover{position:absolute; top:0; left:50%; z-index:10; width:50%; height:100%; overflow:hidden; transition:transform .65s var(--au-ease)}
+.auth.up .auth-cover{transform:translateX(-100%)}
+.auth-cover-in{position:relative; left:-100%; width:200%; height:100%; background:var(--au-cover); color:#fff; transform:translateX(0); transition:transform .65s var(--au-ease)}
+.auth.up .auth-cover-in{transform:translateX(50%)}
+.auth-pane{position:absolute; top:0; width:50%; height:100%; overflow:hidden; isolation:isolate; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem clamp(1.6rem,4vw,3.6rem); text-align:center; transition:transform .65s var(--au-ease);
+  background:linear-gradient(180deg,rgba(27,113,90,.6),rgba(27,113,90,.86) 38%,rgba(21,90,71,.88)),url("../assets/hero.png") 50% 100%/cover no-repeat,var(--au-green)}
+.auth-pane-l{left:0; transform:translateX(-20%)}
+.auth.up .auth-pane-l{transform:translateX(0)}
+.auth-pane-r{right:0; transform:translateX(0)}
+.auth.up .auth-pane-r{transform:translateX(20%)}
+/* Two see-through diamonds, as in the design */
+.auth-pane::before,.auth-pane::after{content:""; position:absolute; z-index:-1; border-radius:6px; background:rgba(255,255,255,.08); transform:rotate(45deg)}
+.auth-pane::before{top:13%; right:24%; width:44px; height:44px}
+.auth-pane::after{bottom:16%; left:16%; width:26px; height:26px; background:rgba(255,255,255,.1)}
+.au-logo{position:absolute; top:1.5rem; left:1.6rem; display:block; width:176px; height:110px; padding:0; border:0; background:none; cursor:pointer}
+.au-logo img{display:block; width:100%; height:100%; object-fit:contain}
+.au-logo:hover{opacity:.88}
+.auth-pane h2{margin-bottom:1rem; color:#fff; font-size:clamp(1.9rem,3vw,2.5rem); font-weight:600}
+.auth-pane h2,.auth-pane p{text-shadow:0 1px 14px rgba(0,0,0,.25)}
+.auth-pane p{max-width:30ch; margin-bottom:calc(2rem + 48px); color:#fff; line-height:1.6}
+/* alignCover() in signin.js measures the form buttons; these line the cover buttons up with them. */
+.auth-pane .au-ghost{position:absolute; left:50%; transform:translateX(-50%)}
+.auth-pane-r .au-ghost{top:var(--au-btn-in,74%)}
+.auth-pane-l .au-ghost{top:var(--au-btn-up,78%)}
+.au-ghost{min-width:180px; min-height:50px; padding:.7rem 2rem; border:1.5px solid rgba(255,255,255,.9); border-radius:99px; background:none; color:#fff; font-weight:500; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; transition:background .2s,color .2s}
+.au-ghost:hover{background:#fff; color:var(--au-green)}
+.auth-pane :focus-visible{outline-color:#fff}
+
+/* Phones: the forms come first and slide sideways; the cover sits below them and swaps its text. */
+@media (max-width:760px){
+  .auth-page{justify-content:flex-start}
+  .au-bar{display:none}
+  .au-back{position:static; align-self:flex-start}
+  .auth-pane{background-position:0 0,50% 22%}
+  .auth{display:flex; flex-direction:column; height:auto}
+  .auth-cover,.auth.up .auth-cover{position:relative; left:auto; width:100%; height:auto; transform:none}
+  .auth-cover-in,.auth.up .auth-cover-in{left:0; width:100%; display:grid; transform:none}
+  .auth-pane{position:relative; grid-area:1/1; width:100%; height:auto; padding:4.4rem 1.4rem 1.8rem; transition:opacity .5s ease,transform .65s var(--au-ease)}
+  .auth-pane-l{opacity:0; transform:translateX(-12%)}
+  .auth.up .auth-pane-l{opacity:1; transform:none}
+  .auth.up .auth-pane-r{opacity:0; transform:translateX(12%)}
+  .auth-pane h2{margin-bottom:.5rem; font-size:1.7rem}
+  .auth-pane p{margin-bottom:1.2rem; font-size:.95rem}
+  .au-logo{top:1.2rem; left:1.2rem}
+  .auth-pane .au-ghost{position:static; transform:none}
+  .auth-forms{position:relative; inset:auto; display:flex; align-items:flex-start; overflow:hidden}
+  .auth-form{position:relative; flex:0 0 100%; width:100%; height:auto; padding:1.8rem 1.2rem 1.6rem; transition:transform .65s var(--au-ease),opacity .5s ease}
+  .auth-up{opacity:0}
+  .auth.up .auth-in{opacity:0; transform:translateX(-100%)}
+  .auth.up .auth-up{opacity:1; transform:translateX(-100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .auth-form,.auth-cover,.auth-cover-in,.auth-pane,.au-ghost{transition:none}
+}
+
+/* Loading, in the style of the KUCCPS portal: a plain screen, a fast "speeding wheel" (a thin
+   ring of two arcs, the sides left open) and "Please wait...". Ours adds a smaller wheel inside
+   turning the other way. The start-up screen and the cover (#loader) look the same; .pl is the
+   wheel in the page area on a page change; #pbar is the thin bar across the top. */
+.loading{min-height:100vh; display:grid; place-items:center; background:var(--card,#fff)}
+#loader{position:fixed; inset:0; z-index:100; display:grid; place-items:center; background:var(--card,#fff); opacity:0; visibility:hidden; transition:opacity .3s ease,visibility 0s .3s}
+#loader.on{opacity:1; visibility:visible; transition:opacity .15s ease}
+.ld{display:grid; justify-items:center; gap:.4rem; text-align:center}
+.ld p,.pl p{margin-top:1.1rem; color:var(--ink); font-size:1.05rem; font-weight:600; letter-spacing:.02em}
+.ld small{color:var(--muted); font-size:.88rem}
+.ld-dots b{display:inline-block; font-weight:800; animation:ld-dot 1.2s infinite} .ld-dots b:nth-child(2){animation-delay:.2s} .ld-dots b:nth-child(3){animation-delay:.4s}
+
+.wheel{position:relative; width:64px; height:64px}
+.wheel span{position:absolute; border-radius:50%; border:3px solid; border-left-color:transparent; border-right-color:transparent}
+.wheel span:first-child{inset:0; border-top-color:var(--navy,#1C3D62); border-bottom-color:var(--blue,#1F65AD); animation:wheel .45s linear infinite}
+.wheel span:last-child{inset:14px; border-width:3px; border-top-color:var(--lime,#8BBF3F); border-bottom-color:#F0643A; animation:wheel .7s linear infinite reverse}
+:root[data-theme="dark"] .wheel span:first-child{border-top-color:#78B6F2}
+.wheel.sm{width:46px; height:46px} .wheel.sm span:last-child{inset:10px}
+.pl{display:grid; place-items:center; align-content:center; min-height:60vh; text-align:center}
+@keyframes wheel{to{transform:rotate(360deg)}}
+@keyframes ld-dot{0%,60%,100%{opacity:.2}30%{opacity:1}}
+
+/* The "Login successful" page on the cover */
+#loader .ok{display:grid; justify-items:center; gap:.35rem; width:min(92vw,380px); text-align:center; animation:ok-in .4s ease both}
+.ok-mark{width:96px; height:96px; margin-bottom:.9rem; overflow:visible}
+.ok-c{fill:none; stroke:#22A55A; stroke-width:4; stroke-dasharray:227; stroke-dashoffset:227; transform:rotate(-90deg); transform-origin:center; animation:ok-draw .6s ease-out forwards, ok-fill .35s .55s ease forwards}
+.ok-t{fill:none; stroke:#fff; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:50; stroke-dashoffset:50; animation:ok-draw .35s .75s ease-out forwards}
+.ok-mark{animation:ok-pop .35s .55s ease both}
+#loader .ok h2{color:var(--ink); font-size:1.6rem; font-weight:800}
+#loader .ok p{color:var(--ink); font-size:1.08rem; font-weight:600}
+#loader .ok small{color:var(--muted); font-size:.88rem}
+.ok-go{margin-top:1.2rem; color:var(--muted); font-size:.82rem}
+@keyframes ok-draw{to{stroke-dashoffset:0}}
+@keyframes ok-fill{to{fill:#22A55A}}
+@keyframes ok-pop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes ok-in{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){ #loader .ok,.ok-mark{animation:none} .ok-c{animation:none; stroke-dashoffset:0; fill:#22A55A} .ok-t{animation:none; stroke-dashoffset:0} }
+
+#pbar{position:fixed; top:0; left:0; z-index:101; width:100%; height:3px; pointer-events:none; transform-origin:0 50%; transform:scaleX(0); opacity:0; background:linear-gradient(90deg,var(--lime,#8BBF3F),var(--blue,#1F65AD),#F0643A)}
+#pbar.run{animation:pbar .7s cubic-bezier(.3,.7,.4,1) forwards}
+@keyframes pbar{0%{transform:scaleX(0); opacity:1}70%{transform:scaleX(.85); opacity:1}100%{transform:scaleX(1); opacity:0}}
+
+.view-in{animation:view-in .35s ease both}
+@keyframes view-in{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .wheel span{animation-duration:1.6s} .ld-dots b,#pbar.run,.view-in{animation:none}
+}

@@ -1,0 +1,17 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Local settings and data (never commit real school records or secrets)
+backend/.env
+backend/data/*.db
+backend/data/*.db-journal
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+
+# Local server output
+backend/server.log
+backend/server.err

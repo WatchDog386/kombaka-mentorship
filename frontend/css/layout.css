@@ -1,0 +1,168 @@
+/* The signed-in page shell: blue side menu, white top bar with a tab strip, main area and contact footer.
+   Colours: a blue rail and tab strip, a white top bar, a light blue-grey page, green buttons, lime highlights. */
+
+.app{--rail:76px; --pane:236px; display:grid; grid-template-columns:calc(var(--rail) + var(--pane)) minmax(0,1fr); min-height:100vh; background:var(--paper)}
+
+/* Side menu: a blue rail of round group icons, and a light panel listing the pages as cards.
+   The group you are in sits on a tab in the panel colour that curves into the panel. */
+.side{--pane-bg:#E8EEF7; --pane-ink:#24406B; --pane-card:#FFFFFF; --pane-muted:#7A8AA3; --rail-a:var(--navy); --rail-b:var(--navy-2); --sel:#1F65AD;
+  position:sticky; top:0; align-self:start; height:100vh; display:grid; grid-template-columns:var(--rail) minmax(0,1fr); overflow:hidden}
+.side :focus-visible{outline-color:var(--sel)}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .side{--pane-bg:#13243B; --pane-ink:#DCE7F5; --pane-card:#1A2F4B; --pane-muted:#8FA3BE; --sel:#8DB6F5}
+}
+:root[data-theme="dark"] .side{--pane-bg:#13243B; --pane-ink:#DCE7F5; --pane-card:#1A2F4B; --pane-muted:#8FA3BE; --sel:#8DB6F5}
+:root[data-theme="dark"] .pane-today{background:#22395A; color:#A9BBD3}
+:root[data-theme="dark"] .side-card .meter{background:#2A4266}
+
+.rail{display:flex; flex-direction:column; align-items:center; min-height:0; padding:1rem 0 1rem 10px; background:linear-gradient(180deg,var(--rail-a),var(--rail-b))}
+.rail :focus-visible{outline-color:#fff}
+.rail-logo{display:grid; place-items:center; width:44px; height:44px; margin:0 10px 1.3rem 0; border-radius:14px; background:var(--lime); color:#132B47; box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.rail-logo img{display:block; width:30px; height:30px; object-fit:contain}
+.rail-n{flex:1; min-height:0; width:100%; display:flex; flex-direction:column; gap:.55rem; overflow-y:auto; padding:1.2rem 0; scrollbar-width:none}
+.rail-b{position:relative; display:grid; place-items:center; width:100%; height:62px; padding:0 10px 0 0; border:0; border-radius:18px 0 0 18px; background:none; cursor:pointer}
+.rail-b i{display:grid; place-items:center; width:44px; height:44px; border-radius:50%; color:#fff; box-shadow:0 4px 10px rgba(0,0,0,.16); transition:transform .2s}
+.rail-b:hover i{transform:scale(1.08)}
+.rail-b.on{background:var(--pane-bg)}
+/* The two little curves above and below the tab */
+.rail-b.on::before,.rail-b.on::after{content:""; position:absolute; right:0; width:18px; height:18px; background:transparent; pointer-events:none}
+.rail-b.on::before{top:-18px; border-bottom-right-radius:18px; box-shadow:6px 6px 0 6px var(--pane-bg)}
+.rail-b.on::after{bottom:-18px; border-top-right-radius:18px; box-shadow:6px -6px 0 6px var(--pane-bg)}
+.rt-orange{background:linear-gradient(135deg,#FF9A62,#F0643A)} .rt-blue{background:linear-gradient(135deg,#6E9CF2,#3D6FD6)}
+.rt-ink{background:linear-gradient(135deg,#3A3F4B,#15181F)} .rt-green{background:linear-gradient(135deg,#4CCB7A,#22A55A)}
+.rt-violet{background:linear-gradient(135deg,#9B86F0,#6A50D8)} .rt-teal{background:linear-gradient(135deg,#3FC6C0,#1A9A95)}
+.rail-b:not(.on) i{box-shadow:0 0 0 2px rgba(255,255,255,.18),0 4px 10px rgba(0,0,0,.16)}
+.rail-me{display:grid; place-items:center; width:40px; height:40px; margin:1rem 10px 0 0; border:2px solid rgba(255,255,255,.55); border-radius:50%; color:#fff; font-size:.8rem; font-weight:800}
+
+.pane{display:flex; flex-direction:column; min-height:0; background:var(--pane-bg); color:var(--pane-ink)}
+.pane-h{padding:1.35rem 1.1rem .9rem}
+.pane-h b{display:block; font-size:.95rem; font-weight:500; line-height:1.2}
+.pane-h small{display:block; margin-top:.2rem; font-size:.76rem; color:var(--pane-muted)}
+.pane-t{display:flex; align-items:center; gap:.3rem; padding:0 1rem .9rem 1.1rem}
+.pane-today{flex:1; min-height:36px; border:0; border-radius:6px; background:#D3DCEA; color:#6A7C98; font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; cursor:pointer}
+.pane-today:hover{background:#C6D2E5; color:var(--pane-ink)}
+.pane-ar{display:grid; place-items:center; width:32px; height:36px; padding:0; border:0; border-radius:6px; background:none; color:var(--pane-muted); cursor:pointer}
+.pane-ar:hover:not(:disabled){background:#D9E1EE; color:var(--pane-ink)}
+.pane-ar:disabled{opacity:.35; cursor:default}
+
+.nav{flex:1; min-height:0; overflow-y:auto; padding:0 .9rem 1rem 1.1rem; scrollbar-width:thin; scrollbar-color:#C2CEE0 transparent}
+.nav-g{display:grid; gap:.45rem; margin-bottom:1rem}
+.nav h4{margin:.35rem 0 .15rem; font:800 .74rem var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--pane-ink)}
+.nav button{display:flex; align-items:center; gap:.65rem; width:100%; min-height:40px; padding:.45rem .7rem; border:1px solid transparent; border-radius:4px; background:var(--pane-card); color:var(--pane-ink); font-size:.86rem; font-weight:600; text-align:left; cursor:pointer; box-shadow:0 1px 2px rgba(30,60,110,.06),0 3px 8px rgba(30,60,110,.05); transition:transform .15s,box-shadow .15s}
+.nav button > span:first-of-type{flex:1}
+.nav button i{flex:none; display:grid; place-items:center; width:26px; height:26px; border-radius:6px; background:color-mix(in srgb,var(--c) 13%,transparent); color:var(--c)}
+.nav button:hover{transform:translateX(2px); box-shadow:0 2px 4px rgba(30,60,110,.08),0 6px 14px rgba(30,60,110,.08)}
+.nav button[aria-current=page]{border-color:color-mix(in srgb,var(--sel) 35%,transparent); color:var(--sel); font-weight:700}
+.nav button[aria-current=page] i{background:color-mix(in srgb,var(--c) 24%,transparent); box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--c) 55%,transparent)}
+.nav .cnt{min-width:22px; padding:0 .4rem; border-radius:99px; background:#F0643A; color:#fff; font-size:.72rem; font-weight:800; line-height:20px; text-align:center}
+.side-card{margin:.4rem 0 0; padding:.95rem 1rem .9rem; border-radius:6px; background:var(--pane-card); box-shadow:0 1px 2px rgba(30,60,110,.06),0 3px 8px rgba(30,60,110,.05)}
+.side-card b{display:block; font-size:.95rem}
+.side-card > span{display:block; margin:.2rem 0 .65rem; font-size:.8rem; color:var(--pane-muted)}
+.side-card .meter{background:#DCE4F0} .side-card .meter i{background:#2FB36B}
+.side-card small{display:block; margin-top:.6rem; font-size:.78rem; font-style:italic; color:var(--pane-muted)}
+
+/* Main column: a white top bar with the search, a blue strip of tabs for the pages in the
+   current group (the open page is a tab that curves into the page), then the page title. */
+.main{min-width:0; display:flex; flex-direction:column}
+.top{--strip-a:var(--navy); --strip-b:color-mix(in srgb,var(--navy) 82%,#4A7BB5); position:sticky; top:0; z-index:5; background:var(--card); box-shadow:0 1px 0 var(--line)}
+.top-bar{display:flex; align-items:center; gap:1rem; min-height:66px; padding:.6rem 0}
+.top-sp{flex:1}
+.top-q{position:relative; flex:0 1 520px; display:flex; align-items:center; padding-left:1.6rem}
+.top-q svg{position:absolute; left:.2rem; color:var(--muted); pointer-events:none}
+.top-q input{min-height:42px; padding:.4rem .6rem .4rem 2.1rem; border:0; border-radius:8px; background:none; color:var(--ink); font-size:.92rem}
+.top-q input::placeholder{color:var(--muted); opacity:.8}
+.top-q input:focus{outline:none; background:var(--soft)}
+.top-i{display:flex; align-items:center; gap:.35rem; flex:none}
+.ib{position:relative; flex:none; display:inline-grid; place-items:center; width:44px; height:44px; padding:0; border:1px solid var(--line); border-radius:var(--r-sm); background:var(--card); color:var(--ink); cursor:pointer}
+.ib:hover{border-color:var(--muted)}
+.ib.sm{width:32px; height:32px}
+.top .ib{width:40px; height:40px; border:0; border-radius:50%; background:none; color:var(--muted)}
+.top .ib:hover{background:var(--soft); color:var(--ink)}
+.dot-n{position:absolute; top:-3px; right:-3px; display:grid; place-items:center; min-width:19px; height:19px; padding:0 4px; border:2px solid var(--card); border-radius:99px; background:#F0643A; color:#fff; font-size:.66rem; font-weight:800}
+
+/* The tab strip, with two pale diagonal bands as in the design */
+.top-tabs{position:relative; isolation:isolate; overflow-x:auto; overflow-y:hidden; display:flex; align-items:flex-end; gap:.3rem; min-height:76px; padding:1rem 1.6rem 0; background:linear-gradient(100deg,var(--strip-a) 0%,var(--strip-a) 55%,var(--strip-b) 100%); scrollbar-width:none}
+.top-tabs::before,.top-tabs::after{content:""; position:absolute; z-index:-1; top:0; bottom:0; background:rgba(255,255,255,.08); transform:skewX(-28deg)}
+.top-tabs::before{left:-30px; width:90px; background:rgba(139,191,63,.28)}
+.top-tabs::after{right:6%; width:22%; background:rgba(255,255,255,.1)}
+.top-tabs button{position:relative; flex:none; display:inline-flex; align-items:center; gap:.55rem; height:54px; padding:0 1.5rem; border:0; border-radius:18px 18px 0 0; background:none; color:#fff; font-size:.95rem; font-weight:600; white-space:nowrap; cursor:pointer; transition:background .15s}
+.top-tabs button:hover{background:rgba(255,255,255,.12)}
+.top-tabs button svg{opacity:.9}
+.top-tabs button[aria-current=page]{background:var(--paper); color:var(--maroon-text)}
+.top-tabs button[aria-current=page] svg{color:#F0643A; opacity:1}
+/* The little curves at the foot of the open tab */
+.top-tabs button[aria-current=page]::before,.top-tabs button[aria-current=page]::after{content:""; position:absolute; bottom:0; width:16px; height:16px; pointer-events:none}
+.top-tabs button[aria-current=page]::before{left:-16px; border-bottom-right-radius:16px; box-shadow:6px 6px 0 6px var(--paper)}
+.top-tabs button[aria-current=page]::after{right:-16px; border-bottom-left-radius:16px; box-shadow:-6px 6px 0 6px var(--paper)}
+.top :focus-visible{outline-color:var(--focus)}
+.top-tabs :focus-visible{outline-color:#fff; outline-offset:-3px}
+
+/* Page title under the strip, large and light as in the design */
+.page-h{display:flex; flex-wrap:wrap; align-items:baseline; gap:.3rem 1.2rem; padding:1.5rem 1.6rem 0}
+.page-h h1{color:var(--head); font-size:clamp(1.35rem,1.9vw,1.7rem); font-weight:500; letter-spacing:-.01em}
+.page-h p{color:var(--muted); font-size:.9rem}
+.menu{display:none}
+.user-info{display:flex; align-items:center; gap:.6rem; min-width:0; flex:none; margin-right:auto; padding:.25rem .35rem .25rem .5rem}
+.user-info .me-hi{display:none}
+.av{flex:none; display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,#3D8BD6,#1F65AD); color:#fff; font-size:.88rem; font-weight:800}
+.av.sm{width:34px; height:34px; font-size:.76rem}
+.me-t{max-width:12rem} .me-t b{display:block; font-size:.9rem; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis} .me-t small{display:block; font-size:.76rem; color:var(--muted)}
+#view{flex:1; width:100%; padding:1.1rem 1.6rem 2.2rem}
+.foot{display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem 2.6rem; padding:1.05rem 1.4rem; border-radius:var(--r); background:var(--navy); color:#fff; font-size:.9rem}
+.foot span{display:inline-flex; align-items:center; gap:.55rem}
+.foot span svg{color:var(--lime); width:18px; height:18px}
+.foot:empty{display:none}
+.banner{padding:.6rem 1.6rem; background:var(--ae-bg); color:var(--ae); font-size:.9rem; font-weight:700}
+.scrim{display:none}
+
+@keyframes slide-in{
+  from{transform:translateX(20px); opacity:0}
+  to{transform:translateX(0); opacity:1}
+}
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* The account menu (the round "more" button in the top bar). On a wide screen it drops down under
+   the button as a short list; on a phone mobile.css turns it into a drawer from the left, with the
+   school's logo at the top and the app's name at the foot, which are hidden here. */
+.more-menu-bg{display:block; position:fixed; inset:0; z-index:35; background:rgba(10,22,38,.1); animation:fade .2s ease both}
+.more-menu{position:fixed; z-index:36; top:68px; right:1.5rem; width:240px; background:var(--card); color:var(--ink); border-radius:16px; box-shadow:0 24px 80px rgba(10,22,38,.2); animation:slide-in .25s cubic-bezier(.2,.9,.3,1) both; overflow:hidden}
+.more-menu-h,.more-menu-brand,.more-menu-foot{display:none}
+.more-menu-body{display:flex; flex-direction:column; gap:.15rem; padding:.5rem}
+.mm-i{display:flex; align-items:center; gap:.85rem; width:100%; min-height:42px; padding:0 .9rem; border:0; border-radius:10px; background:none; color:var(--ink); font-size:.9rem; font-weight:500; text-align:left; cursor:pointer; transition:background .15s}
+.mm-i svg{flex:none; color:var(--muted)}
+.mm-i span{flex:1}
+.mm-i em{min-width:20px; height:20px; padding:0 6px; border-radius:99px; background:#F0643A; color:#fff; font-size:.7rem; font-style:normal; font-weight:800; line-height:20px; text-align:center}
+.mm-i:hover{background:var(--soft)}
+.mm-i[aria-current=page]{color:var(--head); font-weight:700} .mm-i[aria-current=page] svg{color:var(--head)}
+.mm-out{margin-top:.25rem}
+
+@media (max-width:1180px){ .me-t{display:none} }
+@media (max-width:980px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed; z-index:30; inset:0 auto 0 0; width:min(92vw,calc(var(--rail) + var(--pane))); height:100%; transform:translateX(-104%); transition:transform .2s ease;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+  .app.open .side{transform:none}
+  .app.open .scrim{display:block; position:fixed; inset:0; z-index:20; width:100%; padding:0; border:0; background:rgba(0,0,0,.45)}
+  .menu{display:inline-grid}
+  .top-bar{gap:.6rem; min-height:60px; padding:.5rem 1rem}
+  .top-q{display:none}
+  .top-tabs{min-height:64px; padding:.7rem 1rem 0} .top-tabs button{height:48px; padding:0 1rem}
+  .page-h{padding:1.1rem 1rem 0}
+  #view{padding:1rem 1rem 2rem}
+  .grid2{grid-template-columns:1fr}
+
+  /* Remove circular wraps on rail icons */
+  .rail-b i{width:auto; height:auto; border-radius:0; box-shadow:none; background:none}
+  .rail-b:not(.on) i{box-shadow:none}
+  .rail-b.on{background:none}
+  .rail-b.on::before,.rail-b.on::after{display:none}
+  .rail-me{border:none; border-radius:0; background:none; width:auto; height:auto}
+}
+@media (max-width:640px){
+  .top-i{gap:.35rem} .top-i .hide-sm{display:none}
+  .me summary > svg{display:none} .me summary{padding:.2rem}
+}
+@media (prefers-reduced-motion:reduce){ .side{transition:none} }

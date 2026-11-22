@@ -1,0 +1,569 @@
+/* Phones and small tablets. Loaded last, so it can reshape the desktop layout without touching it.
+   Up to 980px the signed-in app works like a phone app: a greeting header, a slim strip of tabs,
+   a bottom tab bar, and a "More" sheet with every page as a grid of coloured icons.
+   Up to 760px the public site gets a logo-and-menu header with a full screen menu, and every
+   pop-up form opens as a sheet from the bottom of the screen. */
+
+/* Parts that only exist on phones stay hidden on wider screens. */
+.tabbar,.launch,.launch-bg,.me-hi,.hx-menu,.pg-menu,.pm{display:none}
+/* Parts drawn only in the phone layout (m-only) or only on wider screens (d-only), at the same
+   980px line the phone layout starts at. The dashboards use them to swap a banner for tiles or cards. */
+@media (min-width:981px){ .m-only{display:none !important} }
+@media (max-width:980px){ .d-only{display:none !important} }
+.mobile-settings{display:none}
+.learner-list .learner-row{cursor:pointer}
+.learner-list .learner-row:focus-visible{outline:3px solid var(--focus); outline-offset:-3px}
+/* Marks who wrote a remark, shown only on a phone (see the 760px block). The class name has no
+   "m-" prefix so this default is not mistaken for a phone-only rule. */
+.tp-tag{display:none}
+
+.learner-record-head{display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:1rem; padding-bottom:.9rem; border-bottom:1px solid var(--line)}
+.learner-record-kicker{color:var(--muted); font-size:.72rem; font-weight:800; text-transform:uppercase}
+.learner-record-head h2{margin:.2rem 0; color:var(--head); font-size:1.2rem}
+.learner-record-head p{color:var(--muted); font-size:.82rem}
+.learner-record-status{flex:none; padding:.3rem .6rem; border-radius:99px; background:var(--soft); color:var(--ink); font-size:.72rem; font-weight:700}
+.learner-record-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(125px,1fr)); gap:.55rem; margin:.8rem 0 1rem}
+.learner-record-stats > div{min-width:0; padding:.7rem .75rem; border-radius:8px; background:var(--soft)}
+.learner-record-stats b{display:block; font-size:1rem; line-height:1.25; overflow-wrap:anywhere}
+.learner-record-stats span{display:block; margin-top:.15rem; color:var(--muted); font-size:.72rem}
+.learner-record-section{padding:.8rem 0; border-top:1px solid var(--line)}
+.learner-record-section h3{margin:0 0 .6rem; color:var(--muted); font-size:.75rem; font-weight:800; text-transform:uppercase}
+.learner-record-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem 1rem; margin:0}
+.learner-record-grid > div{min-width:0}
+.learner-record-grid dt{color:var(--muted); font-size:.72rem}
+.learner-record-grid dd{margin:.1rem 0 0; font-size:.88rem; overflow-wrap:anywhere}
+.learner-record-grid a{font-weight:700; text-decoration:none}
+.learner-record-note{padding:.65rem .75rem; border-radius:8px; background:var(--soft); font-size:.88rem; line-height:1.5; overflow-wrap:anywhere}
+.learner-record-actions{display:flex; align-items:center; gap:.55rem; flex-wrap:wrap}
+.learner-record-primary{display:flex; gap:.5rem; flex-wrap:wrap}
+.learner-record-more{position:relative}
+.learner-record-more summary{display:grid; place-items:center; min-height:42px; padding:0 .8rem; border:1px solid var(--line); border-radius:8px; color:var(--ink); font-size:.82rem; font-weight:700; cursor:pointer; list-style:none}
+.learner-record-more summary::-webkit-details-marker{display:none}
+.learner-record-more > div{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem}
+.learner-record-done{margin-left:auto}
+.mobile-list-row{cursor:pointer}
+.mobile-list-row:focus-visible{outline:3px solid var(--focus); outline-offset:-3px}
+.registers-missing .register-call{display:grid; place-items:center; flex:none; width:44px; height:44px; min-height:44px; padding:0; border:0; border-radius:50%; background:transparent; color:var(--ee); box-shadow:none}
+.registers-missing .register-call:hover{border:0; background:transparent; color:color-mix(in srgb,var(--ee) 78%,#000)}
+.registers-missing .register-call:focus-visible{outline:3px solid var(--focus); outline-offset:1px}
+.application-record-kicker{margin-bottom:.25rem; color:var(--muted); font-size:.72rem; font-weight:800; text-transform:uppercase}
+.application-record h2{margin-bottom:.4rem}
+.mobile-record-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; margin:1rem 0}
+.mobile-record-grid > div{min-width:0}
+.mobile-record-grid dt{color:var(--muted); font-size:.72rem}
+.mobile-record-grid dd{margin:.12rem 0 0; overflow-wrap:anywhere}
+.mobile-record-full{grid-column:1/-1}
+
+@media (max-width:980px){
+  /* ---------------------------------------------------------------- the app frame */
+  .side,.scrim,.menu,.foot{display:none !important}
+  .app{grid-template-columns:minmax(0,1fr)}
+
+  /* Header: avatar and greeting on the left, round icons on the right */
+  .top-bar{min-height:64px; padding:.55rem 0; gap:.4rem}
+  /* The header markup nests one .top-bar inside another; stretch the inner one so the icons reach the far right */
+  .top-bar > .top-bar{flex:1; min-width:0; min-height:0; padding:0}
+  .top-sp{display:none}
+  .top-q{display:none}
+  .top-i{gap:.15rem; flex:none}
+  .user-info{display:flex; align-items:center; gap:.55rem; flex:none; margin-right:auto; padding:.2rem .4rem .2rem .5rem; min-width:0}
+  .user-info .me-t{display:none}
+  .user-info .me-hi{display:block; line-height:1.15; min-width:0}
+  .user-info .me-hi small{display:block; color:var(--muted); font-size:.74rem}
+  .user-info .me-hi b{display:block; max-width:9.5rem; overflow:hidden; color:var(--ink); font-size:.98rem; font-weight:800; white-space:nowrap; text-overflow:ellipsis}
+  .user-info .av{width:44px; height:44px; box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 18%,transparent)}
+  .top .ib{width:42px; height:42px; background:var(--soft)}
+  .ib.menu{margin-left:.35rem}
+
+  /* Keep related pages visible in a compact, swipeable tab row. */
+  .top-tabs{display:flex; min-height:46px; gap:.1rem; padding:.35rem .85rem 0}
+  .top-tabs button{height:38px; padding:0 .75rem; border-radius:10px 10px 0 0; font-size:.78rem}
+  .top-tabs button svg{width:15px; height:15px}
+  .top-tabs button[aria-current=page]::before,.top-tabs button[aria-current=page]::after{width:12px; height:12px}
+  .top-tabs button[aria-current=page]::before{left:-12px; border-bottom-right-radius:12px}
+  .top-tabs button[aria-current=page]::after{right:-12px; border-bottom-left-radius:12px}
+  #view[data-view="dashboard"] .dash .card:has(.quick){display:none}
+  .page-h{padding:.8rem 1rem 0; gap:.1rem}
+  .page-h h1{font-size:1.2rem; font-weight:500}
+  .page-h p{width:100%; overflow:hidden; font-size:.74rem; line-height:1.35; white-space:nowrap; text-overflow:ellipsis}
+  #view{padding:.75rem .85rem calc(96px + env(safe-area-inset-bottom,0px)); font-size:.92rem}
+
+  /* ---------------------------------------------------------------- bottom tab bar */
+  /* The bar itself is drawn by .tb-bg: a flat piece left of the open tab, a curved dip (an SVG) under
+     it and a flat piece to the right. The open tab's icon sits in a raised circle (.tb-dot) in the dip.
+     On a change the circle sinks, slides over with the dip and rises again under the new tab. */
+  .tabbar{position:fixed; z-index:40; left:8px; right:8px; bottom:calc(8px + env(safe-area-inset-bottom,0px)); display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); height:64px; padding:5px 36px; isolation:isolate}
+  .tb-bg{position:absolute; inset:0; z-index:-1; overflow:hidden; border-radius:16px; filter:drop-shadow(0 -2px 14px rgba(20,35,60,.28))}
+  .tb-bg > *{position:absolute; top:0; bottom:0; display:block; margin:0; background:var(--navy); fill:var(--navy)}
+  .tb-l{left:0; width:calc(var(--x) - 49px)}
+  .tb-notch{left:calc(var(--x) - 50px); width:100px; height:64px; background:none !important}
+  .tb-r{left:calc(var(--x) + 49px); right:0}
+  .tb-none .tb-l{width:100%} .tb-none .tb-notch,.tb-none .tb-r{display:none}
+  .tb-dot{position:absolute; z-index:1; top:-21px; left:calc(var(--x) - 26px); display:grid; place-items:center; width:52px; height:52px; border-radius:50%; background:var(--ac,var(--lime)); color:#fff; pointer-events:none}
+  .tb-move .tb-l,.tb-move .tb-notch,.tb-move .tb-r{animation:var(--tb-ms) cubic-bezier(.5,0,.2,1) var(--tb-delay,0ms) both}
+  .tb-move .tb-l{animation-name:tb-l} .tb-move .tb-notch{animation-name:tb-notch} .tb-move .tb-r{animation-name:tb-r}
+  .tb-move .tb-dot{animation:tb-dot var(--tb-ms) cubic-bezier(.5,0,.2,1) var(--tb-delay,0ms) both}
+  .tabbar button{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.1rem; min-width:0; min-height:54px; padding:0; border:0; border-radius:14px; background:none; color:rgba(255,255,255,.72); font-size:.63rem; font-weight:700; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:color .2s}
+  .tabbar i{position:relative; display:grid; place-items:center; width:42px; height:27px; transition:transform .2s,opacity .2s}
+  .tabbar span{max-width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+  .tabbar em{position:absolute; top:-4px; right:2px; min-width:17px; height:17px; padding:0 4px; border:2px solid var(--navy); border-radius:99px; background:#F0643A; color:#fff; font-size:.6rem; font-style:normal; font-weight:800; line-height:13px; text-align:center}
+  .tabbar [aria-current=page]{justify-content:flex-end; padding-bottom:1px; color:#fff}
+  .tabbar [aria-current=page] i{position:absolute; opacity:0; transform:translateY(-16px)}
+  .tabbar button:not([aria-current]):active i{transform:scale(.88)}
+  .tb-move [aria-current=page] span{animation:fade .3s ease calc(var(--tb-ms) * .6 + var(--tb-delay,0ms)) both}
+
+  /* ---------------------------------------------------------------- the "More" sheet */
+  .launch-bg{display:block; position:fixed; inset:0; z-index:45; background:rgba(10,22,38,.5); animation:fade .2s ease both}
+  .launch{display:block; position:fixed; z-index:46; left:0; right:0; bottom:0; max-height:88vh; overflow-y:auto; padding:.5rem 1.1rem calc(1.4rem + env(safe-area-inset-bottom,0px)); border-radius:28px 28px 0 0; background:var(--paper); box-shadow:0 -20px 50px rgba(10,22,38,.25); animation:sheet-up .32s cubic-bezier(.2,.9,.3,1) both; overscroll-behavior:contain}
+  .launch-grip{display:block; width:42px; height:5px; margin:.2rem auto .9rem; border-radius:99px; background:color-mix(in srgb,var(--muted) 40%,transparent)}
+  .launch-h{display:flex; align-items:center; gap:.8rem; margin-bottom:.6rem; padding:.9rem; border-radius:20px; background:var(--card); box-shadow:var(--shadow-sm)}
+  .launch-h > div{flex:1; min-width:0}
+  .launch-h b{display:block; font-size:1rem} .launch-h small{display:block; overflow:hidden; color:var(--muted); font-size:.78rem; white-space:nowrap; text-overflow:ellipsis}
+  .launch-h .ib{width:38px; height:38px; border:0; border-radius:50%; background:var(--soft)}
+  .launch h4{margin:1.1rem .2rem .6rem; color:var(--muted); font:800 .72rem var(--body); letter-spacing:.1em; text-transform:uppercase}
+  .launch-g{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem .4rem}
+  .launch-g button{display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:.35rem; min-width:0; min-height:82px; padding:.15rem .1rem; border:0; border-radius:12px; background:var(--card); color:var(--ink); font-size:.73rem; font-weight:600; line-height:1.2; text-align:center; cursor:pointer; -webkit-tap-highlight-color:transparent}
+  .launch-g i{position:relative; display:grid; place-items:center; width:44px; height:44px; border-radius:13px; background:color-mix(in srgb,var(--c) 14%,var(--card)); color:var(--c); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 14%,transparent); transition:transform .15s}
+  .launch-g button:active i{transform:scale(.92)}
+  .launch-g [aria-current=page] i{background:var(--c); color:#fff; box-shadow:0 8px 18px color-mix(in srgb,var(--c) 35%,transparent)}
+  .launch-g em{position:absolute; top:-5px; right:-5px; min-width:20px; height:20px; padding:0 5px; border:2px solid var(--paper); border-radius:99px; background:#F0643A; color:#fff; font-size:.66rem; font-style:normal; font-weight:800; line-height:16px}
+  .launch-term{margin-top:1.4rem; padding:1rem 1.1rem; border-radius:20px; background:linear-gradient(120deg,var(--navy),var(--navy-2)); color:#fff}
+  .launch-term > div{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.2rem .8rem; margin-bottom:.7rem}
+  .launch-term span{color:#C9D7E7; font-size:.8rem}
+  .launch-term .meter{background:rgba(255,255,255,.18)} .launch-term .meter i{background:var(--lime)}
+  .launch-acts{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-top:.9rem}
+  .launch-acts button{display:flex; align-items:center; justify-content:center; gap:.5rem; min-height:50px; border:1px solid var(--line); border-radius:16px; background:var(--card); color:var(--ink); font-weight:700; font-size:.88rem; cursor:pointer}
+  .launch-acts .out{border-color:transparent; background:color-mix(in srgb,#E5484D 12%,var(--card)); color:#D93C41}
+
+  /* ---------------------------------------------------------------- account menu: a drawer from the left
+     A plain white panel the full height of the screen: the menu icon that closes it, the school's logo
+     and name, one row per item with a grey line icon and no dividers, and the app's name at the foot. */
+  .more-menu-bg{z-index:49; background:rgba(10,22,38,.42)}
+  .more-menu{top:0; right:auto; bottom:0; left:0; display:flex; flex-direction:column; width:min(80vw,310px); padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px); border-radius:0; background:#fff; color:#2B2E35; box-shadow:14px 0 40px rgba(10,22,38,.16); animation:mm-in .3s cubic-bezier(.2,.8,.2,1) both; overflow:hidden; z-index:50}
+  .more-menu-h{display:flex; padding:.75rem .9rem 0}
+  .more-menu-h .ib{width:46px; height:46px; border:0; border-radius:50%; background:none; color:#3A3D45}
+  .more-menu-h .ib:active{background:#F1F2F4}
+  .more-menu-brand{display:flex; align-items:center; gap:.8rem; padding:.7rem 1.5rem 1.35rem; border-bottom:1px solid #EDEEF1}
+  .more-menu-brand img{flex:none; width:auto; height:46px}
+  .more-menu-brand b{color:#1D4777; font-size:1.02rem; font-weight:700; line-height:1.25}
+  .more-menu-body{flex:1; min-height:0; overflow-y:auto; gap:0; padding:.9rem 0}
+  .more-menu .mm-i{gap:1.15rem; min-height:54px; padding:0 1.6rem; border-radius:0; color:#2B2E35; font-size:.98rem; -webkit-tap-highlight-color:transparent}
+  .more-menu .mm-i svg{color:#80858F}
+  .more-menu .mm-i:active{background:#F3F4F6}
+  .more-menu .mm-i[aria-current=page]{color:#1D4777} .more-menu .mm-i[aria-current=page] svg{color:#1D4777}
+  .more-menu .mm-out{margin-top:0}
+  .more-menu-foot{display:flex; align-items:center; gap:.7rem; padding:1rem 1.5rem 1.2rem; border-top:1px solid #EDEEF1}
+  .more-menu-foot img{flex:none; width:28px; height:28px}
+  .more-menu-foot span{min-width:0}
+  .more-menu-foot b{display:block; color:#1D4777; font-size:.9rem; font-weight:700}
+  .more-menu-foot small{display:block; overflow:hidden; color:#80858F; font-size:.76rem; white-space:nowrap; text-overflow:ellipsis}
+
+@keyframes tb-l{from{width:calc(var(--from) - 49px)}}
+@keyframes tb-notch{from{left:calc(var(--from) - 50px)}}
+@keyframes tb-r{from{left:calc(var(--from) + 49px)}}
+@keyframes tb-dot{
+  0%{left:calc(var(--from) - 26px); transform:none; opacity:1}
+  28%{left:calc(var(--from) - 26px); transform:translateY(30px) scale(.4); opacity:0}
+  72%{left:calc(var(--x) - 26px); transform:translateY(30px) scale(.4); opacity:0}
+  100%{left:calc(var(--x) - 26px); transform:none; opacity:1}
+}
+@keyframes mm-in{from{transform:translateX(-100%)}to{transform:none}}
+
+  /* ---------------------------------------------------------------- dashboards and cards */
+  .card,.tile,.step,.lesson,.kidc,.hero,.tw,.quick button,.fees3 div,.sb,.empty{border-radius:12px}
+  .card{padding:.7rem; border-color:transparent; box-shadow:0 1px 2px rgba(20,45,75,.05),0 5px 16px rgba(20,45,75,.06)}
+  .dash .fi{width:auto; height:auto; padding:0; border-radius:0; background:transparent !important; color:var(--ee); box-shadow:none}
+  .dash .av.sm{width:auto; height:auto; border-radius:0; background:transparent; color:var(--ee); font-size:.82rem; box-shadow:none}
+  .registers-missing .rows li{padding:.75rem 0; border:0}
+  .dash,.dash-main,.dash-side{gap:.75rem}
+  .dash-main,.dash-side{grid-template-columns:minmax(0,1fr)}
+  .two{grid-template-columns:minmax(0,1fr)}
+  .tiles{min-width:0; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem}
+  .tile{padding:.8rem; border-color:transparent; box-shadow:0 1px 2px rgba(20,45,75,.05),0 5px 16px rgba(20,45,75,.06)}
+  .tv{font-size:1.25rem}
+  .sbox-v{font-size:1.2rem; max-width:none} .sbox-l{font-size:.76rem; margin-top:.15rem} .sbox-i{top:.45rem; right:.45rem} .sbox-i svg{width:34px; height:34px} .sbox-in{padding:.55rem .65rem .5rem} .sbox .meter{max-width:none}
+  /* The four steps of the term become cards you swipe through */
+  .steps{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:92%; gap:.75rem; margin:0 -.85rem; padding:.2rem .85rem .5rem; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 .85rem; scrollbar-width:none}
+  .steps::-webkit-scrollbar{display:none}
+  .step{scroll-snap-align:start; border-color:transparent; box-shadow:0 1px 2px rgba(20,45,75,.05),0 8px 24px rgba(20,45,75,.07)}
+  .step::after{display:none}
+  .step .btn{border-radius:12px}
+
+  .hero{min-height:0; padding:1.4rem 1.25rem; border:0; background:linear-gradient(135deg,var(--navy),var(--navy-2)); color:#fff}
+  .hero::before{background:rgba(255,255,255,.06)}
+  .hero .hero-k{color:var(--lime)} .hero h2{color:#fff; font-size:1.35rem} .hero p{color:#C9D7E7}
+  .hero .btn:not(.primary):not(.green){border-color:rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:#fff}
+  .hero-b .btn{flex:1; border-radius:14px}
+  .hero-img{display:none}
+  .lessons{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:62%; overflow-x:auto; scroll-snap-type:x mandatory; margin:0 -1.05rem; padding:0 1.05rem .3rem; scrollbar-width:none}
+  .lesson{scroll-snap-align:start}
+  .kids{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:84%; overflow-x:auto; scroll-snap-type:x mandatory; margin:0 -1.05rem; padding:.2rem 1.05rem .4rem; scrollbar-width:none}
+  .kidc{scroll-snap-align:start}
+  .fees3{grid-template-columns:repeat(3,minmax(0,1fr)); gap:.45rem}
+  .fees3 div{padding:.6rem .65rem; border-radius:14px} .fees3 b{font-size:.92rem}
+  .quick{gap:.55rem}
+  .quick button{border-color:transparent; background:var(--soft)}
+  .btn{border-radius:12px}
+  .tools{gap:.55rem}
+  .tools input,.tools select{border-radius:12px}
+}
+
+@media (max-width:760px){
+  /* ---------------------------------------------------------------- lists: each table row becomes a card */
+  .tools{display:grid; grid-template-columns:1fr 1fr; gap:.55rem}
+  .tools > *{width:100% !important; max-width:none !important; min-width:0}
+  .tools input[type=search],.tools .grow{grid-column:1/-1}
+  .tools .grow{display:none}
+  .tools .btn{min-height:48px}
+  .tools .btn.primary{grid-column:1/-1; order:-1}
+  .tools input,.tools select{min-height:48px; font-size:16px; background:var(--card); border-color:transparent; box-shadow:0 1px 2px rgba(20,45,75,.05),0 4px 14px rgba(20,45,75,.06)}
+
+  .tw{overflow:visible; border:0; background:none}
+  .tw:has(>.tt){max-width:100%; overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch}
+  table.t,.t tbody,.t tfoot{display:block}
+  .t thead{display:none}
+  .t tbody tr{display:grid; grid-template-columns:1fr 1fr; gap:.5rem .9rem; margin-bottom:.7rem; padding:.95rem 1rem; border-radius:18px; background:var(--card); box-shadow:0 1px 2px rgba(20,45,75,.05),0 6px 18px rgba(20,45,75,.06)}
+  .t tbody tr:hover td{background:none}
+  .t td{display:block; min-width:0; padding:0; border:0; overflow-wrap:anywhere; font-size:.9rem}
+  .t td[data-l]:not([data-l=""])::before{content:attr(data-l); display:block; margin-bottom:.1rem; color:var(--muted); font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase}
+  .t td.num{text-align:left}
+  .t td:nth-child(2){grid-column:1/-1; order:-1; font-size:1rem}
+  .t td:nth-child(2)::before{display:none !important}
+  .t td.act{grid-column:1/-1; display:flex; flex-wrap:wrap; gap:.45rem; justify-content:flex-start; padding-top:.6rem; border-top:1px solid var(--line)}
+  .t td.act::before{display:none !important}
+  .t td.act .btn{flex:1}
+  .t td[colspan]{grid-column:1/-1}
+  /* The Present / Late / Absent switch takes the card's full width, with big buttons */
+  .t td:has(.seg){grid-column:1/-1}
+  .seg{display:flex; width:100%; border-radius:14px}
+  .seg button{flex:1; min-height:46px; font-size:.9rem}
+  /* Summary numbers (fees, attendance) */
+  .strip{gap:.6rem} .strip > div{border-radius:18px; padding:.9rem 1rem} .strip b{font-size:1.25rem !important; line-height:1.2}
+  .facts{grid-template-columns:1fr 1fr} .facts div{border-radius:16px}
+  .t tfoot tr{display:flex; flex-wrap:wrap; justify-content:space-between; gap:.4rem; padding:.9rem 1rem; border-radius:18px; background:var(--soft)}
+  .t tfoot td{background:none}
+
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .tw{max-width:100%; overflow:visible; border:0; border-radius:0; background:none}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) table.t{display:block; width:100%; min-width:0; table-layout:auto; border-collapse:collapse}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t thead{display:none}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t tbody{display:block}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t tbody tr{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem .85rem; margin:0; padding:.9rem 0; border:0; border-radius:0; background:none; box-shadow:none}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t tbody tr:hover td{background:transparent}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td{display:block; min-width:0; padding:0; border:0; overflow-wrap:anywhere; vertical-align:top; font-size:.8rem; white-space:normal}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td[data-l]:not([data-l=""])::before{content:attr(data-l); display:block; margin-bottom:.08rem; color:var(--muted); font-size:.67rem; font-weight:700; text-transform:uppercase}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td.mobile-list-primary{grid-column:1/-1; order:-1; padding-bottom:.2rem; font-size:.9rem}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td.mobile-list-primary::before{display:none !important}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td.num{text-align:left}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td.act{grid-column:1/-1; display:flex; align-items:center; flex-wrap:wrap; gap:.45rem; padding-top:.35rem}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td.act::before{display:none !important}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td.act .btn{flex:1 1 40%; min-height:40px; white-space:normal}
+  #view:is([data-view="attendance"],[data-view="fees"],[data-view="messages"],[data-view="transport"],[data-view="library"]) .t td:has(.seg){grid-column:1/-1}
+
+  /* ------------------------------------------------ chats: one pane at a time
+   The list fills the screen, and opening a chat slides the conversation over it, so a phone
+   shows one thing at a time instead of a narrow two-column squeeze. */
+  #view[data-view="messages"] .chat-tools{margin-bottom:.6rem}
+  #view[data-view="messages"] .chat{grid-template-columns:minmax(0,1fr); height:calc(100dvh - 340px); min-height:360px; border:0; background:transparent}
+  #view[data-view="messages"] .chat-side{border-right:0; background:transparent; border-radius:14px; box-shadow:var(--shadow-sm); overflow:hidden}
+  #view[data-view="messages"] .chat:not(.chat-list-only) .chat-side{display:none}
+  #view[data-view="messages"] .chat:not(.chat-list-only) .chat-main{display:grid; height:calc(100dvh - 340px); border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm)}
+  #view[data-view="messages"] .chat-back{display:grid; place-items:center; width:38px; height:38px}
+  /* Two header buttons do not fit beside the name on a phone, so they drop to their own
+     line under it rather than pushing the chat sideways. */
+  #view[data-view="messages"] .chat-head{flex-wrap:wrap; row-gap:.5rem; overflow:hidden}
+  #view[data-view="messages"] .chat-head-m{flex:1 1 60%; min-width:0}
+  #view[data-view="messages"] .chat-head-m b,#view[data-view="messages"] .chat-head-m .chat-sub{overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+  #view[data-view="messages"] .chat-head-a{flex:1 0 100%; order:3; justify-content:flex-end}
+  #view[data-view="messages"] .chat-head-a .btn{flex:1 1 auto; min-height:40px}
+  #view[data-view="messages"] .chat-row{padding:.75rem .8rem}
+  #view[data-view="messages"] .chat-av{width:40px; height:40px}
+  #view[data-view="messages"] .chat-b{max-width:86%}
+  #view[data-view="messages"] .chat-body{padding:.75rem .7rem}
+  #view[data-view="messages"] .chat-compose{padding:.5rem .6rem}
+  #view[data-view="messages"] .chat-compose textarea{min-height:40px}
+
+  /* ------------------------------------------------ teaching material: one card per file
+     The title sits on its own line above the buttons, so a long file name is never squeezed
+     into a narrow column beside them. */
+  #view[data-view="resources"] .res-list{gap:.5rem}
+  #view[data-view="resources"] .res-card{flex-wrap:wrap; align-items:flex-start; gap:.6rem; padding:.75rem .8rem; border-radius:12px}
+  #view[data-view="resources"] .res-ico{width:40px; height:40px; font-size:.62rem}
+  #view[data-view="resources"] .res-m{flex:1 1 100%; order:2}
+  #view[data-view="resources"] .res-ico{order:1}
+  #view[data-view="resources"] .res-a{flex:1 0 100%; order:3; margin-top:.15rem}
+  #view[data-view="resources"] .res-a .btn{flex:1; min-height:44px}
+  #view[data-view="resources"] .res-areas{margin-left:-.85rem; margin-right:-.85rem; padding:0 .85rem .2rem}
+
+  #view[data-view="fees"] .cols > .panel{padding:0; border:0; border-radius:0; background:transparent; box-shadow:none}
+  #view[data-view="notices"] .note{margin:0 0 .65rem; padding:.75rem 0; border:0; border-radius:0; background:transparent; box-shadow:none}
+  #view[data-view="calendar"] .panel{margin:0 0 1rem; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none}
+  #view[data-view="calendar"] .panel > h2{padding-bottom:0; border:0}
+
+/* ------------------------------------------------ assessment and reports: dense, not cards
+     These two pages are wide tables of numbers, so the card treatment above wastes most of the
+     screen on labels and padding. Instead every row collapses to one or two short lines: the name
+     on the left, the marks or points on the right, and labels only where a bare number would be
+     ambiguous. The reset comes first, because the generic card rules above would otherwise reach
+     in and reorder the cells. */
+  .as-list .tw,.rp-list .tw,.rp-card-list .tw{max-width:100%; overflow:visible; border:0; border-radius:0; background:none}
+  .as-list .t,.rp-list .t,.rp-card-list .t{display:block; width:100%; min-width:0; table-layout:auto; border-collapse:collapse}
+  .as-list .t thead,.rp-list .t thead,.rp-card-list .t thead{display:none}
+  .as-list .t tbody,.rp-list .t tbody,.rp-card-list .t tbody{display:block}
+  .as-list .t td,.rp-list .t td,.rp-card-list .t td{
+    order:initial; grid-area:auto; display:block; min-width:0; padding:0; border:0;
+    vertical-align:middle; overflow-wrap:anywhere; white-space:normal}
+  .as-list .t td:not([data-l=""])::before,.rp-list .t td:not([data-l=""])::before,.rp-card-list .t td:not([data-l=""])::before{content:none !important; display:none !important}
+  .as-list .t td:first-child,.rp-list .t td:first-child{display:none}
+  .as-list .t td.hide-sm,.rp-card-list .t td.hide-sm{display:none}
+
+  /* Mark entry: one line per learner, with a thumb-sized box for the mark. */
+  .as-list .t tbody tr{display:flex; align-items:center; gap:.5rem; margin:0; padding:.3rem 0; border:0; border-radius:0; background:none; box-shadow:none}
+  .as-list .t tbody tr + tr,.rp-list .t tbody tr + tr,.rp-card-list .t tbody tr + tr{border-top:1px solid var(--line)}
+  .as-list .t tbody tr:hover td,.rp-list .t tbody tr:hover td{background:transparent}
+  .as-list .t td:nth-child(2){flex:1 1 auto; font-size:.88rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .as-list .t td.as-in{flex:none; width:4.6rem}
+  .as-list .t td.as-in input,.as-list .t td.as-in select{width:100%; min-height:40px; padding:.15rem .3rem; border-radius:9px; font-size:16px; text-align:center}
+  .as-list .t td:last-child{flex:none; width:2.9rem; text-align:right}
+  .as-list .t td:last-child .lvl{min-width:0}
+
+  /* The class list has more to say than fits on one line, so it becomes two short ones:
+     name, mean and band on top; progress, both remark ticks and the button underneath. */
+  .rp-list .t tbody tr{display:grid; grid-template-columns:minmax(0,1fr) auto auto auto; gap:.1rem .4rem; align-items:center; margin:0; padding:.4rem 0; border:0; border-radius:0; background:none; box-shadow:none}
+  .rp-list .t td:nth-child(2){grid-area:1/1/2/3; font-size:.88rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .rp-list .t td:nth-child(3){grid-area:2/1/3/2; font-size:.7rem; text-align:left; white-space:nowrap}
+  .rp-list .t td:nth-child(4){grid-area:1/3/2/4; text-align:right; font-size:.82rem; font-variant-numeric:tabular-nums; white-space:nowrap}
+  .rp-list .t td:nth-child(5){grid-area:1/4/2/5; text-align:right; white-space:nowrap}
+  .rp-list .t td:nth-child(6){grid-area:2/2/3/3}
+  .rp-list .t td:nth-child(7){grid-area:2/3/3/4}
+  .rp-list .t td:nth-child(8){grid-area:2/4/3/5}
+  .rp-list .t td .chip,.rp-list .t td .lvl{padding:.05rem .3rem; min-width:0; font-size:.66rem; border-radius:5px; white-space:nowrap}
+  .rp-list .t td.act{padding:0; border:0}
+  .rp-list .t td.act .btn{min-height:34px; padding:.15rem .5rem; font-size:.72rem; white-space:nowrap; border-radius:9px}
+
+  /* The report card's area rows: area name left, mark, band and points right. */
+  .rp-card-list .t tbody tr{display:flex; align-items:baseline; gap:.45rem; margin:0; padding:.3rem 0; border:0; background:none; box-shadow:none}
+  .rp-card-list .t tbody tr:last-child{margin-top:.2rem; border-top:2px solid var(--line)}
+  .rp-card-list .t td:first-child{flex:1 1 auto; min-width:0; font-size:.82rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .rp-card-list .t td:nth-child(2){flex:none; width:2.4rem; text-align:right; font-size:.82rem; font-variant-numeric:tabular-nums}
+  .rp-card-list .t td:nth-child(3){flex:none; white-space:nowrap}
+  .rp-card-list .t td:nth-child(4){flex:none; text-align:right; font-size:.74rem; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--muted)}
+  .rp-card-list .t td .lvl{min-width:0; padding:.05rem .3rem; font-size:.7rem; border-radius:5px}
+  .rp-card-list .t td .only-sm{display:none}
+  /* The Overall row is the same shape as an area row, not a summary card. */
+  .rp-card-list .t tfoot tr{display:flex; flex-wrap:nowrap; align-items:baseline; gap:.45rem; margin-top:.3rem; padding:.45rem 0; border:0; border-top:2px solid var(--line); border-radius:0; background:none}
+  .rp-card-list .t tfoot td{display:block; min-width:0; padding:0; border:0; font-size:.84rem; font-weight:700; white-space:nowrap}
+  .rp-card-list .t tfoot td:first-child{flex:1 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis}
+  .rp-card-list .t tfoot td.num{flex:none; text-align:right; font-variant-numeric:tabular-nums}
+  .rp-card-list .t tfoot td.hide-sm{display:none}
+  /* Two bare ticks in a row mean nothing once the table collapses, so on a phone each carries
+     who wrote it. The tag is hidden everywhere else, where the column headings already say it. */
+  .tp-tag{display:none}
+  @media (max-width:640px){ .rp-list .t td .tp-tag{display:inline; margin-right:.2rem; opacity:.65} }
+
+  /* Keep every learner field visible in a flat, unconfined two-column table row. */
+  .learner-list .tw{max-width:100%; overflow:visible; border:0; border-radius:0; background:none}
+  .learner-list .t{display:block; width:100%; min-width:0; table-layout:auto; border-collapse:collapse; font-size:.86rem}
+  .learner-list .t thead{display:none}
+  .learner-list .t tbody{display:block}
+  .learner-list .t tbody tr{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem .85rem; margin:0; padding:.9rem 0; border:0; border-radius:0; background:none; box-shadow:none}
+  .learner-list .t td{display:block; min-width:0; padding:0; border:0; overflow-wrap:anywhere; vertical-align:top; font-size:.8rem; white-space:normal}
+  .learner-list .t td[data-l]:not([data-l=""])::before{content:attr(data-l); display:block; margin-bottom:.08rem; color:var(--muted); font-size:.67rem; font-weight:700; text-transform:uppercase}
+  .learner-list .learner-name-col{grid-column:1/-1; order:-1; padding-bottom:.2rem !important; font-size:.9rem !important}
+  .learner-list .learner-name-col::before{display:none !important}
+  .learner-list .learner-name-col b{display:block; font-size:.95rem; line-height:1.25}
+  .learner-list .learner-row:hover td{background:transparent}
+
+  .mobile-flat-list .tw{max-width:100%; overflow:visible; border:0; border-radius:0; background:none}
+  .mobile-flat-list .t{display:block; width:100%; min-width:0; table-layout:auto; border-collapse:collapse}
+  .mobile-flat-list .t thead{display:none}
+  .mobile-flat-list .t tbody{display:block}
+  .mobile-flat-list .t tbody tr.mobile-list-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem .85rem; margin:0; padding:.9rem 0; border:0; border-radius:0; background:none; box-shadow:none}
+  .mobile-flat-list .t tbody tr.mobile-list-row:hover td{background:transparent}
+  .mobile-flat-list .t td{display:block; min-width:0; padding:0; border:0; overflow-wrap:anywhere; vertical-align:top; font-size:.8rem; white-space:normal}
+  .mobile-flat-list .t td[data-l]:not([data-l=""])::before{content:attr(data-l); display:block; margin-bottom:.08rem; color:var(--muted); font-size:.67rem; font-weight:700; text-transform:uppercase}
+  .mobile-flat-list .t td.mobile-list-primary{grid-column:1/-1; order:-1; padding-bottom:.2rem; font-size:.9rem}
+  .mobile-flat-list .t td.mobile-list-primary::before{display:none !important}
+  .mobile-flat-list .t td.mobile-list-primary b{font-size:.95rem; line-height:1.25}
+  .mobile-flat-list .t td:nth-child(2):not(.mobile-list-primary){grid-column:auto; order:initial; font-size:.8rem}
+  .mobile-flat-list .t td:nth-child(2):not(.mobile-list-primary)::before{display:block !important}
+  .mobile-flat-list .t td.act{grid-column:1/-1; display:flex; flex-wrap:wrap; gap:.4rem; padding:.35rem 0 0}
+  .mobile-flat-list .t td.act::before{display:none !important}
+  .mobile-flat-list .t td.act .btn{flex:1 1 40%; min-height:40px; white-space:normal}
+  .mobile-flat-list .t td.act{justify-content:center}
+  .mobile-flat-list .t td.act > .btn[data-act="staffForm"],
+  .mobile-flat-list .t td.act > .btn[data-act="classForm"]{flex:0 1 80%; width:80%; max-width:260px; min-height:44px; margin:0 auto; padding:.4rem 1rem; border:1px solid #0F1720; border-radius:99px; background:#0F1720; color:#fff; font-size:.78rem; white-space:nowrap}
+  .mobile-flat-list .t td.act > .btn[data-act="staffForm"]:hover,
+  .mobile-flat-list .t td.act > .btn[data-act="classForm"]:hover{background:#1C2836; border-color:#1C2836}
+  .mobile-record-grid{gap:.65rem .75rem}
+  .application-record .actions{display:grid; grid-template-columns:repeat(2,minmax(0,1fr))}
+  .application-record .actions .btn{min-width:0; padding:.4rem; font-size:.78rem; white-space:normal}
+
+  /* ---------------------------------------------------------------- pop-up forms open as sheets */
+  .modal-bg{align-items:end; padding:0}
+  .modal,.modal.wide,.pub .modal{width:100%; max-height:92vh; padding:1.7rem 1.15rem calc(1.2rem + env(safe-area-inset-bottom,0px)); border-radius:26px 26px 0 0; animation:sheet-up .3s cubic-bezier(.2,.9,.3,1) both}
+  .modal::before{content:""; display:block; width:42px; height:5px; margin:-.9rem auto 1.1rem; border-radius:99px; background:color-mix(in srgb,var(--muted) 40%,transparent)}
+  /* The yes/no question is short and needs an answer, so on a phone it stays a centred pop
+     rather than a sheet: no drag handle, no pinned button bar, just the question in the middle. */
+  .modal-bg:has(.ask){align-items:center; padding:1rem}
+  .modal:has(.ask){width:min(100%,400px); max-height:calc(100dvh - 2rem); padding:1.5rem 1.25rem 1.25rem; border-radius:22px; animation:ask-in .32s cubic-bezier(.2,1.15,.35,1) both}
+  .modal:has(.ask)::before{display:none}
+  .modal:has(.ask) .actions{position:static; margin:1.6rem 0 0; padding:0; background:none; border-top:0}
+  .modal:has(.ask) .actions .btn{min-width:0; min-height:50px; border-radius:14px}
+  .modal:has(.ask-bare){padding:1.35rem 1.2rem 1.15rem}
+  .modal:has(.ask-bare) .actions .btn{min-height:48px; border-radius:99px}
+  .modal .actions{position:sticky; bottom:calc(-1.2rem - env(safe-area-inset-bottom,0px)); margin:1.1rem -1.15rem calc(-1.2rem - env(safe-area-inset-bottom,0px)); padding:.8rem 1.15rem calc(.9rem + env(safe-area-inset-bottom,0px)); background:var(--card); border-top:1px solid var(--line)}
+  .modal .actions .btn{flex:1; min-height:50px; border-radius:14px}
+  .modal input,.modal select,.modal textarea{min-height:48px; border-radius:12px; font-size:16px}
+  .modal:has(.learner-record){padding:1.15rem .95rem calc(1rem + env(safe-area-inset-bottom,0px))}
+  .learner-record-head h2{font-size:1.15rem}
+  .learner-record-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .learner-record-grid{gap:.6rem .75rem}
+  .modal .learner-record-actions{position:static; display:grid; grid-template-columns:minmax(0,1fr); gap:.45rem; margin:.8rem 0 0; padding:.7rem 0 calc(.8rem + env(safe-area-inset-bottom,0px)); border-top:1px solid var(--line); background:none}
+  .learner-record-primary{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.45rem}
+  .learner-record-primary .btn{min-width:0; padding:.45rem; font-size:.78rem; white-space:normal}
+  .learner-record-primary > .btn[data-act="learnerForm"]{grid-column:1/-1; justify-self:center; width:80%; max-width:260px; min-height:44px; border:1px solid #0F1720; border-radius:99px; background:#0F1720; color:#fff; font-size:.78rem}
+  .learner-record-primary .learner-record-report{grid-column:1/-1}
+  .learner-record-more summary{min-height:46px; background:var(--soft)}
+  .learner-record-more > div{display:grid; grid-template-columns:repeat(2,minmax(0,1fr))}
+  .learner-record-more > div .btn{min-width:0; padding:.4rem; font-size:.76rem; white-space:normal}
+  .learner-record-done{width:100%; margin:0}
+  .pr-bg{top:auto; left:.75rem; right:.75rem; bottom:calc(84px + env(safe-area-inset-bottom,0px)); width:auto}
+  body.pub .pr-bg{bottom:calc(1rem + env(safe-area-inset-bottom,0px))}
+
+  /* ---------------------------------------------------------------- public site header and menu */
+  .hx-nav,.hx-acct{display:none !important}
+  .hx-menu{display:grid; place-items:center; flex:none; width:46px; height:46px; margin-left:auto; padding:0; border:1.5px solid rgba(255,255,255,.55); border-radius:15px; background:rgba(255,255,255,.1); color:#fff; backdrop-filter:blur(6px); cursor:pointer}
+  .hx-top{flex-wrap:nowrap; padding-top:1.1rem}
+  .hx-logo img{height:44px}
+
+  .pm{display:flex; flex-direction:column; position:fixed; inset:0; z-index:90; overflow-y:auto; padding:calc(1rem + env(safe-area-inset-top,0px)) 1.2rem calc(1.4rem + env(safe-area-inset-bottom,0px)); color:#fff;
+    background:linear-gradient(170deg,rgba(21,90,71,.97),rgba(27,113,90,.95) 55%,rgba(16,70,55,.98)),url("../assets/hero.png") 70% 30%/cover no-repeat,#155A47; animation:fade .2s ease both}
+  .pm-top{display:flex; align-items:center; gap:.8rem}
+  .pm-logo{flex:1; min-width:0; display:flex; align-items:center; gap:.7rem; overflow:hidden; font-weight:600; white-space:nowrap; text-overflow:ellipsis}
+  .pm-logo i{flex:none; display:grid; place-items:center; width:40px; height:40px; border:1.5px solid rgba(255,255,255,.85); border-radius:4px}
+  .pm-x{display:grid; place-items:center; width:46px; height:46px; padding:0; border:0; border-radius:15px; background:rgba(255,255,255,.14); color:#fff; cursor:pointer}
+  .pm-nav{display:grid; gap:.55rem; margin:2rem 0 1.6rem}
+  .pm-nav a{display:flex; align-items:center; gap:.95rem; min-height:62px; padding:.4rem 1rem .4rem .55rem; border:1px solid rgba(255,255,255,.14); border-radius:18px; background:rgba(255,255,255,.08); color:#fff; font-size:1.12rem; font-weight:600; text-decoration:none; animation:pm-in .4s var(--d,0ms) cubic-bezier(.2,.9,.3,1) both}
+  .pm-nav a > i{display:grid; place-items:center; width:46px; height:46px; border-radius:14px; background:rgba(255,255,255,.14)}
+  .pm-nav a > span{flex:1}
+  .pm-nav a > svg{opacity:.6}
+  .pm-nav a[aria-current=page]{background:#fff; color:#155A47}
+  .pm-nav a[aria-current=page] > i{background:#E3F2EC}
+  .pm-acts{display:grid; gap:.65rem; margin-top:auto}
+  .pm-btn{display:grid; place-items:center; min-height:56px; border-radius:99px; font-weight:700; font-size:.84rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none}
+  .pm-in{border:1.5px solid rgba(255,255,255,.9); color:#fff}
+  .pm-apply{background:var(--hx-lime,#B8DC6E); color:#1F2A0E; box-shadow:0 12px 26px rgba(0,0,0,.2)}
+  .pm-call{display:flex; align-items:center; justify-content:center; gap:.5rem; margin-top:1.1rem; color:#DCEFE8; font-size:.88rem; text-decoration:none}
+
+  /* ---------------------------------------------------------------- home page */
+  .sheet{padding:6px 6px 18px}
+  .hx{border-radius:24px 24px 0 0}
+  .hx-body{padding:2rem var(--gut) 1.2rem}
+  .hx-badge{height:54px; font-size:.9rem}
+  .hx-bell{width:84px; height:68px; margin-top:-20px}
+  .hx-text h1{margin:1.4rem 0 .8rem; font-size:2.35rem}
+  .hx-sub{font-size:1rem}
+  .hx-find{margin-top:1.6rem; padding:.8rem; border-radius:20px}
+  .hx-go{min-height:50px; border-radius:14px}
+  .hx-tab{gap:.3rem 1.6rem; padding-left:1.2rem}
+  .hx-below{padding:1.1rem .9rem 0}
+  .hx-spot{padding:.9rem; border-radius:20px; background:var(--hx-tile)}
+  .hx-spot img{width:72px; height:72px; border-radius:14px}
+  .hx-tile{min-height:70px; border-radius:18px; font-size:.95rem}
+
+  /* Sign-in page */
+  .auth{border-radius:24px; box-shadow:0 20px 50px rgba(20,22,30,.14)}
+  .au-field input,.au-field select{font-size:16px}
+}
+
+@keyframes sheet-up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pm-in{from{opacity:0; transform:translateX(24px)}to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){ .launch,.launch-bg,.modal,.pm,.pm-nav a,.tabbar *{animation:none !important} }
+
+/* ================================================================ phone entry (views/mobile.js)
+   A phone that is not signed in sees only these: the opening slides (.ob), then the plain
+   sign-in page (.ml). They keep their own light colours. */
+.ob,.ml{--ink:#16263D; --muted:#66758A; color-scheme:light; min-height:100vh; min-height:100dvh}
+
+/* The entrances move like Framer Motion's default spring: quick, a little past the mark, then settled.
+   --spring is that curve. It is set on its own animation-timing-function line after each animation,
+   so a browser without linear() keeps moving, on its default ease. */
+:root{--spring:linear(0, 0.04, 0.139, 0.271, 0.417, 0.561, 0.693, 0.807, 0.9, 0.971, 1.023, 1.056, 1.076, 1.083, 1.082, 1.075, 1.065, 1.053, 1.041, 1.029, 1.019, 1.011, 1.004, 0.999, 0.996, 0.994, 0.993, 0.993, 0.994, 0.996, 0.998, 1)}
+@keyframes fm-in{from{opacity:0; transform:translateY(20px)}to{opacity:1; transform:none}}
+@keyframes fm-pop{from{opacity:0; transform:scale(.88)}to{opacity:1; transform:none}}
+
+/* Opening slides */
+/* A coloured panel cut on a slant with a rounded corner (the #obCut clip in mobile.js), the students
+   from the home page in it, then a grey tag, the headline, a line led by a small triangle, a sentence,
+   the Get started button and the dots. Text and button use the sign-in page's styles and colours.
+   --c is the slide's colour. */
+.ob{position:relative; display:flex; flex-direction:column; padding:0 0 calc(1.1rem + env(safe-area-inset-bottom,0px)); overflow:hidden; background:#FAFAFB; color:var(--ink)}
+.ob-art{position:relative; flex:1 0 clamp(270px,46vh,430px)}
+/* Its top edge is the plain slide colour (the glow starts lower down), so it meets the phone's status
+   bar, which mobile.js paints the same colour, without a seam. */
+.ob-pic{position:absolute; inset:0; clip-path:url(#obCut); -webkit-clip-path:url(#obCut);
+  background:url("../assets/hero.png") var(--bp)/var(--bs) no-repeat,linear-gradient(var(--c),transparent 26%),radial-gradient(120% 90% at 75% 15%,color-mix(in srgb,var(--c) 65%,#fff),transparent 70%),var(--c);
+  animation:ob-pic .9s 0s backwards; animation-timing-function:var(--spring)}
+.ob-text{position:relative; z-index:1; margin-top:-1.4rem; padding:0 1.5rem}
+.ob-text > *{animation:fm-in .8s .12s backwards; animation-timing-function:var(--spring)}
+.ob-tag{display:inline-block; padding:.4rem .65rem; border-radius:8px; background:#EEF0F3; color:var(--muted); font-size:.78rem; font-weight:600; line-height:1}
+.ob h2{margin:.8rem 0 .55rem; color:#1D4777; font-family:var(--display); font-size:1.55rem; font-weight:500; line-height:1.2; letter-spacing:-.01em; overflow-wrap:anywhere; animation-delay:.19s}
+.ob-sub{display:flex; align-items:center; gap:.6rem; margin:0 0 .35rem; color:#1D4777; font-size:.875rem; font-weight:600; animation-delay:.26s}
+.ob-sub::before{content:""; flex:none; border-left:8px solid var(--c); border-top:5px solid transparent; border-bottom:5px solid transparent}
+.ob-p{max-width:36ch; margin:0; color:#5B7088; font-size:.875rem; line-height:1.5; animation-delay:.33s}
+/* Get started is the sign-in page's button (.ml-btn); this only places it on the slide. */
+.ob .ob-go{align-self:stretch; margin:1.5rem 1.5rem 0; animation:fm-pop .8s .42s backwards; animation-timing-function:var(--spring)}
+.ob-go:focus-visible,.ob-dots button:focus-visible{outline:3px solid color-mix(in srgb,var(--c) 60%,transparent); outline-offset:3px}
+.ob-dots{display:flex; justify-content:center; align-items:center; gap:.45rem; margin-top:auto; padding-top:1.6rem; animation:fade .5s .55s backwards}
+.ob-dots button{width:7px; height:7px; padding:0; border:0; border-radius:99px; background:#CFCFD4; cursor:pointer; transition:width .3s,background-color .3s}
+.ob-dots button.on{width:22px; background:#0F1720}
+/* The dots are small, so each gets a larger invisible target. */
+.ob-dots button{position:relative} .ob-dots button::after{content:""; position:absolute; inset:-12px -6px}
+@keyframes ob-pic{from{opacity:0; transform:translateY(-28px) scale(1.06)}to{opacity:1; transform:none}}
+@keyframes sp-up{from{opacity:0; transform:translateY(12px)}to{opacity:1; transform:none}}
+
+/* Install the app: a quiet link under Get started on the slides and above the help on sign in. */
+.app-inst{display:inline-flex; align-self:center; align-items:center; justify-content:center; gap:.45rem; min-height:44px; margin:.6rem auto 0; padding:0 .9rem; border:0; border-radius:99px; background:none; color:#1D4777; font:600 .85rem var(--body); cursor:pointer; -webkit-tap-highlight-color:transparent}
+.app-inst[hidden]{display:none}
+.app-inst:active{background:#EEF0F3}
+.ob .app-inst{animation:fade .5s .5s backwards}
+.ml .app-inst{margin:1.2rem auto -.6rem; animation:fm-in .8s .5s backwards; animation-timing-function:var(--spring)}
+.inst-steps{display:grid; gap:.8rem; margin:0; padding:0; list-style:none}
+.inst-steps li{display:flex; align-items:center; gap:.85rem}
+.inst-steps i{flex:none; display:grid; place-items:center; width:40px; height:40px; border-radius:12px; background:#EEF0F3; color:#1D4777}
+.inst-ok{flex:1; width:100%; margin:0}
+
+/* Sign in */
+/* Android-sized: the school logo above the heading, muted grey fields, and a black pill button. */
+.ml{--ml-green:#1B715A; display:flex; flex-direction:column; justify-content:center; padding:calc(2.4rem + env(safe-area-inset-top,0px)) 1.5rem calc(1.6rem + env(safe-area-inset-bottom,0px)); background:#FAFAFB; color:var(--ink)}
+.ml-head{margin-bottom:2rem; text-align:center}
+/* Sign in comes in one piece at a time: the logo pops, then the heading, the fields, the button and the help. */
+.ml-head > *,.ml-f,.ml .ml-btn,.ml-help{animation:fm-in .8s backwards; animation-timing-function:var(--spring)}
+.ml .ml-logo{animation-name:fm-pop; animation-delay:.05s}
+.ml h1{animation-delay:.14s} .ml-sub{animation-delay:.2s}
+.ml-f:nth-of-type(1){animation-delay:.27s} .ml-f:nth-of-type(2){animation-delay:.34s}
+.ml .ml-btn{animation-delay:.42s} .ml-help{animation-delay:.5s}
+/* The artwork carries its own wordmark, so it needs no plate here: the navy and grey in it read
+   on this near-white screen. */
+.ml-logo{display:block; width:auto; height:74px; margin:0 auto 1.1rem}
+/* The heading matches the dashboard's page title (.page-h h1): Urbanist at regular weight in the heading navy,
+   at the smaller size Android uses for a screen title rather than the desktop one. */
+.ml h1{margin:0 0 .4rem; color:#1D4777; font-family:var(--display); font-size:1.55rem; font-weight:500; letter-spacing:-.01em}
+.ml-sub{max-width:36ch; margin:0 auto; color:#5B7088; font-size:.875rem; line-height:1.5}
+.ml-form{display:grid; gap:.85rem}
+.ml-f > span:first-child{display:block; margin:0 0 .35rem .15rem; color:var(--muted); font-size:.78rem; font-weight:600}
+.ml-in{position:relative; display:flex; align-items:center}
+.ml-in > svg{position:absolute; left:1rem; color:#9AA3AF; pointer-events:none}
+.ml-in input{width:100%; min-height:50px; padding:.6rem 3rem .6rem 2.8rem; border:1px solid transparent; border-radius:12px; background:#EEF0F3; color:var(--ink); font-size:16px; transition:background-color .2s,border-color .2s}
+.ml-in input::placeholder{color:#9AA3AF}
+.ml-in input:focus{outline:none; border-color:rgba(27,113,90,.45); background:#E8EBEF}
+.ml-in .au-eye{position:absolute; right:.4rem; width:46px; height:46px; color:#9AA3AF}
+.ml .err{min-height:1.1rem; margin:0; color:#C2362F; font-size:.85rem; text-align:center}
+.ml-btn{min-height:50px; margin-top:.3rem; border:1px solid #0F1720; border-radius:99px; background:#0F1720; color:#fff; font-size:.8rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; box-shadow:0 6px 16px rgba(15,23,32,.18); cursor:pointer; transition:background-color .2s,border-color .2s,transform .1s}
+.ml-btn:hover{background:#1C2836; border-color:#1C2836}
+.ml-btn:active{transform:scale(.98)}
+.ml-btn:focus-visible{outline:3px solid rgba(27,113,90,.4); outline-offset:3px}
+.ml-help{margin-top:2.1rem; color:var(--muted); font-size:.8rem; line-height:1.65; text-align:center}
+.ml-help a{color:var(--ml-green); font-weight:700; text-decoration:none}
+@media (prefers-reduced-motion:reduce){ .ob *,.ml *{animation:none !important} }
